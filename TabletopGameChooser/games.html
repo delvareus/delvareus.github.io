@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		.tooltip {
+		  position: relative;
+		  display: inline-block;
+		  border-bottom: 1px dotted black;
+		}
+
+		.tooltip .tooltiptext {
+		  visibility: hidden;
+		  width: 240px;
+		  background-color: #555;
+		  color: #fff;
+		  text-align: center;
+		  border-radius: 6px;
+		  padding: 5px 0;
+		  position: absolute;
+		  z-index: 1;
+		  bottom: 125%;
+		  left: 50%;
+		  margin-left: -120px;
+		  opacity: 0;
+		  transition: opacity 0.3s;
+		}
+
+		.tooltip .tooltiptext::after {
+		  content: "";
+		  position: absolute;
+		  top: 100%;
+		  left: 50%;
+		  margin-left: -5px;
+		  border-width: 5px;
+		  border-style: solid;
+		  border-color: #555 transparent transparent transparent;
+		}
+
+		.tooltip:hover .tooltiptext {
+		  visibility: visible;
+		  opacity: 1;
+		}
+	</style>
+	
+	<head>
+	</head>
+	
+	<body>
+		<div id="criteria">
+			<h2>How many players are there?</h2>
+			<input type="checkbox" id="1player" name="players" value=1><label for="1player">1</label>&nbsp;&nbsp;
+			<input type="checkbox" id="2players" name="players" value=2><label for="2players">2</label>&nbsp;&nbsp;
+			<input type="checkbox" id="3players" name="players" value=3><label for="3players">3</label>&nbsp;&nbsp;
+			<input type="checkbox" id="4players" name="players" value=4><label for="4players">4</label>&nbsp;&nbsp;
+			<input type="checkbox" id="5players" name="players" value=5><label for="5players">5</label>&nbsp;&nbsp;
+			<input type="checkbox" id="6players" name="players" value=6><label for="6players">6</label>&nbsp;&nbsp;
+			<input type="checkbox" id="7players" name="players" value=7><label for="7players">7</label>&nbsp;&nbsp;
+			<input type="checkbox" id="8players" name="players" value=8><label for="8players">8</label>&nbsp;&nbsp;
+			<input type="checkbox" id="9players" name="players" value=9><label for="9players">9</label>&nbsp;&nbsp;
+			<input type="checkbox" id="10players" name="players" value=10><label for="10players">10</label>&nbsp;&nbsp;
+			<input type="checkbox" id="11+players" name="players" value=11><label for="11+players">11+</label>&nbsp;&nbsp;
+			<input type="button" value="Check All" onclick="checkAll('players')">&nbsp;&nbsp;
+			<input type="button" value="Clear All" onclick="uncheckAll('players')">
+			<h2>Are any of the players children?</h2>
+			<input type="radio" id="nokids" name="kids" checked="checked" value=""><label for="nokids">No</label>&nbsp;&nbsp;
+			<input type="radio" id="yeskids" name="kids" value="true"><label for="yeskids">Yes</label>&nbsp;&nbsp;
+			<h2>About how much time are you willing to spend on a single game? (Select all that apply)</h2>
+			<input type="checkbox" id="20min" name="time" value=20><label for="20min">20 minutes or less</label>&nbsp;&nbsp;
+			<input type="checkbox" id="30min" name="time" value=30><label for="30min">30 minutes</label>&nbsp;&nbsp;
+			<input type="checkbox" id="45min" name="time" value=45><label for="45min">45 minutes</label>&nbsp;&nbsp;
+			<input type="checkbox" id="60min" name="time" value=60><label for="60min">60 minutes</label>&nbsp;&nbsp;
+			<input type="checkbox" id="75min" name="time" value=75><label for="75min">75 minutes or more</label>&nbsp;&nbsp;
+			<input type= "button" value= "Check All" onclick="checkAll('time')">&nbsp;&nbsp;
+			<input type= "button" value= "Clear All" onclick="uncheckAll('time')">
+			<h2>What type of game do you want to play?</h2>
+			<input type="radio" id="competative" name="type" value="Competative"><label for="competative">Competative</label>&nbsp;&nbsp;
+			<input type="radio" id="cooperative" name="type" value="Cooperative"><label for="cooperative">Cooperative</label>&nbsp;&nbsp;
+			<input type="radio" id="either" name="type" checked="checked" value="Either"><label for="either">Either</label>&nbsp;&nbsp;
+			<h2>How difficult are the game instructions that you're willing to endure? (Select all that apply)</h2>
+			<input type="checkbox" id="1veryeasy" name="difficulty" value=1><label for="1veryeasy">1 - Very Easy</label>&nbsp;&nbsp;
+			<input type="checkbox" id="2mostlyeasy" name="difficulty" value=2><label for="2mostlyeasy">2 - Mostly Easy</label>&nbsp;&nbsp;
+			<input type="checkbox" id="3moderate" name="difficulty" value=3><label for="3moderate">3 - Moderate</label>&nbsp;&nbsp;
+			<input type="checkbox" id="4somewhatdifficult" name="difficulty" value=4><label for="4somewhatdifficult">4 - Somewhat Difficult</label>&nbsp;&nbsp;
+			<input type="checkbox" id="5difficult" name="difficulty" value=5><label for="5difficult">5 - Difficult</label>&nbsp;&nbsp;
+			<input type="button" value="Check All" onclick="checkAll('difficulty')">&nbsp;&nbsp;
+			<input type="button" value="Clear All" onclick="uncheckAll('difficulty')">
+			<h3>Sort results by</h3>
+			<input type="radio" id="byname" name="sort" checked="checked" value="Name"><label for="byname">Name</label>&nbsp;&nbsp;
+			<input type="radio" id="bydifficulty" name="sort" value="Difficulty"><label for="bydifficulty">Difficulty</label>&nbsp;&nbsp;
+			<input type="radio" id="bytime" name="sort" value="Time"><label for="bytime">Time to Play</label>&nbsp;&nbsp;
+		</div>
+	
+	
+		<p><p>
+		<button onclick="showTable()">Show List</button>
+		<div id="results"></div>
+
+
+		<script src="games.js"></script>
+	</body>
+	
+</html>

@@ -1,0 +1,173 @@
+{ "games": [
+	{
+		"name": "Forbidden Island",
+		"description": "",
+		"type": "Cooperative",
+		"minPlayers": 2,
+		"maxPlayers": 4,
+		"maxPlayersWithExpansion": 4,
+		"learningCurve": "2 - Mostly Easy",
+		"averageMinutesToPlay": [30],
+		"expansions": [],
+		"tags": [
+			"Great for Beginners"
+		],
+		"notes": ""
+	},
+	{
+		"name": "Forbidden Desert",
+		"description": "",
+		"type": "Cooperative",
+		"minPlayers": 2,
+		"maxPlayers": 5,
+		"maxPlayersWithExpansion": 5,
+		"learningCurve": "3 - Moderate",
+		"averageMinutesToPlay": [45],
+		"expansions": [],
+		"tags": [],
+		"notes": "Play Forbidden Island first."
+	},
+	{
+		"name": "Pandemic",
+		"description": "Work with your teammates against time to contain 4 deadly contagions spreading across the globe",
+		"type": "Cooperative",
+		"minPlayers": 2,
+		"maxPlayers": 4,
+		"maxPlayersWithExpansion": 5,
+		"learningCurve": "4 - Somewhat Difficult",
+		"averageMinutesToPlay": [45],
+		"expansions": [
+			"On the Brink",
+			"In the Lab"
+		],
+		"tags": [
+			"Favorite"
+		],
+		"notes": "Play Forbidden Island first."
+	},
+	{
+		"name": "Sentinels of the Multiverse",
+		"description": "",
+		"type": "Cooperative",
+		"minPlayers": 2,
+		"maxPlayers": 5,
+		"maxPlayersWithExpansion": 5,
+		"learningCurve": "4 - Somewhat Difficult",
+		"averageMinutesToPlay": [ 30, 45, 60 ],
+		"expansions": [],
+		"tags": [],
+		"notes": "Chris hasn't played this one in a while!"
+	},
+	{
+		"name": "The Settlers of Catan",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 3,
+		"maxPlayers": 4,
+		"maxPlayersWithExpansion": 4,
+		"learningCurve": "3 - Moderate",
+		"averageMinutesToPlay": [60],
+		"expansions": [],
+		"tags": [
+			"Gaming Staple"
+		],
+		"notes": ""
+	},
+	{
+		"name": "Cards Against Humanity",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 2,
+		"maxPlayers": 99,
+		"maxPlayersWithExpansion": 99,
+		"learningCurve": "1 - Very Easy",
+		"averageMinutesToPlay": [ 20, 30, 45, 60, 75 ],
+		"expansions": [],
+		"tags": [
+			"Party",
+			"Adults Only"
+		],
+		"notes": ""
+	},
+	{
+		"name": "Fact or Crap",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 3,
+		"maxPlayers": 8,
+		"maxPlayersWithExpansion": 8,
+		"learningCurve": "1 - Very Easy",
+		"averageMinutesToPlay": [ 20, 30, 45, 60, 75 ],
+		"expansions": [],
+		"tags": [
+			"Party"
+		],
+		"notes": ""
+	},
+	{
+		"name": "Plague, Inc.",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 1,
+		"maxPlayers": 4,
+		"maxPlayersWithExpansion": 4,
+		"learningCurve": "3 - Moderate",
+		"averageMinutesToPlay": [ 60 ],
+		"expansions": [],
+		"tags": [],
+		"notes": ""
+	},
+	{
+		"name": "Dominion",
+		"description": "A deck-building card game where the player with the most victory points wins!",
+		"type": "Competative",
+		"minPlayers": 2,
+		"maxPlayers": 4,
+		"maxPlayersWithExpansion": 4,
+		"learningCurve": "3 - Moderate",
+		"averageMinutesToPlay": [ 30 ],
+		"expansions": [],
+		"tags": ["Favorite"],
+		"notes": ""
+	},
+	{
+		"name": "7 Wonders",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 2,
+		"maxPlayers": 7,
+		"maxPlayersWithExpansion": 8,
+		"learningCurve": "4 - Somewhat Difficult",
+		"averageMinutesToPlay": [ 30, 45 ],
+		"expansions": [],
+		"tags": [],
+		"notes": ""
+	},
+	{
+		"name": "Carcassonne",
+		"description": "",
+		"type": "Competative",
+		"minPlayers": 2,
+		"maxPlayers": 5,
+		"maxPlayersWithExpansion": 6,
+		"learningCurve": "3 - Moderate",
+		"averageMinutesToPlay": [ 30, 45 ],
+		"expansions": ["Numerous"],
+		"tags": [],
+		"notes": ""
+	},
+	{
+		"name": "The Resistance",
+		"description": "Members of the resistance go on missions for their cause, but spies among them will sabotage the operations! Can the loyal members figure out who the spies are, or will the spies succeed in defeating the resistance?",
+		"type": "Team",
+		"minPlayers": 5,
+		"maxPlayers": 10,
+		"maxPlayersWithExpansion": 10,
+		"learningCurve": "2 - Mostly Easy",
+		"averageMinutesToPlay": [ 30 ],
+		"expansions": [],
+		"tags": ["Psychological","Favorite"],
+		"notes": ""
+	}
+ ]
+}

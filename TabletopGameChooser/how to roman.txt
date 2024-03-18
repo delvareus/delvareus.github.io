@@ -1,0 +1,70 @@
+1	I
+5	V
+10	X
+50	L
+100	C
+500	D
+1000	M
+
+4	IV
+9	IX
+40	XL  ?
+41	XLI
+..
+44	XLIV
+45	XLV
+..
+49	(IL) NO!  It's (XLIX) or is it
+50	L
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vinculum (with overscores)
+5000	V
+10000	X
+50000	L
+100000	C
+500000	D
+100000	M
+
+
+I
+II
+III
+*IV
+V
+VI
+VII
+VIII
+*IX
+X
+XI
+XII
+XIII
+*XIV
+XV
+XVI
+XVII
+XVIII
+*XIX
+XX
+XXI
+XXII
+XXIII
+*XXIV
+XXV
+XXVI
+XXVII
+XXVIII
+*XXIX
+XXX
