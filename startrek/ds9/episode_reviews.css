@@ -1,0 +1,555 @@
+﻿
+
+.pageTitleImage {
+	position: fixed;
+	left: 0;
+	z-index: -3;
+	width: 100%;
+	background-color: #030303;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: #404040;
+}
+.spacer {
+	height: 60px;
+}
+.seasonNav {
+	text-align: center;
+	margin: auto;
+	margin-bottom: 20px;
+	background-color: #181818EE;
+	width: fit-content;
+}
+.activeSeason {
+	border-style: solid none solid none;
+	border-width: 1px;
+	background-color: #444;
+	padding: 2px;
+}
+.seriesInfoCard {
+	border:2px solid white;
+	float:right;
+	padding: 3px;
+	margin: 10px;
+	font-size: 14px;
+}
+.seriesInfoCard td{
+		padding-left: 3px;
+		padding-right: 3px;
+}
+.seriesInfoCard th{
+		background-color: #444;
+}
+
+/* -------------------- EPISODE CARD -------------------- */
+.episodeCard {
+	position: relative;
+	z-index: 0;
+	margin: auto;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
+	padding: 1px;
+	width: 85%;
+	overflow: hidden;
+	min-height:500px;
+	background-color: #181818EE;
+}
+.episodeCardBG{
+	position: absolute;
+	z-index:-1;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: auto;
+	overflow:hidden;
+	object-fit:contain;
+	mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
+}
+.episodeCardFlare{
+	position: absolute;
+	z-index:-1;
+	left: 0;
+	top: 0;
+	overflow:hidden;
+	object-fit:contain;
+	/* mask-image: linear-gradient(135deg, rgba(0,0,0,1), rgba(0,0,0,1) 40%, rgba(0,0,0,0.1)); */
+}
+.episodeCardTable{
+	width: 100%;
+}
+
+/* -------------------- EPISODE CARD BLOCKS -------------------- */
+.titleBlock {
+	margin-left: auto;
+	margin-right: auto;
+	width: 98%;
+	cellpadding:2;
+	cellspacing:3;
+}
+.detailBlock {
+	margin-left: 56px;
+	margin-right: 35%;
+	border-width: 0;
+	min-height:269px;
+}
+.ratingBlock {
+	margin-left: auto;
+	margin-right: auto;
+	width: 98%;
+	border: 2px solid #C0C0C0;
+	z-index: 1;
+}
+
+/* -------------------- TITLE BLOCK ELEMENTS -------------------- */
+
+.seasonEpisodeNumberBox {
+	text-align: left;
+	font-size: large;
+	vertical-align: bottom;
+	font-weight: bold;
+}
+.SepisodeNumberBox {
+	border: 1px solid #C0C0C0;
+	text-align: center;
+	background-color:rgba(0,0,0,0.5);
+	width: 90px;
+	height: 24px;
+}
+.FepisodeNumberBox {
+	border: 1px solid #C0C0C0;
+	text-align: center;
+	background-color:rgba(0,0,0,0.5);
+	width: 90px;
+	height: 24px;
+	cursor: help;
+}
+.combadgeBox {
+	text-align: center;
+	font-size: xx-large;
+	height: 36px;
+	width: 36px;
+}
+.titleBox {
+	text-align: left;
+	font-size: xx-large;
+	height: 36px;
+	font-weight: bold;
+}
+.titleMarginBox {
+	width: auto;
+}
+.synopsisBox {
+	text-align: left;
+	font-size: small;
+	font-style: italic;
+	background-color: #18181890;
+	margin-right: 35%;
+	white-space: normal;
+	width: 600px;
+	border-radius: 5px;
+}
+.synopsis {
+	text-align: left;
+	font-size: small;
+	font-style: italic;
+	background-color: #18181890;
+	border-radius: 5px;
+	height: auto;
+	width: fit-content;
+	padding: 2px;
+}
+.arcDescription {
+	font-style: normal;
+	color: #FFFBAA;
+}
+
+/* -------------------- DESCRIPTION BLOCK ELEMENTS -------------------- */
+
+.iconBox {
+	text-align: center;
+	font-size: large;
+	height: 24px; width: 36px;
+	
+}
+.iconDescription {
+	border-radius: 8px;
+	text-align: left;
+	font-size: medium;
+	height: auto;
+	width: fit-content;
+	background-color: #18181890;
+	padding: 3px;
+}
+.nitpickery {
+	border-radius: 8px;
+	text-align: left;
+	font-size: medium;
+	height: auto;
+	width: fit-content;
+	background-color: #18181890;
+	padding: 3px;
+}
+.quote {
+	border-radius: 10px;
+	text-align: center;
+	font-size: xx-large;
+	font-family: Times New Roman, serif;
+}
+.thoughtsSection {
+	border-radius: 8px;
+	text-align: left;
+	font-size: small;
+	height: auto;
+	width: fit-content;
+	background-color: #18181890;
+	padding: 3px;
+}
+.watchRecommendationExplanation {
+	border-radius: 8px;
+	text-align: left;
+	font-size: medium;
+	height: auto;
+	width: fit-content;
+	background-color: #18181890;
+	padding: 3px;
+}
+
+/* -------------------- RATING BLOCK ELEMENTS -------------------- */
+
+.myRatingDescriptionBox {
+	text-align: right;
+	vertical-align: bottom;
+	width: 200px; height: 24px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.SFDratingDescriptionBox {
+	text-align: right;
+	width: 200px; height: 24px;
+	font-weight: bold;
+}
+.EASratingDescriptionBox {
+	text-align: right;
+	width: 200px; height: 24px;
+	font-weight: bold;
+}
+.NIMDBratingDescriptionBox {
+	text-align: right;
+	width: 200px; height: 24px;
+	font-weight: bold;
+}
+.starRatingBox {
+	font-size: large;
+	padding-left: 10px;
+}
+.ratingsInfoLinkBox{
+	font-size: small;
+	vertical-align:bottom;
+	text-align:right;
+}
+/* --- STARS --- */
+.stars0 {
+	font-size: x-large;
+	color: #F8696B;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars1 {
+	font-size: x-large;
+	color: #FA9473;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars2 {
+	font-size: x-large;
+	color: #FCBF7B;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars3 {
+	font-size: x-large;
+	color: #FFEB84;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars4 {
+	font-size: x-large;
+	color: #B1D580;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars5 {
+	font-size: x-large;
+	color: #63BE7B;
+	height: 24px;
+	padding-left: 8px;
+}
+.hollowStar {
+	color: #828282;
+}
+.halfstar {
+	display: inline-block;
+	position: relative;
+	font-size:x-large;
+	height:26px;
+	overflow:hidden;
+	vertical-align:top;
+}
+.lefthalfstar{
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	width:50%;
+}
+.righthalfstar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #828282;
+}
+.personalFavorite {
+	font-size: x-large;
+	color: #FF86AD;
+	height: 24px
+}
+.award{
+	color: lightgray;
+}
+/* --- OTHER RATINGS --- */
+.ratingNumber {
+	font-weight: bold;
+	padding-left: 10px;
+}
+/* --- WATCH RECOMMENDATION BOX --- */
+.watchRecommendationBox {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	background-color:rgba(51,51,51,0.7);
+	width: 150px;
+	vertical-align:top;
+}
+.watchRecommendationTitle {
+	font-size: small;
+}
+.NotablyBad {
+	color: #FF6666;
+}
+/* --- SCORE BOX --- */
+.ScoreBox0 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color:#F8696BBF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox1 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #F98370BF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox2 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #FA9D75BF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox3 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #FCB77ABF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox4 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #FDD17FBF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox5 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #FFEB84BF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox6 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color:#E0E383BF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox7 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #C1DA81BF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox8 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color:#A2D07FBF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox9 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #83C77DBF;
+	width: 120px;
+	vertical-align:top;
+}
+.ScoreBox10 {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color:#63BE7BBF;
+	width: 120px;
+	vertical-align:top;
+}
+
+
+/* ---------------------------- */
+
+
+.xx-small {
+	font-size: xx-small;
+}
+.x-small {
+	font-size: x-small;
+}
+.small {
+	font-size: small;
+}
+.large {
+	font-size: large;
+}
+.x-large {
+	font-size: x-large;
+}
+.xx-large {
+	font-size: xx-large;
+}
+.spoiler{
+	
+}
+.spoilerTag{
+	font-weight: bold;
+	color: orange;
+	cursor: pointer;
+}
+.spoilerTag:hover{
+	background-color: #845600EE;
+	border-radius: 3px;
+}
+.spoilerContent{
+	/*display: none;*/
+	filter: blur(6px);
+	font-size:small;
+	color: #FFE1CA;
+	transition: 0.5s;
+}
+.spoilerContent a{
+	pointer-events:none;
+}
+
+
+/* -------------------- SIDE NAVIGATION MENU -------------------- */
+ 
+#leftNavOpenButton{
+	cursor: pointer;
+	position: fixed;
+	left:0;
+	top:50%;
+	text-align: center;
+	background-color: #000020;
+	padding: 6px;
+	border: 3px solid;
+	border-radius: 0px 26px 26px 0px;
+	overflow: hidden;
+	z-index: 100;
+	transition: 0.2s;
+	/*font-weight: bold;
+	font-size: large;*/
+}
+ 
+#leftNavOpenButton:hover {
+	background-color: #555;
+}
+ 
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111111EE; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; 
+  transition: 0.2s; 
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #AAAACC;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #FFFFFF;
+}
+
+.sidenav .sidenavseasons{
+	padding-top: 18px;
+	text-align:center;
+}
+
+.sidenav .sidenavseasons a{
+	padding: 0px 0px 0px 0px;
+	display:inline;
+	font-size: 18px;
+}
+
+
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 10px;}
+}

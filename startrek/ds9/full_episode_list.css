@@ -1,0 +1,14 @@
+/* ---------------------------- */
+
+.filterrow {
+	width:100%;
+}
+
+.ratingNumber{
+	font-weight:bold;
+	text-align:center;
+}
+
+th {
+	cursor: pointer;
+}

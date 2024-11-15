@@ -1,0 +1,84 @@
+body {
+	background-color: #181818;
+	color: #C0C0C0;
+	font-family: Roboto, sans-serif;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+}
+body a {
+	color: #84C1FF;
+	text-decoration:none;
+	white-space:nowrap;
+}
+body a:hover {
+	color: #f1f1f1;
+	text-decoration:none;
+}
+body a[target="_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAACXRFWHRDb21tZW50AACJKo0GAAAASElEQVR4nGP4//8/AzZ85syZ/8gYQwBNcQKKQhwmwhQl4FSIrAjmDAyF6IpgGEXhqVOnFLApwlAIU4zue6wKsQUT6QoJYZBCABxrNhBirnqBAAAAAElFTkSuQmCC);
+  margin: 0px 3px 0px 5px;
+}
+
+.content {
+	margin: auto;
+	padding: 8px;
+	width: 85%;
+	border-radius: 3px;
+	background-color: #181818EE;
+}
+
+/* -------------------- TOOL TIPS -------------------- */
+
+
+.tooltip {
+	display: none;
+	border: 1px solid #C0C0C0;
+	padding: 5px;
+	border-radius:5px;
+	background-color:#141F29;
+	font-size:small;
+	cursor: pointer;
+}
+
+/* -------------------- SCROLL TO TOP BUTTON -------------------- */
+
+#toTopButton {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  top: 0px; 
+  left: 15px; 
+  z-index: 100; 
+  cursor: pointer; /* Add a mouse pointer on hover */
+  text-align: center;
+  background-color: #000020;
+  padding: 4px;
+  border: 3px solid;
+  border-radius: 0px 0px 26px 26px;
+  overflow: hidden;
+  /*font-weight: bold;
+  font-size: large;*/
+}
+
+#toTopButton:hover {
+  background-color: #555;
+}
+
+/*
+td {
+  border: 1px dotted #999;
+}
+*/
+
+.understanding-ratings {
+	border-collapse: collapse;
+}
+
+.understanding-ratings td {
+	 border-bottom: 1px dotted #DDD;
+	 padding: 5px;
+}
+
+.understanding-ratings th {
+	 border-top: 1px dotted #DDD;
+	 border-bottom: 1px dotted #DDD;
+	 background-color: #303030;
+}
