@@ -12,3 +12,41 @@
 th {
 	cursor: pointer;
 }
+
+#filterSideBar {
+	position: fixed;
+	left: 3px;
+	
+}
+
+.filterCategory {
+	padding: 8px;
+}
+
+.filterAndOr {
+	padding: 3px;
+}
+
+.icon {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+}
+
+#episodeTable{
+	border: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: collapse;
+}
+
+#episodeTable td {
+	 border-bottom: 1px dotted #DDD;
+	 padding: 3px;
+}
+
+#episodeTable th {
+	 border-top: 1px dotted #DDD;
+	 border-bottom: 1px dotted #DDD;
+	 background-color: #303030;
+}
