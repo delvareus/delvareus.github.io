@@ -1,18 +1,6 @@
 ﻿
 
-.pageTitleImage {
-	position: fixed;
-	left: 0;
-	z-index: -3;
-	width: 100%;
-	background-color: #030303;
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-	border-color: #404040;
-}
-.spacer {
-	height: 60px;
-}
+
 .seasonNav {
 	text-align: center;
 	margin: auto;
@@ -54,6 +42,7 @@
 	overflow: hidden;
 	min-height:500px;
 	background-color: #181818EE;
+	line-height: 1.1;
 }
 .episodeCardBG{
 	position: absolute;
@@ -108,6 +97,7 @@
 	font-size: large;
 	vertical-align: bottom;
 	font-weight: bold;
+	line-height: 1;
 }
 .SepisodeNumberBox {
 	border: 1px solid #C0C0C0;
@@ -115,6 +105,8 @@
 	background-color:rgba(0,0,0,0.5);
 	width: 90px;
 	height: 24px;
+	line-height: 0.9;
+	padding-top: 0px;
 }
 .FepisodeNumberBox {
 	border: 1px solid #C0C0C0;
@@ -123,12 +115,15 @@
 	width: 90px;
 	height: 24px;
 	cursor: help;
+	line-height: 0.9;
+	padding-top: 0px;
 }
 .combadgeBox {
 	text-align: center;
 	font-size: xx-large;
 	height: 36px;
-	width: 36px; 
+	width: 36px;
+	line-height: 0;
 }
 .titleBox {
 	text-align: left;
@@ -170,7 +165,7 @@
 	text-align: center;
 	font-size: large;
 	height: 24px; width: 36px;
-	
+	line-height: 0;
 }
 .iconDescription {
 	border-radius: 8px;
@@ -192,7 +187,7 @@
 }
 .quote {
 	border-radius: 10px;
-	text-align: center;
+	text-align: left;
 	font-size: xx-large;
 	font-family: Times New Roman, serif;
 }
@@ -332,6 +327,7 @@
 	background-color:rgba(51,51,51,0.7);
 	width: 150px;
 	vertical-align:top;
+	line-height: 1;
 }
 .watchRecommendationTitle {
 	font-size: small;
@@ -340,13 +336,21 @@
 	color: #FF6666;
 }
 /* --- SCORE BOX --- */
+.ScoreBox {
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	color: #000000;
+	background-color: #ccc;
+	width: 120px;
+	vertical-align:middle;
+}
 .ScoreBox0 {
 	border: 1px solid #CCCCCC;
 	text-align: center;
 	color: #000000;
 	background-color:#F8696BBF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox1 {
 	border: 1px solid #CCCCCC;
@@ -354,7 +358,7 @@
 	color: #000000;
 	background-color: #F98370BF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox2 {
 	border: 1px solid #CCCCCC;
@@ -362,7 +366,7 @@
 	color: #000000;
 	background-color: #FA9D75BF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox3 {
 	border: 1px solid #CCCCCC;
@@ -370,7 +374,7 @@
 	color: #000000;
 	background-color: #FCB77ABF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox4 {
 	border: 1px solid #CCCCCC;
@@ -378,7 +382,7 @@
 	color: #000000;
 	background-color: #FDD17FBF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox5 {
 	border: 1px solid #CCCCCC;
@@ -386,7 +390,7 @@
 	color: #000000;
 	background-color: #FFEB84BF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox6 {
 	border: 1px solid #CCCCCC;
@@ -394,7 +398,7 @@
 	color: #000000;
 	background-color:#E0E383BF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox7 {
 	border: 1px solid #CCCCCC;
@@ -402,7 +406,7 @@
 	color: #000000;
 	background-color: #C1DA81BF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox8 {
 	border: 1px solid #CCCCCC;
@@ -410,7 +414,7 @@
 	color: #000000;
 	background-color:#A2D07FBF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox9 {
 	border: 1px solid #CCCCCC;
@@ -418,7 +422,7 @@
 	color: #000000;
 	background-color: #83C77DBF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 .ScoreBox10 {
 	border: 1px solid #CCCCCC;
@@ -426,7 +430,7 @@
 	color: #000000;
 	background-color:#63BE7BBF;
 	width: 120px;
-	vertical-align:top;
+	vertical-align:middle;
 }
 
 

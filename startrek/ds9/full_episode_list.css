@@ -4,11 +4,6 @@
 	width:100%;
 }
 
-.ratingNumber{
-	font-weight:bold;
-	text-align:center;
-}
-
 th {
 	cursor: pointer;
 }
@@ -16,15 +11,34 @@ th {
 #filterSideBar {
 	position: fixed;
 	left: 3px;
-	
+	top: 240px;
+	width: 300px;
+	height: fit-content;
+}
+
+#filterTotalbox {
+	width: 100%;
+	text-align: center;
+	border: 1px solid #ccc;
+	padding: 1px;
+	background-color: #303030;
 }
 
 .filterCategory {
 	padding: 8px;
+/*	border:1px solid #FFFFFF;
+	border-radius:5px; */
+	width:max-content;
 }
 
 .filterAndOr {
 	padding: 3px;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+/*	border-radius:5px; */
 }
 
 .icon {
@@ -33,11 +47,28 @@ th {
 	text-align: center;
 }
 
+#tableContainer{
+	margin-left: 300px;
+}
+
 #episodeTable{
 	border: 1px;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: #181818EE;
 	border-collapse: collapse;
+	width: 980px;
+}
+
+#episodeTable th {
+	 border-top: 1px dotted #DDD;
+	 border-bottom: 1px dotted #DDD;
+	 background-color: #303030;
+}
+
+.sortarrows {
+	color: #666;
+	font-weight: normal;
 }
 
 #episodeTable td {
@@ -45,8 +76,11 @@ th {
 	 padding: 3px;
 }
 
-#episodeTable th {
-	 border-top: 1px dotted #DDD;
-	 border-bottom: 1px dotted #DDD;
-	 background-color: #303030;
+.list_episodeRating {
+	font-weight:bold;
+	text-align:center;
+}
+
+.list_episodeTags {
+	font-weight: bold;
 }

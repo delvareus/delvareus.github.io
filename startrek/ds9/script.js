@@ -63,6 +63,49 @@
 		
 	});
 
+	Array.from(document.getElementsByClassName("ScoreBox")).forEach(box => {
+		
+		var score = box.querySelector(".xx-large").innerHTML;
+
+		switch (Array.from(score)[0]) {
+			case "0":
+				box.style.backgroundColor = '#F8696BBF';
+				break;
+			case "1":
+				if (Array.from(score)[1] == "0") {
+					box.style.backgroundColor = '#63BE7BBF';
+				} else {
+					box.style.backgroundColor = '#F98370BF';
+				}
+				break;
+			case "2":
+				box.style.backgroundColor = '#FA9D75BF';
+				break;
+			case "3":
+				box.style.backgroundColor = '#FCB77ABF';
+				break;
+			case "4":
+				box.style.backgroundColor = '#FDD17FBF';
+				break;
+			case "5":
+				box.style.backgroundColor = '#FFEB84BF';
+				break;
+			case "6":
+				box.style.backgroundColor = '#E0E383BF';
+				break;
+			case "7":
+				box.style.backgroundColor = '#C1DA81BF';
+				break;
+			case "8":
+				box.style.backgroundColor = '#A2D07FBF';
+				break;
+			case "9":
+				box.style.backgroundColor = '#83C77DBF';
+				break;
+		}
+		
+	});
+
 }
 
 function closeToolTip(caller) {
