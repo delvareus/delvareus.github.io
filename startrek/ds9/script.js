@@ -1,4 +1,94 @@
-﻿window.onload = function() {
+﻿
+
+function closeToolTip(caller) {
+	caller.style.display = 'none';
+}
+
+
+
+/* ------------------------- NAVIGATION MENU ------------------------- */
+
+function toggleNav(){
+	var button = document.getElementById("leftNavOpenButton");
+	var style = getComputedStyle(button);
+	if (style.left == "320px") {
+		closeNav();
+	} else {
+		openNav();
+	}
+}
+
+function openNav() {
+  document.getElementById("mainSidenav").style.width = "320px";
+  document.getElementById("leftNavOpenButton").style.left = "320px";
+}
+
+function closeNav() {
+  var sidenavExists = document.getElementById("mainSidenav")
+	if (!!sidenavExists){
+		document.getElementById("mainSidenav").style.width = "0";
+		document.getElementById("leftNavOpenButton").style.left = "0px";
+	}
+}
+
+window.addEventListener('mouseup',function(event){
+	var menu = document.getElementById("mainSidenav");
+	if(event.target != menu && event.target.parentNode != menu){
+            closeNav();
+        }
+});
+
+/* ------------------------- SCROLL TO TOP BUTTON ------------------------- */
+
+window.onscroll = function scrollFunction() {
+  let toTopButton = document.getElementById("toTopButton");
+  
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    toTopButton.style.display = "block";
+  } else {
+    toTopButton.style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+
+/* ------------------------- SPOILERS ------------------------- */
+
+function displaySpoiler(caller) {
+	
+	var content = caller.parentNode.querySelector('.spoilerContent');
+	var style = getComputedStyle(content);
+	var anchors = content.getElementsByTagName('a');
+	
+	/*if (content.style.display === "inline") {
+		content.style.display = "none";
+	} else {
+		content.style.display = "inline";
+	}*/
+
+	if (style.filter === "blur(6px)") {
+		content.style.filter = "none";
+		content.style.userSelect = "auto";
+		Array.from(anchors).forEach((anchor) => {
+			anchor.style.pointerEvents = "auto";
+		})
+	} else {
+		content.style.filter = "blur(6px)";
+		content.style.userSelect = "none";
+		Array.from(anchors).forEach((anchor) => {
+			anchor.style.pointerEvents = "none";
+		})
+	}
+}
+
+/* ------------------------------------------------------------------------------------------------------------
+   -------------------------------------------------- ONLOAD --------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------ */
+
+window.onload = function() {
 
 	/*document.getElementById('TTDIV').innerHTML = `
 		<div id="FepisodeToolTip" class="tooltip" onClick="closeToolTip(this)">"Franchise Episode" tells you the order in which episodes from ANY/ALL Star Trek television shows aired or streamed for the first time. This number excludes movies, TOS's "The Cage", and the "Very Short Treks" web shorts.<br /><span class="xx-small"><center>click to close</center></span></div>
@@ -107,88 +197,3 @@
 	});
 
 }
-
-function closeToolTip(caller) {
-	caller.style.display = 'none';
-}
-
-
-
-/* ------------------------- NAVIGATION MENU ------------------------- */
-
-function toggleNav(){
-	var button = document.getElementById("leftNavOpenButton");
-	var style = getComputedStyle(button);
-	if (style.left == "320px") {
-		closeNav();
-	} else {
-		openNav();
-	}
-}
-
-function openNav() {
-  document.getElementById("mainSidenav").style.width = "320px";
-  document.getElementById("leftNavOpenButton").style.left = "320px";
-}
-
-function closeNav() {
-  var sidenavExists = document.getElementById("mainSidenav")
-	if (!!sidenavExists){
-		document.getElementById("mainSidenav").style.width = "0";
-		document.getElementById("leftNavOpenButton").style.left = "0px";
-	}
-}
-
-window.addEventListener('mouseup',function(event){
-	var menu = document.getElementById("mainSidenav");
-	if(event.target != menu && event.target.parentNode != menu){
-            closeNav();
-        }
-});
-
-/* ------------------------- SCROLL TO TOP BUTTON ------------------------- */
-
-window.onscroll = function scrollFunction() {
-  let toTopButton = document.getElementById("toTopButton");
-  
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    toTopButton.style.display = "block";
-  } else {
-    toTopButton.style.display = "none";
-  }
-}
-
-function scrollToTop() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-} 
-
-/* ------------------------- SPOILERS ------------------------- */
-
-function displaySpoiler(caller) {
-	
-	var content = caller.parentNode.querySelector('.spoilerContent');
-	var style = getComputedStyle(content);
-	var anchors = content.getElementsByTagName('a');
-	
-	/*if (content.style.display === "inline") {
-		content.style.display = "none";
-	} else {
-		content.style.display = "inline";
-	}*/
-
-	if (style.filter === "blur(6px)") {
-		content.style.filter = "none";
-		content.style.userSelect = "auto";
-		Array.from(anchors).forEach((anchor) => {
-			anchor.style.pointerEvents = "auto";
-		})
-	} else {
-		content.style.filter = "blur(6px)";
-		content.style.userSelect = "none";
-		Array.from(anchors).forEach((anchor) => {
-			anchor.style.pointerEvents = "none";
-		})
-	}
-}
-

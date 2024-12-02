@@ -1,0 +1,10 @@
+.pageTitleImageSpacer {
+	position:fixed;
+    width:600px;
+	left: 0px;
+}
+
+.pageTitle {
+    padding-left:1200px;
+    left:-600px;
+}

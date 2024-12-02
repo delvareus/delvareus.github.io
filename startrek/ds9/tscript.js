@@ -1,49 +1,25 @@
-﻿
+﻿/* -------------------------------------------------- GLOBAL VARIABLES -------------------------------------------------- */
+
 var G_sortcol = 0;
 var G_sortdir = "asc";
 
+
+/* -------------------------------------------------- CREATE THE TABLE -------------------------------------------------- */
 
 function csvToNestedArray(csvString) {
   // Split into rows
   const rows = csvString.split('\n');
   // Split each row into an array. This regex splits using a comma delimiter, but ignores commas that are within quotation marks.
+  // Yet for some reason I've now forgotten, I changed the commas in quotes to another similar character
   const nestedArray = rows.map(row => row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)); 
   return nestedArray;
 }
-
-/*function waitCursor(){
-	document.body.style.cursor = "wait";
-	const headers = Array.from(document.getElementsByTagName("th"));
-	
-	headers.forEach((header) => {
-		header.style.cursor = "wait";
-	})
-	
-}
-
-function normalCursor(){
-	document.body.style.cursor = "";
-	const headers = Array.from(document.getElementsByTagName("th"));
-	
-	headers.forEach((header) => {
-		header.style.cursor = "pointer";
-	})
-
-}*/
 
 function createTable(array) {
     
 	// ----------------- ADD CONTENT -----------------
 	var columns = 5;
 	var content = "";
-	
-	content += `<tr>
-					<th style="width:100px;text-align:left" onclick="sortTable(0)">Episode <span id="0asc" class="sortarrows">⬆</span><span id="0desc" class="sortarrows">⬇</span></th>
-					<th style="width:auto;text-align:left" onclick="sortTable(1)">Title <span id="1asc" class="sortarrows">⬆</span><span id="1desc" class="sortarrows">⬇</span></th>
-					<th style="width:150px" onclick="sortTable(2)">Tags <span id="sortarrows"><span id="2asc" class="sortarrows">⬆</span><span id="2desc" class="sortarrows">⬇</span></span></th>
-					<th style="width:250px" onclick="sortTable(3)">Recommendation <span id="3asc" class="sortarrows">⬆</span><span id="3desc" class="sortarrows">⬇</span></th>
-					<th style="width:80px" onclick="sortTable(4)">Rating <span id="4asc" class="sortarrows">⬆</span><span id="4desc" class="sortarrows">⬇</span></th>
-				</tr>`
 	
 	array.slice(1).forEach(function(row) {
         content += '<tr class="filterrow">';
@@ -78,37 +54,12 @@ function createTable(array) {
 					break;
 			}
 			
-		
-			
-			
-			
-			
-			
-			
             content += '<td class="' + cellClass + '">' + cell + "</td>" ;
 		}
-		
-        /*row.forEach(function(cell) {
 			
-			// Set cell class
-			var cellClass = "";
-			if (cell.match(/[0-9]\.[0-9]/)){
-				cellClass = "ratingNumber";
-			}
-			if (cell.match(/[0-9]x[0-9]/)){
-				cellClass = "episodeNumber";
-			}
-			
-			// Replace flag icons
-			cell = cell.replace("R⚑",'<span style="color:red">⚑</span>');
-			cell = cell.replace("P⚑",'<span style="color:yellow">⚑</span>');
-			
-            content += '<td class="' + cellClass + '">' + cell + "</td>" ;
-        }); */
-		
         content += "</tr>";
     });
-    document.getElementById("episodeTable").innerHTML = content;
+    document.getElementById("episodeTable").innerHTML += content;
 	
 	// ----------------- ADD LINKS -----------------
 	
@@ -128,7 +79,7 @@ function createTable(array) {
 	
 }
 
-/* -------------------------------------------------- TABLE SORT -------------------------------------------------- */
+/* ------------------------------------------------------------ TABLE SORT ------------------------------------------------------------ */
 
 function sortTable(n) {
 	
@@ -148,7 +99,7 @@ function sortTable(n) {
 		rows = table.rows;
 		/* Loop through all table rows (except the
 		first, which contains table headers): */
-		for (i = 1; i < (rows.length - 1); i++) {
+		for (i = 2; i < (rows.length - 1); i++) {
 			// Start by saying there should be no switching:
 			shouldSwitch = false;
 			/* Get the two elements you want to compare,
@@ -231,7 +182,31 @@ function sortTable(n) {
 
 }
 
-/* -------------------------------------------------- FILTERS -------------------------------------------------- */
+/* ------------------------------------------------------------ TABLE FILTERS ------------------------------------------------------------ */
+
+function toggleFilterBox(id) {
+	var box = document.getElementById(id);
+
+	if (box.style.display != "block") {
+		box.style.display = "block";
+	} else {
+		box.style.display = "none";
+	}
+}
+
+window.addEventListener('mouseup',function(event){
+	var filterBox = document.getElementById("tagFilter");
+	if(event.target != filterBox && event.target.parentNode != filterBox && event.target.parentNode.parentNode != filterBox && event.target.parentNode != filterBox.parentNode){
+        filterBox.style.display = "none";
+    }
+});
+
+window.addEventListener('mouseup',function(event){
+	var filterBox = document.getElementById("recommendationFilter");
+	if(event.target != filterBox && event.target.parentNode != filterBox && event.target.parentNode.parentNode != filterBox && event.target.parentNode != filterBox.parentNode){
+        filterBox.style.display = "none";
+    }
+});
 
 function updateFilterCount() {
 	
@@ -254,10 +229,14 @@ function setRnFilters() {
 	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
 	var checkedRnFilters = document.querySelectorAll(".rnfiltercheckbox:checked");
 	let activeRnFilters = [];
+	var activeIcons = "";
 	
 	Array.from(checkedRnFilters).forEach((filter) => {
 		activeRnFilters.push(filter.value);
+		activeIcons += filter.parentElement.querySelector("span.icon").innerHTML;
 	})
+	
+	document.getElementById("recommendationFilterTextbox").value = activeIcons;
 
 	filterrows.forEach((filterrow) => {
 		
@@ -285,13 +264,17 @@ function setTagsFilters() {
 	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
 	var checkedTagsFilters = document.querySelectorAll(".tagsfiltercheckbox:checked");
 	let activeTagsFilters = [];
+	var activeIcons = "";
 	
 	Array.from(checkedTagsFilters).forEach((filter) => {
 		const filterItem = filter.value.split('|');
 		filterItem.forEach((item) => {
 			activeTagsFilters.push(item);
 		});
+		activeIcons += filter.parentElement.querySelector("span.icon").innerHTML;
 	});
+
+	document.getElementById("tagFilterTextbox").value = activeIcons;
 
 	filterrows.forEach((filterrow) => {
 		
@@ -331,22 +314,29 @@ function setFilters(type) {
 	
 	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
 
-	if (type.endsWith("all")) {
+	if (type.endsWith("all")) { // "All Tags" or "All Recommendations" was checked or unchecked
 		
-		if (type == "rnall") {
+		if (type == "rnall") { // "All Recommendations" was checked or unchecked
 			var rnallfilter = document.getElementById("rnfilterall");
 			var rnfilters = document.getElementsByClassName("rnfiltercheckbox");
 			
-			if (!rnallfilter.checked) {
+			if (!rnallfilter.checked) { // "All Recommendations" was unchecked: re-check it
 				rnallfilter.checked = true;
+				return;
 			}
-			else
+			else // "All Recommendations" was checked
 			{
+				// Uncheck all other Recommendation selections
 				Array.from(rnfilters).forEach((filter) => {
 					filter.checked = false;
 				})
 				
-				if (tagsfilterall.checked) {
+				// Clear the filter textbox
+				document.getElementById("recommendationFilterTextbox").value = "";
+				
+				toggleFilterBox('recommendationFilter');
+				
+				if (tagsfilterall.checked) { // If "All Tags" is also selected, show all rows
 					filterrows.forEach((filterrow) => {
 						filterrow.style.display = "";
 					})
@@ -357,7 +347,7 @@ function setFilters(type) {
 					}
 					return;
 				}
-				else
+				else // Else if "All Tags" is not selected, filter by Tags
 				{
 					setTagsFilters();
 					return;
@@ -365,20 +355,27 @@ function setFilters(type) {
 			}
 		}
 		
-		if (type == "tagsall") {
+		if (type == "tagsall") { // "All Tags" was checked or unchecked
 			var tagsallfilter = document.getElementById("tagsfilterall");
 			var tagsfilters = document.getElementsByClassName("tagsfiltercheckbox");
 			
-			if (!tagsallfilter.checked) {
+			if (!tagsallfilter.checked) { // "All Tags" was unchecked: re-check it
 				tagsallfilter.checked = true;
+				return;
 			}
-			else
+			else // "All Tags" was checked
 			{
+				// Uncheck all other Tags selections
 				Array.from(tagsfilters).forEach((filter) => {
 					filter.checked = false;
 				})
 				
-				if (rnfilterall.checked) {
+				// Clear the filter textbox
+				document.getElementById("tagFilterTextbox").value = "";
+				
+				toggleFilterBox('tagFilter');
+				
+				if (rnfilterall.checked) { // If "All Recommendations" is also selected, show all rows
 					filterrows.forEach((filterrow) => {
 						filterrow.style.display = "";
 					})
@@ -389,7 +386,7 @@ function setFilters(type) {
 					}
 					return;
 				}
-				else
+				else // Else if "All Recommendations" is not selected, filter by Tags
 				{
 					setRnFilters();
 					return;
@@ -397,30 +394,30 @@ function setFilters(type) {
 			}
 		}
 	}
-	else
+	else // A selection was made that WASN'T of of the "All" options
 	{
 		var rnallfilter = document.getElementById("rnfilterall");
 		var tagsallfilter = document.getElementById("tagsfilterall");
 		
 
-		if (type=="rn") {
+		if (type=="rn") { // A recommendation filter was checked or unchecked
 			rnallfilter.checked = false;
 			
-			if (tagsallfilter.checked) {
+			if (tagsallfilter.checked) { // All Tags is checked: just filter by Recommendation
 				setRnFilters();
 				return;
 			}
 		}
-		if (type=="tags") {
+		if (type=="tags") { // A tags filter was checked or unchecked
 			tagsallfilter.checked = false;
 			
-			if (rnallfilter.checked) {
+			if (rnallfilter.checked) { // All Recommendations is checked: just filter by Tags
 				setTagsFilters();
 				return;
 			}
 		}
-		if (type=="andor") {
-			if (rnallfilter.checked && tagsallfilter.checked) {
+		if (type=="andor") { // The and/or selector was changed
+			if (rnallfilter.checked && tagsallfilter.checked) { // Both Tags and Recommendations are set to "All": Show all rows
 				filterrows.forEach((filterrow) => {
 					filterrow.style.display = "";
 				})
@@ -431,30 +428,41 @@ function setFilters(type) {
 				}				
 				return;
 			}
-			if (rnallfilter.checked && !tagsallfilter.checked) {
+			if (rnallfilter.checked && !tagsallfilter.checked) { // Recommendations is set to "All": filter by Tags
 				setTagsFilters();
 				return;
 			}
-			if (!rnallfilter.checked && tagsallfilter.checked) {
+			if (!rnallfilter.checked && tagsallfilter.checked) { // Tags is set to "All": filter by Recommendation
 				setRnFilters();
 				return;
 			}
 		}
 		
+	// ********** A SELECTION WAS MADE THAT REQUIRES FILTERING BY BOTH FILTERS **********
+		
 		var checkedRnFilters = document.querySelectorAll(".rnfiltercheckbox:checked");
 		let activeRnFilters = [];
+		var activeRnIcons = "";
 		var checkedTagsFilters = document.querySelectorAll(".tagsfiltercheckbox:checked");
 		let activeTagsFilters = [];
+		var activeTagsIcons = "";
 		var andorradio = document.querySelector(".andorradio:checked");
 		var andor = andorradio.value;
 	
 		Array.from(checkedRnFilters).forEach((filter) => {
 			activeRnFilters.push(filter.value);
-		})
+			activeRnIcons += filter.parentElement.querySelector("span.icon").innerHTML;
+		});
+
+		document.getElementById("recommendationFilterTextbox").value = activeRnIcons;
+		
 		
 		Array.from(checkedTagsFilters).forEach((filter) => {
 			activeTagsFilters.push(filter.value);
-		})	
+			activeTagsIcons += filter.parentElement.querySelector("span.icon").innerHTML;
+		});
+		
+		document.getElementById("tagFilterTextbox").value = activeTagsIcons;
 		
 		filterrows.forEach((filterrow) => {
 			
@@ -499,7 +507,10 @@ function resetFilters() {
 	
 	var filterallcheckboxes = document.querySelectorAll("#rnfilterall,#tagsfilterall");
 	var filtercheckboxes = document.querySelectorAll(".rnfiltercheckbox,.tagsfiltercheckbox");
-					
+	
+	document.getElementById("recommendationFilterTextbox").value = "";
+	document.getElementById("tagFilterTextbox").value = "";
+	
 	Array.from(filterallcheckboxes).forEach((checkbox) => {
 		checkbox.checked = true;
 	})
@@ -520,7 +531,7 @@ function resetFilters() {
 	}
 }
 
-/* -------------------------------------------------- SEASON SEPARATOR -------------------------------------------------- */
+/* ------------------------------------------------------------ SEASON SEPARATOR ------------------------------------------------------------ */
 
 function addSeasonSeparator() {
 	
@@ -528,8 +539,8 @@ function addSeasonSeparator() {
 	rows = table.rows;
 	
 	/* Loop through all table rows (except the
-		first, which contains table headers): */
-	for (i = 1; i < (rows.length - 1); i++) {
+		first and second, which contains filters and table headers): */
+	for (i = 2; i < (rows.length - 1); i++) {
 		
 		rowstyle = getComputedStyle(rows[i]);
 		if (rowstyle.display == "none") {continue;};	
@@ -564,8 +575,6 @@ function removeSeasonSeparator() {
    ------------------------------------------------------------------------------------------------------------ */
 
 window.onload = function() {
-	
-	
 	
 var csvString = `Episode,Title,Tags,Recommendation,Rating
 1x01/02 [FL],Emissary,,🕶 ‼ Must Watch/Bare Minimum,7.2
@@ -627,7 +636,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 3x15,Destiny,♥️,✔ Recommended,6.4
 3x16,Prophet Motive,,,3.3
 3x17,Visionary,🕖,,6.6
-3x18,Distant Voices,,,3.1
+3x18,Distant Voices,😱,,3.1
 3x19,Through the Looking Glass,♊,✔ Recommended,6.4
 3x20,Improbable Cause,A🟡,🕶 Must Watch,9.0
 3x21,The Die is Cast,A🟡,🕶 Must Watch,9.2
@@ -743,6 +752,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 	
 	createTable(array);
 	
+	// Add episode rating colors
 	Array.from(document.getElementsByClassName("list_episodeRating")).forEach(rating => {
 		
 		rating.style.color = 'black';

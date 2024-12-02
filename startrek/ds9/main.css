@@ -30,6 +30,18 @@ body a[target="_blank"]::after {
 	border-bottom: 1px solid;
 	border-color: #404040;
 }
+.pageTitle {
+	margin: 0 auto;
+	position: relative;
+	padding-top: 100px;
+	padding-bottom: 120px;
+	text-align: center;
+	display: block;
+    font-size: 2em;
+    font-weight: bold;
+	text-wrap: nowrap;
+}
+
 .spacer {
 	height: 60px;
 }
