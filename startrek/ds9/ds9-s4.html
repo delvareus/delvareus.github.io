@@ -4,6 +4,7 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="stylesheet" href="main.css" />
+<link rel="stylesheet" href="ds9.css" />
 <link rel="stylesheet" href="episode_reviews.css" />
 
 <script type="text/javascript" src="script.js"></script>
@@ -13,10 +14,8 @@
 <body>
 
 <div class="pageTitleImage"><img src="images/ds9--3.png" /></div>
-
-<div class="spacer"></div>
-<h1 style="text-align:center">Episode Guide</h1>
-<div class="spacer"></div>
+<div class="pageTitleImageSpacer"></div>
+<div class="pageTitle">Episode Guide</div>
 
 <h3 class="seasonNav"><a href="ds9-s1.html">Season 1</a> • <a href="ds9-s2.html">Season 2</a> • 
 <a href="ds9-s3.html">Season 3</a> • <span class="activeSeason"><a href="ds9-s4.html">Season 4</a></span> • <a href="ds9-s5.html">Season 5</a> • <a href="ds9-s6.html">Season 6</a> • <a href="ds9-s7.html">Season 7</a></h3>
@@ -27,6 +26,11 @@
 <div id="mainSidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	<a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a><br />
+	<a href="ds9-episode-list.html" style="text-align:center">Full Episode List</a>
+	<div class="sidenavseasons">
+		Season: 
+		<a href="ds9-s1.html">1</a> • <a href="ds9-s2.html">2</a> • <a href="ds9-s3.html">3</a> • <span class="activeSeason"><a href="ds9-s4.html">4</a></span> • <a href="ds9-s5.html">5</a> • <a href="ds9-s6.html">6</a> • <a href="ds9-s7.html">7</a>
+	</div>
 	<a href="#e01" onclick="closeNav()">4x01/02:  The Way of the Warrior</a>
 	<a href="#e03" onclick="closeNav()">4x03:  The Visitor</a>
 	<a href="#e04" onclick="closeNav()">4x04:  Hippocratic Oath</a>
@@ -52,11 +56,6 @@
 	<a href="#e24" onclick="closeNav()">4x24:  The Quickening</a>
 	<a href="#e25" onclick="closeNav()">4x25:  Body Parts</a>
 	<a href="#e26" onclick="closeNav()">4x26:  Broken Link</a>
-	<br /><a href="ds9-episode-list.html" style="text-align:center">Full Episode List</a>
-	<div class="sidenavseasons">
-		Jump to Season<br/>
-		<a href="ds9-s1.html">1</a> • <a href="ds9-s2.html">2</a> • <a href="ds9-s3.html">3</a> • <a href="ds9-s4.html">4</a> • <a href="ds9-s5.html">5</a> • <a href="ds9-s6.html">6</a> • <a href="ds9-s7.html">7</a>
-	</div>
 </div>
 <div id="e01" class="episodeCard">
 	<img src="images/ds9-4x01.png" class="episodeCardBG"/>
@@ -66,7 +65,7 @@
 			<table class="titleBlock">
 				<tr>
 					<td>&nbsp;</td>
-					<td class="seasonEpisodeNumberBox">4x01/02<span class="xx-small">(Feature-Length)</span></td>
+					<td class="seasonEpisodeNumberBox">4x01/02<span class="xx-small" style="font-weight:normal">&nbsp;&nbsp;(Feature-Length)</span></td>
 					<td>&nbsp;</td>
 					<td class="SepisodeNumberBox"><span class="x-small">Series Episode</span><br /><strong>72</strong></td>
 					<td class="FepisodeNumberBox"><span class="x-small">Franchise Episode</span><br /><strong>370</strong></td>
@@ -94,7 +93,7 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
-						<td class="iconBox">🔼</td>
+						<td class="iconBox" style="color:lime;font-size:x-large">⬆</td>
 						<td><div class="iconDescription"><strong>Level-Up:</strong> DS9 weapons upgrade, Worf moved to command division, Dax promoted to Lt. Cmdr., Bashir promoted to Lt.</div></td>
 					</tr>
 					<tr>
@@ -102,9 +101,26 @@
 						<td><div class="iconDescription"><strong>Vice-Admiral Pips: </strong>Pips are awarded to episodes that are the most stand-out, representative examples of the series as a whole.</div></td>
 					</tr>
 					<tr>
+						<td class="quote">“</td>
+						<td>Dax's line when she first meets Worf, and its translation, are given in the script as: &quot;DAX (mischievous, in Klingon): Louk, a jeek CHIM&#8209;ta law. (Yeah, but I'm a lot better looking than he was.)&quot;</td>
+					</tr>
+					<tr>
+						<td class="iconBox">❕</td>
+						<td><div class="iconDescription"><div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">This contains spoiler information for DS9 5x01: Apocalypse Rising. Come back after you've watched it.<div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Continue anyway » </span><span class="spoilerContent">The General Martok in this episode is actually a changeling impostor. It's unclear how the changeling faked the blood test near the start of this episode, but the reality is that the writers at this point likely hadn't envisioned a future episode where Martok had been replaced by a changeling.</span></div></span></div></div></td>
+					</tr>					
+					<tr>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td class="nitpickery"><strong>Nitpickery: </strong>In the opening sequence, the crew are searching for a changeling on board the station. Kira contacts O'Brien and says, "Watch yourself, Chief. This changeling knows the station as well as we do. He could be anywhere, or anything." It is then revealed that this is merely a training exercise and that the changeling is Odo. Kira's warning to O'Brien serves no purpose in this context and acts only as exposition and to heighten the drama for the audience.</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Season 4 marks a significant refresh for Deep Space Nine and sets up important stories for the future. This episode is absolutely a &quot;Must Watch&quot; and is the 4th on the &quot;Bare Minimum&quot; list.</div></td>
 					</tr>
@@ -180,6 +196,10 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>While you could skip this episode and not miss anything that is important to the overall story of this series, this episode is especially good and it's a bit of a step out of the norm for DS9. For those reasons, it's rated as &quot;Highly Recommended.&quot;</div></td>
 					</tr>
@@ -254,9 +274,13 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>	
 						<td class="iconBox"></td>
-						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Honestly, I forget why I recommended this. But it's recommended.</div></td>
+						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>It's average and not terribly important. No recommendation.</div></td>
 					</tr>
 				</table>
 			</div>
@@ -269,8 +293,8 @@
 					<td>&nbsp;</td>
 					<td class="watchRecommendationBox" rowspan="4">
 						<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br />
-						<strong><span class="x-large">✔</span></strong></span><br />
-						<strong><span class="large">Recommended</span></strong>
+						<strong><span class="x-large"></span></strong></span><br />
+						<strong><span class="large">-</span></strong>
 					</td>
 					<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 						
@@ -319,7 +343,7 @@
 				<tr>
 					<td>&nbsp;</td>
 					<td><div class="synopsis">
-						Kira and Dukat investigate a 6-year-old crash site that claimed both Cardassian and Bajoran lives.<br />B-plot: Sisko becomes uncomfortable when his relationship with Kassidy starts getting serious.
+						Kira and Dukat investigate a 6-year-old crash site that claimed both Cardassian and Bajoran lives.<br />B-plot: Sisko becomes uncomfortable when his relationship with Kasidy starts getting serious.
 					</div></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -330,6 +354,10 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode introduces a new character and an important relationship for Dukat, so it's rated as a &quot;Must Watch.&quot;</div></td>
@@ -407,8 +435,12 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
-						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Because it covers more of Dax's past as well as Trill society, this episode is rated as &quot;Recommended.&quot;</div></td>
+						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>It covers more of Dax's past, but it is still sort of a one-off episode that isn't going to impact the rest of the series. No recommendedation.&quot;</div></td>
 					</tr>
 				</table>
 			</div>
@@ -421,8 +453,8 @@
 					<td>&nbsp;</td>
 					<td class="watchRecommendationBox" rowspan="4">
 						<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br />
-						<strong><span class="x-large">✔</span></strong></span><br />
-						<strong><span class="large">Recommended</span></strong>
+						<strong><span class="x-large"></span></strong></span><br />
+						<strong><span class="large">-</span></strong>
 					</td>
 					<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 						
@@ -483,8 +515,12 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
-						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is a pretty good episode and is rated as &quot;Recommended.&quot;</div></td>
+						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>It's a good episode but nothing really <em>important</em> happens in it. No recommendation.</div></td>
 					</tr>
 				</table>
 			</div>
@@ -497,8 +533,8 @@
 					<td>&nbsp;</td>
 					<td class="watchRecommendationBox" rowspan="4">
 						<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br />
-						<strong><span class="x-large">✔</span></strong></span><br />
-						<strong><span class="large">Recommended</span></strong>
+						<strong><span class="x-large"></span></strong></span><br />
+						<strong><span class="large">-</span></strong>
 					</td>
 					<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 						
@@ -572,7 +608,7 @@
 					</tr>
 					<tr>
 						<td class="iconBox">&nbsp;</td>
-						<td><div class="thoughtsSection"><strong>Thoughts: </strong>This episode is usually rated by others as being above-average, and I think it's largely because everyone loves a good time-travel Trek story. I'm going against the grain by only giving it 2 stars... but this one just wasn't for me. It's a little too goofy and there some very cringy moments involving oomox. And I'm pretty sure I got emphysema just by watching this episode. Of all the time-travel episodes in Trek, I'd rather watch any of them over this one.</div></td>
+						<td><div class="thoughtsSection"><strong>Thoughts: </strong>This episode is usually rated by others as being above-average, and I think it's largely because everyone loves a good time-travel Trek story. I'm going against the grain by only giving it 2 stars... but this one just wasn't for me. It's a little too goofy and there some very cringy moments. And I'm pretty sure I got emphysema just by watching this episode. Of all the time-travel episodes in Trek, I'd rather watch any of them over this one.</div></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -657,15 +693,15 @@
 				<table>
 					<tr>
 						<td class="iconBox">🔀</td>
-						<td><div class="iconDescription"><strong>Crossover:</strong> Kor (TOS)</div></td>
+						<td><div class="iconDescription"><strong>Crossover:</strong> Kor (TOS), Toral (TNG)</div></td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
+						<td class="iconBox">🔗</td>
+						<td><div class="iconDescription">Toral, son of Duras, first appears in <a href="..\tng\tng-s4.html#e26">TNG&nbsp;4x26/5x01:&nbsp;Redemption,&nbsp;Parts&nbsp;I&nbsp;and&nbsp;II</a> (though he is played by a different actor). In the episode, Worf spares Toral's life instead of killing him in response to his crimes against the House of Mogh.</div></td>
 					</tr>
 					<tr>
-						<td class="iconBox">&nbsp;</td>
-						<td><div class="thoughtsSection">Thoughts:</div></td>
+						<td class="iconBox">🔗</td>
+						<td><div class="iconDescription">Kor speaks of the Klingon Emperor, saying &quot;a clone of the original Kahless cooked up in a vat by ambitious clerics.&quot; The story of this emperor is told in <a href="..\tng\tng-s6.html#e23">TNG&nbsp;6x23:&nbsp;Rightful&nbsp;Heir</a>.</div></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -761,7 +797,7 @@
 					</tr>
 					<tr>
 						<td class="iconBox">&nbsp;</td>
-						<td><div class="thoughtsSection"><strong>Thoughts: </strong>Despite my general dislike of Dr. Bashir, I think he's found a good spot here. He's much less annoying as a super-spy than in his role as a smug doctor.</div></td>
+						<td><div class="thoughtsSection"><strong>Thoughts: </strong>Despite my general dislike of Dr. Bashir, I think he's found a good spot here. He's much less annoying as a super-spy than in his role as a smug doctor. This episode requires a healthy dose of <em>suspension of disbelief</em>. Once you set aside the ridiculousness of the setup, i.e. how they got into the crazy holodeck situation, that makes it easier to sit back and just enjoy the hijinks.</div></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -1027,6 +1063,10 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is &quot;Recommended&quot; for its exploration of the relationships among Kira, Odo, and Shakaar.</div></td>
 					</tr>
@@ -1103,6 +1143,10 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is &quot;Recommended&quot; for some character building for Kira, Dukat, Damar, and Ziyal.</div></td>
 					</tr>
@@ -1178,6 +1222,14 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td class="iconBox">🔗</td>
+						<td><div class="iconDescription">Worf's brother, Kurn, appears in the TNG episodes <a href="..\tng\tng-s3.html#e17">TNG&nbsp;3x17:&nbsp;Sins&nbsp;of&nbsp;the&nbsp;Father</a> and <a href="..\tng\tng-s4.html#e26">TNG&nbsp;4x26/5x01:&nbsp;Redemption,&nbsp;Parts&nbsp;I&nbsp;and&nbsp;II</a>.</div></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Not one of my favorites, but I'll mark it as &quot;Optional&quot; if you want to know Kurn's fate.</div></td>
@@ -1256,6 +1308,10 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>It's meh. No recommendation.</div></td>
@@ -1360,8 +1416,8 @@
 					<td>&nbsp;</td>
 					<td class="watchRecommendationBox" rowspan="4">
 						<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br />
-						<strong><span class="x-large"></span></strong></span><br />
-						<strong><span class="large">-</span></strong>
+						<strong><span class="x-large">✔</span></strong></span><br />
+						<strong><span class="large">Recommended</span></strong>
 					</td>
 					<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 						
@@ -1594,6 +1650,10 @@
 			<div class="detailBlock">
 				<table>
 					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Since it is part of the continuing Mirror Universe story, this episode is &quot;Recommended.&quot;</div></td>
 					</tr>
@@ -1669,6 +1729,10 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td class="iconBox">&nbsp;</td>
 						<td><div class="thoughtsSection"><strong>Thoughts: </strong>I'm not sure which one is the A-plot and which is the B-plot. The episode seems like it's two entirely unrelated stories thrown together, and neither of them is good. It sort of just feels like two episode concepts that were thrown together.</div></td>
@@ -1999,6 +2063,10 @@
 		<tr><td>
 			<div class="detailBlock">
 				<table>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td class="iconBox"></td>
 						<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I originally had this rated as &quot;Recommended&quot; because of two plot developments that you probably should know about, but the episode isn't really that great... so you can either watch it yourself, or just see those two things by clicking on this spoiler tag: <div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">(1) Because Keiko was injured in some weird shuttle accident, the O'Brien baby is surgically transferred to Kira, who must now carry him to term. This was done as a convenience since Nana Visitor (Kira) was actually pregnant for real. (2) Liquidator Brunt tricks Quark into reneging on a contract, so the Ferengi Commerce Authority revokes his business license and bars him from doing business with other Ferengi.</span></div></div></td>

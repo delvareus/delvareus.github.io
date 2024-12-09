@@ -187,7 +187,7 @@
 }
 .quote {
 	border-radius: 10px;
-	text-align: left;
+	text-align: center;
 	font-size: xx-large;
 	font-family: Times New Roman, serif;
 }
@@ -473,9 +473,7 @@
 	color: #FFE1CA;
 	transition: 0.5s;
 	user-select: none;
-}
-.spoilerContent a{
-	pointer-events:none;
+	pointer-events: none;
 }
 
 
@@ -531,14 +529,23 @@
 }
 
 .sidenav .sidenavseasons{
-	padding-top: 18px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	line-height: 1.5;
 	text-align:center;
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	width: max-content;
 }
 
 .sidenav .sidenavseasons a{
 	padding: 0px 0px 0px 0px;
 	display:inline;
-	font-size: 18px;
 }
 
 

@@ -4,6 +4,7 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="stylesheet" href="main.css" />
+<link rel="stylesheet" href="ds9.css" />
 <link rel="stylesheet" href="full_episode_list.css" />
 
 <script type="text/javascript" src="script.js"></script>
@@ -14,53 +15,71 @@
 <body>
 
 <div class="pageTitleImage"><img src="images/ds9--3.png" /></div>
+<div class="pageTitleImageSpacer"></div>
+<div class="pageTitle">Full Episode List</div>
 
-<div class="spacer"></div>
-<h1 style="text-align:center">Full Episode List</h1>
-<div class="spacer"></div>
 
 <div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div> 
 
+<p style="position:fixed"><a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a></p>
+<p><div id="filterTotalbox">Showing <span id="filterTotal">173</span> of 173 episodes</div></p>
 
-	<div id="filterSideBar">
-		<p><a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a></p>
-		<div id="filterTotalbox">Showing <span id="filterTotal">173</span> of 173 episodes</div>
-		<div class="filterCategory">
-			<label class="checkContainer"><input type="checkbox" id="rnfilterall" onClick="setFilters('rnall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Recommendations</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="🕶" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">🕶</span>&nbsp;Must&nbsp;Watch</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="‼" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">‼</span>&nbsp;Bare&nbsp;Minimum</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔+" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔+</span>&nbsp;Highly&nbsp;Recommended</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔ " onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔</span>&nbsp;Recommended</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="♦" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">♦</span>&nbsp;Optional</label>
-			<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✖" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✖</span>&nbsp;Notably&nbsp;Bad</label>
-			<input type="hidden" class="rnfiltercheckbox" value="None" />
-		</div>
-		<div class="filterAndOr">
-			<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked />AND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" />OR<br />
-		</div>
-		<div class="filterCategory">
-			<label class="checkContainer"><input type="checkbox" id="tagsfilterall" onClick="setFilters('tagsall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Tags</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="admiral.png" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon"><img alt="vice admiral insignia" src="images/vice_admiral.png" width="25" /></span>&nbsp;Admiral&nbsp;Pips</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♥" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♥️</span>&nbsp;Personal&nbsp;Favorites</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🏅|🎖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🕖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🕖</span>&nbsp;Time&nbsp;Travel episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="Q" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon"><strong>Q</strong></span>&nbsp;Q episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="31" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon"><strong>31</strong></span>&nbsp;Section 31 episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="⚖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⚖️</span>&nbsp;Courtroom&nbsp;episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♊" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♊</span>&nbsp;Mirror&nbsp;Universe&nbsp;episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🌎" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🌎</span>&nbsp;Episode&nbsp;takes&nbsp;place&nbsp;on&nbsp;Earth</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🟨" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🟨</span>&nbsp;Holodeck&nbsp;episodes</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🎭" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🎭</span>&nbsp;Lighthearted/Comedy</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="😱" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">😱</span>&nbsp;Scary</label>
-			<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="⚑" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⚑</span>&nbsp;Flagged</label>
-		</div>
-		<input type="button" class="resetfiltersbutton" onClick="resetFilters()" value="Reset Filters" />
-	</div>
 	<p></p>
 	
 <div id="tableContainer">
 	<table id="episodeTable">
+		<tr>
+			<td></td>
+			<td>
+				<span style="font-size: 14px">Filter mode:&nbsp;&nbsp;&nbsp;</span>
+				<div class="filterAndOr">
+					<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked />AND&nbsp;&nbsp;&nbsp;
+					<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" />OR<br />
+				</div>
+			</td>
+			<td>
+				<input type="textbox" id="tagFilterTextbox" placeholder="tags filter" size="14" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">🔽</span>
+				<div class="filterCategory" id="tagFilter" style="transform: translateX(-112px);">
+					<label class="checkContainer"><input type="checkbox" id="tagsfilterall" onClick="setFilters('tagsall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Tags</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="admiral.png" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⏺</span>&nbsp;Admiral&nbsp;Pips</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♥" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♥️</span>&nbsp;Personal&nbsp;Favorites</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🏅|🎖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🕖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🕖</span>&nbsp;Time&nbsp;Travel episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="Q" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">Q</span>&nbsp;Q episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="31" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">31</span>&nbsp;Section 31 episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="⚖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⚖️</span>&nbsp;Courtroom&nbsp;episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♊" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♊</span>&nbsp;Mirror&nbsp;Universe&nbsp;episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🌎" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🌎</span>&nbsp;Episode&nbsp;takes&nbsp;place&nbsp;on&nbsp;Earth</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🟨" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🟨</span>&nbsp;Holodeck&nbsp;episodes</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🎭" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🎭</span>&nbsp;Lighthearted/Comedy</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="😱" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">😱</span>&nbsp;Scary</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="⚑" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⚑</span>&nbsp;Flagged</label>
+				</div>
+			</td>
+			<td>
+				<input type="textbox" id="recommendationFilterTextbox" placeholder="recommendation filter" size="28" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">🔽</span>
+				<div class="filterCategory" id="recommendationFilter" style="transform: translateX(29px);">
+					<label class="checkContainer"><input type="checkbox" id="rnfilterall" onClick="setFilters('rnall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Recommendations</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="‼" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">‼</span>&nbsp;Bare&nbsp;Minimum</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="🕶" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">🕶</span>&nbsp;Must&nbsp;Watch</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔+" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔+</span>&nbsp;Highly&nbsp;Recommended</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔ " onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔</span>&nbsp;Recommended</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="♦" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">♦</span>&nbsp;Optional</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✖" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✖</span>&nbsp;Notably&nbsp;Bad</label>
+					<input type="hidden" class="rnfiltercheckbox" value="None" />
+				</div>
+			</td>
+			<td>
+				<input type="button" class="resetfiltersbutton" onClick="resetFilters()" value="Clear Filters" />
+			</td>
+		</tr>
+		<tr>
+			<th style="width:100px;text-align:left" onclick="sortTable(0)">Episode <span id="0asc" class="sortarrows">⬆</span><span id="0desc" class="sortarrows">⬇</span></th>
+			<th style="width:auto;text-align:left" onclick="sortTable(1)">Title <span id="1asc" class="sortarrows">⬆</span><span id="1desc" class="sortarrows">⬇</span></th>
+			<th style="width:150px" onclick="sortTable(2)">Tags <span id="sortarrows"><span id="2asc" class="sortarrows">⬆</span><span id="2desc" class="sortarrows">⬇</span></span></th>
+			<th style="width:250px" onclick="sortTable(3)">Recommendation <span id="3asc" class="sortarrows">⬆</span><span id="3desc" class="sortarrows">⬇</span></th>
+			<th style="width:80px" onclick="sortTable(4)">Rating <span id="4asc" class="sortarrows">⬆</span><span id="4desc" class="sortarrows">⬇</span></th>
+		</tr>
 		
 	</table>
 </div>

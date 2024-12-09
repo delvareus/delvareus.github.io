@@ -647,10 +647,10 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 3x26,The Adversary,,🕶 Must Watch,7.5
 4x01/02 [FL],The Way of the Warrior,V🟡🥈,🕶 ‼ Must Watch/Bare Minimum,9.6
 4x03,The Visitor,,✔+ Highly Recommended,8.6
-4x04,Hippocratic Oath,,✔ Recommended,5.3
+4x04,Hippocratic Oath,,,5.3
 4x05,Indiscretion,,🕶 Must Watch,6.7
-4x06,Rejoined,,✔ Recommended,5.1
-4x07,Starship Down,,✔ Recommended,7.4
+4x06,Rejoined,,,5.1
+4x07,Starship Down,,,7.4
 4x08,Little Green Men,🕖🌎,♦ Optional,6.0
 4x09,The Sword of Kahless,,,4.8
 4x10,Our Man Bashir,🎭🟨♥️,♦ Optional,6.8

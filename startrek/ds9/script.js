@@ -61,26 +61,15 @@ function displaySpoiler(caller) {
 	
 	var content = caller.parentNode.querySelector('.spoilerContent');
 	var style = getComputedStyle(content);
-	var anchors = content.getElementsByTagName('a');
-	
-	/*if (content.style.display === "inline") {
-		content.style.display = "none";
-	} else {
-		content.style.display = "inline";
-	}*/
 
 	if (style.filter === "blur(6px)") {
 		content.style.filter = "none";
 		content.style.userSelect = "auto";
-		Array.from(anchors).forEach((anchor) => {
-			anchor.style.pointerEvents = "auto";
-		})
+		content.style.pointerEvents = "auto";
 	} else {
 		content.style.filter = "blur(6px)";
 		content.style.userSelect = "none";
-		Array.from(anchors).forEach((anchor) => {
-			anchor.style.pointerEvents = "none";
-		})
+		content.style.pointerEvents = "none";
 	}
 }
 

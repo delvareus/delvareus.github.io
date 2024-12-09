@@ -16,39 +16,60 @@ th {
 	height: fit-content;
 }
 
+input[type=textbox] {
+	background-color: slategray;
+	color: white;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+input[type=button] {
+	background-color: #0078D7;
+	color: white;
+	border: 1px solid black;
+}
+
 #filterTotalbox {
-	width: 100%;
+	width: max-content;
 	text-align: center;
 	border: 1px solid #ccc;
-	padding: 1px;
+	padding: 3px;
 	background-color: #303030;
+	position: fixed;
+	top: 300px;
 }
 
 .filterCategory {
 	padding: 8px;
-/*	border:1px solid #FFFFFF;
-	border-radius:5px; */
+	border:1px solid #FFFFFF;
+	border-radius:5px;
 	width:max-content;
+	position: absolute;
+	background-color:black;
+	z-index: 10;
+	display: none;
 }
 
 .filterAndOr {
-	padding: 3px;
-	border-top: 1px solid #FFFFFF;
-	border-bottom: 1px solid #FFFFFF;
-	width: 100%;
-	text-align: center;
 	font-size: 14px;
-/*	border-radius:5px; */
+	display: inline;
+}
+
+.dropdownArrow {
+	cursor: pointer;
+	user-select: none;
 }
 
 .icon {
 	display: inline-block;
 	width: 30px;
 	text-align: center;
+	font-weight: bold;
 }
 
 #tableContainer{
-	margin-left: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #episodeTable{
