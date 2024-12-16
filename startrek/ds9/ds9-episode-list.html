@@ -21,24 +21,23 @@
 
 <div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div> 
 
-<p style="position:fixed"><a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a></p>
-<p><div id="filterTotalbox">Showing <span id="filterTotal">173</span> of 173 episodes</div></p>
+<div style="position:fixed;top:250px;"><a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a></div>
 
-	<p></p>
+
 	
 <div id="tableContainer">
 	<table id="episodeTable">
 		<tr>
-			<td></td>
-			<td>
+			<td><div id="filterTotalbox">Showing<br /><span id="filterTotal">173</span> of 173<br />episodes</div></td>
+			<td style="text-align:right">
 				<span style="font-size: 14px">Filter mode:&nbsp;&nbsp;&nbsp;</span>
 				<div class="filterAndOr">
 					<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked />AND&nbsp;&nbsp;&nbsp;
-					<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" />OR<br />
+					<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" />OR&nbsp;&nbsp;&nbsp;
 				</div>
 			</td>
 			<td>
-				<input type="textbox" id="tagFilterTextbox" placeholder="tags filter" size="14" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">🔽</span>
+				<input type="textbox" id="tagFilterTextbox" placeholder="tags filter" size="12" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">▼</span>
 				<div class="filterCategory" id="tagFilter" style="transform: translateX(-112px);">
 					<label class="checkContainer"><input type="checkbox" id="tagsfilterall" onClick="setFilters('tagsall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Tags</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="admiral.png" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⏺</span>&nbsp;Admiral&nbsp;Pips</label>
@@ -57,7 +56,7 @@
 				</div>
 			</td>
 			<td>
-				<input type="textbox" id="recommendationFilterTextbox" placeholder="recommendation filter" size="28" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">🔽</span>
+				<input type="textbox" id="recommendationFilterTextbox" placeholder="recommendation filter" size="26" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">▼</span>
 				<div class="filterCategory" id="recommendationFilter" style="transform: translateX(29px);">
 					<label class="checkContainer"><input type="checkbox" id="rnfilterall" onClick="setFilters('rnall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Recommendations</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="‼" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">‼</span>&nbsp;Bare&nbsp;Minimum</label>

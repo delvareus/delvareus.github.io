@@ -48,6 +48,8 @@ function createTable(array) {
 					break;
 				case 3:
 					cellClass = "list_episodeRecommendation";
+					// Stylize notably bad entries
+					cell = cell.replace("✖ Notably Bad",'<span class="NotablyBad">✖ Notably Bad</span>');
 					break;
 				case 4:
 					cellClass = "list_episodeRating";
@@ -660,7 +662,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 4x14,Return to Grace,,✔ Recommended,6.9
 4x15,Sons of Mogh,,,4.7
 4x16,Bar Association,,,4.2
-4x17,Accession,,✔ Recommended,3.6
+4x17,Accession,,,3.6
 4x18,Rules of Engagement,⚖️,,6.5
 4x19,Hard Time,,,5.4
 4x20,Shattered Mirror,♊,✔ Recommended,6.5

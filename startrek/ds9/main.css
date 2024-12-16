@@ -94,6 +94,14 @@ td {
   border: 1px dotted #999;
 }
 */
+.introParagraph {
+	margin-top: 30px;
+}
+
+.finalVerdict {
+	text-align: center;
+	font-size: x-large;
+}
 
 .understanding-ratings {
 	border-collapse: collapse;
@@ -110,7 +118,49 @@ td {
 	 background-color: #303030;
 }
 
-/* -------------------- CUSTOM CHECKBOX -------------------- */
+/* -------------------- TIMELINE TABLE -------------------- */
+
+.timelineTable{
+	border: 3px double #C0C0C0;
+	background-color: #181818EE;
+	border-collapse: collapse;
+	font-size: 12px;
+	text-align: center;
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 8px;
+}
+
+.timelineTable th {
+	 border-top: 1px dotted #DDD;
+	 border-bottom: 1px dotted #DDD;
+	 background-color: #303030;
+	 font-size: 16px;
+}
+
+.timelineTable td {
+	 border-bottom: 1px dotted #DDD;
+	 padding: 3px;
+}
+
+.timelineTable .seriesBox {
+	background-color: #272A2C;
+	border: 1px solid #C0C0C0;
+}
+
+.timelineTable .filmBox {
+	background-color: #242437;
+	border: 1px solid #C0C0C0;
+}
+
+.timelineTable .activeBox {
+	color: yellow;
+	border: 2px solid yellow;
+}
+
+.timelineTable .majorEventBox {
+	background-color: #642800;
+}
 
  /* Customize the label (the container) */
 .checkContainer {
