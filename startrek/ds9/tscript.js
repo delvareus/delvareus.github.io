@@ -679,10 +679,10 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 5x05,The Assignment,,,5.3
 5x06,Trials and Tribble-ations,V🟡🕖🎖,🕶 Must Watch,10.0
 5x07,Let He Who Is Without Sin…,,✖ Notably Bad,1.4
-5x08,Things Past,,✔ Recommended,5.7
-5x09,The Ascent,,,4.9
+5x08,Things Past,,,5.7
+5x09,The Ascent,,,4.4
 5x10,Rapture,,✔ Recommended,6.0
-5x11,The Darkness and the Light,,✔ Recommended,3.4
+5x11,The Darkness and the Light,,,3.4
 5x12,The Begotten ,,✔ Recommended,5.6
 5x13,For the Uniform,,🕶 Must Watch,7.1
 5x14,In Purgatory's Shadow,A🟡,🕶 Must Watch,8.9
@@ -690,8 +690,8 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 5x16,Doctor Bashir，I Presume,,✔ Recommended,5.1
 5x17,A Simple Investigation,,,5.0
 5x18,Business as Usual,,,5.2
-5x19,Ties of Blood and Water,,✔ Recommended,6.4
-5x20,Ferengi Love Songs,,✔ Recommended,3.5
+5x19,Ties of Blood and Water,,♦ Optional,6.4
+5x20,Ferengi Love Songs,,,3.5
 5x21,Soldiers of the Empire,,,5.9
 5x22,Children of Time,🕖,,6.4
 5x23,Blaze of Glory,,🕶 Must Watch,6.8

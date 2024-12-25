@@ -84,6 +84,9 @@ window.onload = function() {
 		
 	`;*/
 
+	if (window.location.href.includes("openNav")) {
+		openNav();
+	};
 
 	for (const item of document.getElementsByClassName('FepisodeNumberBox')) {
 		item.onclick = function(e){

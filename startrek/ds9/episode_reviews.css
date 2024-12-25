@@ -18,7 +18,8 @@
 	border:2px solid white;
 	float:right;
 	padding: 3px;
-	margin: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 	font-size: 14px;
 }
 .seriesInfoCard td{
@@ -40,7 +41,7 @@
 	padding: 1px;
 	width: 85%;
 	overflow: hidden;
-	min-height:500px;
+	min-height:530px;
 	background-color: #181818EE;
 	line-height: 1.1;
 }
@@ -66,6 +67,11 @@
 }
 .episodeCardTable{
 	width: 100%;
+	height: 100%;
+}
+.episodeCardTable > tbody > tr:nth-child(2) > td{
+	/* Make the second row (the detail block) have a minimum height */
+	height: 280px;
 }
 
 /* -------------------- EPISODE CARD BLOCKS -------------------- */
@@ -80,7 +86,18 @@
 	margin-left: 56px;
 	margin-right: 35%;
 	border-width: 0;
-	min-height:269px;
+	height: auto;
+	min-height: 100%;
+}
+.detailBlock > table {
+	height: 100%;
+	min-height: 280px;
+}
+.detailBlock > table tr:last-child td {
+	/* Make the last row fill the remaining space */
+    height: 100%;
+	vertical-align: bottom;
+	padding-bottom: 8px;
 }
 .ratingBlock {
 	margin-left: auto;
@@ -159,12 +176,13 @@
 	color: #FFFBAA;
 }
 
-/* -------------------- DESCRIPTION BLOCK ELEMENTS -------------------- */
+/* -------------------- DETAIL BLOCK ELEMENTS -------------------- */
 
 .iconBox {
 	text-align: center;
 	font-size: large;
-	height: 24px; width: 36px;
+	height: 24px;
+	width: 36px;
 	line-height: 0;
 }
 .iconDescription {
@@ -179,7 +197,7 @@
 .nitpickery {
 	border-radius: 8px;
 	text-align: left;
-	font-size: medium;
+	font-size: small;
 	height: auto;
 	width: fit-content;
 	background-color: #18181890;
@@ -241,8 +259,12 @@
 .ratingsInfoLinkBox{
 	font-size: small;
 	vertical-align:bottom;
-	text-align:right;
+	text-align: right;
 }
+.ratingsInfoLinkBox a {
+	white-space: normal;
+}
+
 /* --- STARS --- */
 .stars0 {
 	font-size: x-large;

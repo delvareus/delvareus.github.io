@@ -23,7 +23,7 @@
 <div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div>
 
 <div class="content">
-
+	<p>&nbsp;</p>
 	<div class="seriesInfoCard">
 		<table>
 			<tr>
@@ -53,9 +53,9 @@
 		<div class="small">
 			Jump to: <br />
 			<a href="#URAR">• Understanding Ratings &amp; Recommendations</a><br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#URAR">• Episode scores</a><br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#URAR">• Additional awards</a><br />
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#URAR">• Watch recommendations</a><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#episode-scores">• Episode scores</a><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#additional-awards">• Additional awards</a><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#watch-recommendations">• Watch recommendations</a><br />
 			<a href="#spoilerPolicy">• Spoiler Policy</a><br />
 		</div>
 	</div>
@@ -222,7 +222,7 @@
 		Everyone has different tastes and opinions, and my opinions certainly aren't always popular. To help combat that, a &quot;final score&quot; on any episode is an average of my rating and the ratings from 3 other independent sources, including IMDB. Though, my rating is weighted a little higher in that calculation, because this is my website, after all. In addition to the ratings, I also provide a &quot;Watch Recommendation&quot; which doesn't necessarily have anything to do with the quality of the episode. Rather, the watch recommendation is based on how important the episode is to the overall story of the entire series, whether that episode is good or bad. See below for more details.
 	</p>
 	<p>&nbsp;</p>
-	<h3 style="text-decoration:underline">Episode scores:</h3>
+	<h3 id="episode-scores" style="text-decoration:underline">Episode scores:</h3>
 	<table class="understanding-ratings">
 		<tr>
 			<th style="width:200px">Episode Rating</th>
@@ -284,7 +284,7 @@
 		</tr>
 	</table>
 	<p>&nbsp;</p>
-	<h3 style="text-decoration:underline">Additional awards:</h3>
+	<h3 id="additional-awards" style="text-decoration:underline">Additional awards:</h3>
 	<table class="understanding-ratings">
 		<tr>
 			<th colspan=2>Award</th>
@@ -349,7 +349,7 @@
 		</tr>
 	</table>
 	<p>&nbsp;</p>
-	<h3 style="text-decoration:underline">Watch Recommendations:</h3>
+	<h3 id="watch-recommendations" style="text-decoration:underline">Watch Recommendations:</h3>
 	<h4>Watch recommendations are mostly based on how <em>important</em> the episode is to the overall series, not necessarily whether the episode is particularly <em>good</em>.</h4>
 	
 	<table class="understanding-ratings">
@@ -394,7 +394,7 @@
 				If you're looking for even more episodes to watch, this recommended list is the place to go. These are episodes that are usually average or above-average, and they might provide more in-depth details about characters and events, but they aren't necessarily crucial to understanding the entire series.
 			</td>
 			<td style="text-align:center">
-				40
+				30
 			</td>
 		</tr>
 		<tr>
@@ -404,7 +404,7 @@
 				&quot;Optional&quot; episodes are usually ones that wouldn't otherwise be recommended, but might have a special guest character or particular plot point that you might be interested in watching.
 			</td>
 			<td style="text-align:center">
-				13
+				16
 			</td>
 		</tr>
 		<tr>
@@ -414,7 +414,7 @@
 				This is the default. It doesn't mean the episode is bad, it just means that you can skip it without missing anything too important.
 			</td>
 			<td style="text-align:center">
-				62
+				69
 			</td>
 		</tr>
 		<tr>
@@ -439,7 +439,9 @@
 		<br />
 		<li>Blatant spoilers will be obscured, with a "Spoiler" tag that you can click on to reveal the contents. Don't read the spoiler unless you've seen the episode or don't have any intention of seeing the episode. Try it here:
 			<div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">This is a spoiler!</span></div></div>
-		</li>		
+		</li>
+		
+	<div class="toTopFooter"><a onClick="scrollToTop()">▲ Back to Top ▲</a></div>
 </div>
 
 <div id="TTDIV"></div>
