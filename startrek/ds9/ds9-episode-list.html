@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <meta name="darkreader-lock">
 <link rel="stylesheet" href="../main.css" />
@@ -22,28 +22,26 @@
 
 <div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div> 
 
-<div style="position:absolute;top:250px;"><a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a></div>
-
-
+<div id="backButton" onclick="window.location = 'index.html';"><span style="font-size:large;font-weight:bold">←</span><br />DS9<br />home</div>
 	
 <div id="tableContainer">
 	<table id="episodeTable">
 		<tr>
 			<td><div id="filterTotalbox">Showing<br /><span id="filterTotal">173</span> of 173<br />episodes</div></td>
-			<td style="text-align:right">
-				<span style="font-size: 14px">Filter mode:&nbsp;&nbsp;&nbsp;</span>
+			<td style="text-align:right;padding-right:8px;vertical-align:bottom;">
+				<span style="font-size: 12px;text-decoration:underline">Filter mode</span><br />
 				<div class="filterAndOr">
-					<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked />AND&nbsp;&nbsp;&nbsp;
-					<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" />OR&nbsp;&nbsp;&nbsp;
+					<label class="radioContainer">AND&nbsp;<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked /><span class="radioDot"></span></label><br />
+					<label class="radioContainer">OR&nbsp;<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" /><span class="radioDot"></span></label>
 				</div>
 			</td>
-			<td>
-				<input type="textbox" id="tagFilterTextbox" placeholder="tags filter" size="12" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">▼</span>
+			<td style="text-align:center;vertical-align:bottom;">
+				<input type="textbox" id="tagFilterTextbox" placeholder="Tags filter" size="12" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">▼</span>
 				<div class="filterCategory" id="tagFilter" style="transform: translateX(-112px);">
 					<label class="checkContainer"><input type="checkbox" id="tagsfilterall" onClick="setFilters('tagsall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Tags</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="admiral.png" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⏺</span>&nbsp;Admiral&nbsp;Pips</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♥" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♥️</span>&nbsp;Personal&nbsp;Favorites</label>
-					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🏅|🎖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🥉|🏅|🎖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🕖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🕖</span>&nbsp;Time&nbsp;Travel episodes</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="Q" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">Q</span>&nbsp;Q episodes</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="31" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">31</span>&nbsp;Section 31 episodes</label>
@@ -56,8 +54,8 @@
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="⚑" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⚑</span>&nbsp;Flagged</label>
 				</div>
 			</td>
-			<td>
-				<input type="textbox" id="recommendationFilterTextbox" placeholder="recommendation filter" size="26" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">▼</span>
+			<td style="text-align:center;vertical-align:bottom;">
+				<input type="textbox" id="recommendationFilterTextbox" placeholder="Recommendation filter" size="26" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">▼</span>
 				<div class="filterCategory" id="recommendationFilter" style="transform: translateX(29px);">
 					<label class="checkContainer"><input type="checkbox" id="rnfilterall" onClick="setFilters('rnall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Recommendations</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="‼" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">‼</span>&nbsp;Bare&nbsp;Minimum</label>
@@ -69,16 +67,22 @@
 					<input type="hidden" class="rnfiltercheckbox" value="None" />
 				</div>
 			</td>
-			<td>
+			<td style="text-align:right;vertical-align:bottom;">
 				<input type="button" class="resetfiltersbutton" onClick="resetFilters()" value="Clear Filters" />
 			</td>
 		</tr>
 		<tr>
-			<th style="width:100px;text-align:left" onclick="sortTable(0)">Episode <span id="0asc" class="sortarrows">⬆</span><span id="0desc" class="sortarrows">⬇</span></th>
-			<th style="width:auto;text-align:left" onclick="sortTable(1)">Title <span id="1asc" class="sortarrows">⬆</span><span id="1desc" class="sortarrows">⬇</span></th>
-			<th style="width:150px" onclick="sortTable(2)">Tags <span id="sortarrows"><span id="2asc" class="sortarrows">⬆</span><span id="2desc" class="sortarrows">⬇</span></span></th>
-			<th style="width:250px" onclick="sortTable(3)">Recommendation <span id="3asc" class="sortarrows">⬆</span><span id="3desc" class="sortarrows">⬇</span></th>
-			<th style="width:80px" onclick="sortTable(4)">Rating <span id="4asc" class="sortarrows">⬆</span><span id="4desc" class="sortarrows">⬇</span></th>
+			<th style="width:100px;text-align:left" onclick="sortTable(0)">Episode <span id="0asc" class="sortarrows">↿</span><span id="0desc" class="sortarrows">⇂</span></th>
+			<th style="width:auto;text-align:left" onclick="sortTable(1)">Title <span id="1asc" class="sortarrows">↿</span><span id="1desc" class="sortarrows">⇂</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span style="font-weight:normal;font-size:small">
+					<label class="radioContainer"><input type="radio" class="sorttype" value="title" name="sorttype" onClick="" checked />Title Sort&nbsp;<span class="radioDot"></span></label>&nbsp;&nbsp;
+					<label class="radioContainer"><input type="radio" class="sorttype" value="strictaz" name="sorttype" onClick="" />Strict A-Z Sort&nbsp;<span class="radioDot"></span></label>
+				</span>
+			</th>
+			<th style="width:150px" onclick="sortTable(2)">Tags <span id="sortarrows"><span id="2asc" class="sortarrows">↿</span><span id="2desc" class="sortarrows">⇂</span></span></th>
+			<th style="width:250px" onclick="sortTable(3)">Recommendation <span id="3asc" class="sortarrows">↿</span><span id="3desc" class="sortarrows">⇂</span></th>
+			<th style="width:80px" onclick="sortTable(4)">Rating <span id="4asc" class="sortarrows">↿</span><span id="4desc" class="sortarrows">⇂</span></th>
 		</tr>
 		
 	</table>

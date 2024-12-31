@@ -86,9 +86,10 @@ function createTable(array) {
 function sortTable(n) {
 	
 	sortArrowOff = document.getElementById(G_sortcol + G_sortdir);
-	sortArrowOff.style.color = "#666";
+	sortArrowOff.style.color = "#555";
 	
 	var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	var sorttype = document.querySelector('input[name="sorttype"]:checked').value;
 	table = document.getElementById("episodeTable");
 	switching = true;
 	// Set the sorting direction to ascending:
@@ -100,7 +101,7 @@ function sortTable(n) {
 		switching = false;
 		rows = table.rows;
 		/* Loop through all table rows (except the
-		first, which contains table headers): */
+		first two, which contains table headers): */
 		for (i = 2; i < (rows.length - 1); i++) {
 			// Start by saying there should be no switching:
 			shouldSwitch = false;
@@ -110,7 +111,7 @@ function sortTable(n) {
 			y = rows[i + 1].getElementsByTagName("TD")[n];
 			/* Check if the two rows should switch place,
 			based on the direction, asc or desc: */
-			//console.log(x.innerHTML.match(/[0.9]\.[0-9]/));
+			
 			var isNumber = x.innerHTML.match(/[0-9]\.[0-9]/);
 			if (!!isNumber){
 				if (dir == "asc") {
@@ -134,8 +135,14 @@ function sortTable(n) {
 					y = y.querySelectorAll("a")[0];
 				}
 				
-				x = x.innerHTML.toLowerCase().replace(/^('|a\s|an\s|the\s)/, '')
-				y = y.innerHTML.toLowerCase().replace(/^('|a\s|an\s|the\s)/, '')
+				x = x.innerHTML.toLowerCase().replace(/^(')/, '');
+				y = y.innerHTML.toLowerCase().replace(/^(')/, '');
+				
+				if (sorttype == "title"){
+					x = x.replace(/^('|a\s|an\s|the\s)/, '')
+					y = y.replace(/^('|a\s|an\s|the\s)/, '')
+				}
+
 
 				if (dir == "asc") {
 					if (x > y) {
@@ -559,7 +566,7 @@ function addSeasonSeparator() {
 		if (Array.from(x.innerHTML)[0] != Array.from(y.innerHTML)[0]) {
 			var rcells = y.parentElement.querySelectorAll("td");
 			Array.from(rcells).forEach((rcell) => {
-				rcell.style.borderTop="thick solid #DDD";
+				rcell.style.borderTop="thick double #C0C0C0";
 			});
 		}	
 	}
@@ -660,7 +667,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 4x12,Paradise Lost,A🟡🌎,🕶 Must Watch,9.1
 4x13,Crossfire,,✔ Recommended,4.6
 4x14,Return to Grace,,✔ Recommended,6.9
-4x15,Sons of Mogh,,,4.7
+4x15,Sons of Mogh,,♦ Optional,4.7
 4x16,Bar Association,,,4.2
 4x17,Accession,,,3.6
 4x18,Rules of Engagement,⚖️,,6.5
@@ -677,7 +684,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 5x03,Looking for par'Mach in All the Wrong Places,,♦ Optional,4.9
 5x04,Nor the Battle to the Strong,,,6.6
 5x05,The Assignment,,,5.3
-5x06,Trials and Tribble-ations,V🟡🕖🎖,🕶 Must Watch,10.0
+5x06,Trials and Tribble-ations,V🟡🕖🏅,🕶 Must Watch,10.0
 5x07,Let He Who Is Without Sin…,,✖ Notably Bad,1.4
 5x08,Things Past,,,5.7
 5x09,The Ascent,,,4.4
@@ -703,9 +710,9 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 6x03,Sons and Daughters,,✔ Recommended,3.8
 6x04,Behind the Lines,V🟡,🕶 Must Watch,6.9
 6x05,Favor the Bold,,🕶 Must Watch,7.7
-6x06,Sacrifice of Angels,A🟡,🕶 ‼ Must Watch/Bare Minimum,9.2
+6x06,Sacrifice of Angels,A🟡🥉,🕶 ‼ Must Watch/Bare Minimum,9.2
 6x07,You Are Cordially Invited,♥️,♦ Optional,6.6
-6x08,Resurrection,♊,✔ Recommended,3.6
+6x08,Resurrection,♊,♦ Optional,3.6
 6x09,Statistical Probabilities,,✔ Recommended,5.9
 6x10,The Magnificent Ferengi,,,6.2
 6x11,Waltz,V🟡,🕶 Must Watch,6.1

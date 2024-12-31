@@ -4,7 +4,17 @@ function closeToolTip(caller) {
 	caller.style.display = 'none';
 }
 
+function showTimeline(id){
+	obj = document.getElementById(id);
+	
+	obj.style.transform = "translateX(0%) translateY(-50%)";
+}
 
+function hideTimeline(id){
+	obj = document.getElementById(id);
+	
+	obj.style.transform = "translateX(-100%) translateY(-50%)";
+}
 
 /* ------------------------- NAVIGATION MENU ------------------------- */
 
@@ -103,6 +113,42 @@ window.onload = function() {
 			tooltip.style.display = 'none';
 		}*/
 	}
+	
+	for (const item of document.getElementsByClassName('redFlag')) {
+		item.onclick = function(e){
+			var tooltip = document.getElementById('redFlagToolTip');
+			var x = e.clientX,
+				y = e.clientY;
+				tooltip.style.top = (y+20) + 'px';
+				tooltip.style.left = (x+20) + 'px';
+				tooltip.style.display = 'block';
+				tooltip.style.position = 'fixed';
+		}
+	}
+	
+	for (const item of document.getElementsByClassName('penaltyFlag')) {
+		item.onclick = function(e){
+			var tooltip = document.getElementById('penaltyFlagToolTip');
+			var x = e.clientX,
+				y = e.clientY;
+				tooltip.style.top = (y+20) + 'px';
+				tooltip.style.left = (x+20) + 'px';
+				tooltip.style.display = 'block';
+				tooltip.style.position = 'fixed';
+		}
+	}
+	
+	for (const item of document.getElementsByClassName('showAward')) {
+		item.onclick = function(e){
+			var tooltip = document.getElementById('showAwardToolTip');
+			var x = e.clientX,
+				y = e.clientY;
+				tooltip.style.top = (y+20) + 'px';
+				tooltip.style.left = (x+20) + 'px';
+				tooltip.style.display = 'block';
+				tooltip.style.position = 'fixed';
+		}
+	}	
 
 	Array.from(document.getElementsByClassName("ratingNumber")).forEach(rating => {
 		

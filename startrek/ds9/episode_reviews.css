@@ -1,12 +1,14 @@
 ﻿
-
-
+.content {
+	background-color: transparent;
+} 
 .seasonNav {
 	text-align: center;
 	margin: auto;
 	margin-bottom: 20px;
 	background-color: #181818EE;
 	width: fit-content;
+	padding: 4px;
 }
 .activeSeason {
 	border-style: solid none solid none;
@@ -16,9 +18,9 @@
 }
 .seriesInfoCard {
 	border:2px solid white;
-	float:right;
+	float: left;
 	padding: 3px;
-	margin-left: 10px;
+	margin-right: 10px;
 	margin-bottom: 10px;
 	font-size: 14px;
 }
@@ -39,7 +41,7 @@
 	border-width: 1px;
 	border-radius: 15px;
 	padding: 1px;
-	width: 85%;
+	width: 95%;
 	overflow: hidden;
 	min-height:530px;
 	background-color: #181818EE;
@@ -173,11 +175,49 @@
 }
 .arcDescription {
 	font-style: normal;
+	font-size: medium;
 	color: #FFFBAA;
 }
 
 /* -------------------- DETAIL BLOCK ELEMENTS -------------------- */
 
+.timelinePopup {
+	position: absolute;
+	left: 0%;
+	top: 50%;
+	transform: translateX(-100%) translateY(-50%);
+	z-index: 6;
+	transition: .3s;
+	vertical-align: middle;
+}
+.timelinePopup table{
+	display: inline-block;
+	vertical-align: middle;
+}
+.timelinePopupTab {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+	height: fit-content;
+	width: 16px;
+	font-size: x-small;
+	background-color: #000020;
+	text-align: center;
+	cursor: pointer;
+}
+.timelineCloseTab {
+	display: inline-block;
+	z-index: 6;
+	height: fit-content;
+	width: 16px;
+	font-size: x-small;
+	background-color: #200020;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
 .iconBox {
 	text-align: center;
 	font-size: large;
@@ -336,6 +376,18 @@
 }
 .award{
 	color: lightgray;
+}
+.showAward{
+	color: lightgray;
+	cursor: help;
+}
+.redFlag{
+	color:red;
+	cursor: help;
+}
+.penaltyFlag{
+	color:yellow;
+	cursor: help;
 }
 /* --- OTHER RATINGS --- */
 .ratingNumber {
@@ -505,17 +557,16 @@
 	cursor: pointer;
 	position: fixed;
 	left:0;
-	top:50%;
+	top:30%;
 	text-align: center;
 	background-color: #000020;
 	padding: 6px;
-	border: 3px solid;
-	border-radius: 0px 26px 26px 0px;
+	border: 2px solid;
+	border-radius: 0px 15px 15px 0px;
 	overflow: hidden;
 	z-index: 100;
 	transition: 0.2s;
-	/*font-weight: bold;
-	font-size: large;*/
+	width: 40px;
 }
  
 #leftNavOpenButton:hover {

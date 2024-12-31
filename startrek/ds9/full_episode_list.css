@@ -30,7 +30,8 @@ input[type=button] {
 	cursor: pointer;
 }
 input[type=button]:hover {
-	background-color: #446;
+	background-color: #2196F3;
+	color: white;
 }
 #filterTotalbox {
 	width: 80px;
@@ -48,6 +49,7 @@ input[type=button]:hover {
 	border:1px solid #FFFFFF;
 	border-radius:5px;
 	width:max-content;
+	text-align: left;
 	position: absolute;
 	background-color:black;
 	z-index: 10;
@@ -69,7 +71,8 @@ input[type=button]:hover {
 }
 
 .dropdownArrow:hover {
-	background-color: #446;
+	background-color: #2196F3;
+	color: white;
 }
 
 .icon {
@@ -100,8 +103,8 @@ input[type=button]:hover {
 }
 
 .sortarrows {
-	color: #666;
-	font-weight: normal;
+	color: #555;
+	font-weight: bold;
 }
 
 #episodeTable td {

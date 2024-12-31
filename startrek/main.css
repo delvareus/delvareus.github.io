@@ -45,11 +45,32 @@ body a[target="_blank"]::after {
 .spacer {
 	height: 60px;
 }
+
+#backButton{
+	cursor: pointer;
+	position: fixed;
+	left:0;
+	top:30%;
+	transform: translateY(60px);
+	text-align: center;
+	background-color: #000020;
+	padding: 6px;
+	border: 2px solid;
+	border-radius: 0px 15px 15px 0px;
+	overflow: hidden;
+	z-index: 100;
+	width: 40px;
+}
+#backButton:hover {
+	background-color: #555;
+}	
+
 .content {
 	margin: auto;
 	padding: 8px;
-	/*width: fit-content;*/
-	width: 95%;
+	/*width: 95%;*/
+	margin-left: 60px;
+	margin-right: 60px;
 	border-radius: 3px;
 	background-color: #181818EE;
 }
@@ -65,6 +86,7 @@ body a[target="_blank"]::after {
 	background-color:#141F29;
 	font-size:small;
 	cursor: pointer;
+	max-width: 300px;
 }
 
 /* -------------------- SCROLL TO TOP BUTTON -------------------- */
@@ -79,9 +101,10 @@ body a[target="_blank"]::after {
   text-align: center;
   background-color: #000020;
   padding: 4px;
-  border: 3px solid;
-  border-radius: 0px 0px 26px 26px;
+  border: 2px solid;
+  border-radius: 0px 0px 15px 15px;
   overflow: hidden;
+  width: 30px;
   /*font-weight: bold;
   font-size: large;*/
 }
@@ -107,8 +130,9 @@ td {
 
 .seriesCard {
 	position: relative;
+	display: inline-block;
 	z-index: 0;
-	margin: auto;
+	margin: 5px auto 5px auto;
 	border-style: solid;
 	border-width: 2px;
 	border-radius: 15px;
@@ -118,7 +142,6 @@ td {
 	min-height:120px;
 	background-color: #181818EE;
 	line-height: 1.1;
-	margin: 10px;
 	text-align: center;
 }
 .seriesCardBG{
@@ -132,10 +155,14 @@ td {
 	object-fit:contain;
 	mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
 }
+.inactive {
+	mask-image: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 40%, rgba(0,0,0,0));
+}
 .seriesCardTitle {
 	display: inline-block;
 	height: 120px;
 	vertical-align: middle;
+	font-size: x-large;
 }
 .seriesCardTitle tr {
 	height: 120px;
@@ -164,6 +191,10 @@ td {
 .finalVerdict {
 	text-align: center;
 	font-size: x-large;
+	border: 2px solid;
+	padding: 3px;
+	margin: auto;
+	width: fit-content;
 }
 
 .understanding-ratings {
@@ -183,6 +214,25 @@ td {
 	 border-bottom: 1px dotted #DDD;
 	 background-color: #303030;
 }
+td.diagonalRising
+{
+	background: linear-gradient(to right bottom, #00000000 0%,#00000000 49%,#C0C0C0FF 49.1%,#C0C0C0FF 51.9%,#00000000 52%,#00000000 100%);
+}
+
+td.diagonalFalling
+{
+	background: linear-gradient(to right top, #ffffff 0%,#ffffff 49.9%,#000000 50%,#000000 51%,#ffffff 51.1%,#ffffff 100%);
+}
+.mainIndexTable{
+	width: 90%;
+	margin: auto;
+}
+.mainIndexTable > tbody > tr > td{
+	border: 1px dotted white;
+	text-align: center;
+	vertical-align: top;
+	width: 50%;
+}
 
 /* -------------------- TIMELINE TABLE -------------------- */
 
@@ -192,9 +242,6 @@ td {
 	border-collapse: collapse;
 	font-size: 12px;
 	text-align: center;
-	float: left;
-	margin-bottom: 10px;
-	margin-right: 10px;
 }
 
 .timelineTable th {
@@ -227,7 +274,20 @@ td {
 .timelineTable .majorEventBox {
 	background-color: #642800;
 }
-
+.timelineTable .alternateReality{
+	border: 2px solid indigo;
+}
+.timelineTable .majorTimeTravel{
+	background-color: #926F00;
+}
+.timelineTable .minorTimeTravel{
+	
+}
+.seriesTimelineTable{
+	float: right;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
  /* Customize the label (the container) */
 .checkContainer {
   display: block;
@@ -273,7 +333,7 @@ td {
 
 /* When the checkbox is checked, add a blue background */
 .checkContainer input:checked ~ .checkmark {
-  background-color: #84C1FF;
+  background-color: #2196F3/*#84C1FF*/;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -294,9 +354,72 @@ td {
   top: 1px;
   width: 4px;
   height: 7px;
-  border: solid black;
+  border: solid white;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+ /* Customize the label (the container) */
+.radioContainer {
+ 
+  padding-right: 16px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.radioDot {
+  position: absolute;
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 2px;
+  border: 1px solid #C0C0C0;
+}
+
+/* On mouse-over, add a grey background color */
+.radioContainer:hover input ~ .radioDot {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioContainer input:checked ~ .radioDot {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radioDot:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioContainer input:checked ~ .radioDot:after {
+  display: flex;
+}
+
+/* Style the indicator (dot/circle) */
+.radioContainer .radioDot:after {
+  top: 5px;
+  left: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
 } 
