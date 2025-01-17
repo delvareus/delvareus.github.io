@@ -1,3 +1,12 @@
+
+/* --- Global table borders - for troubleshooting only  --- */
+/*
+	td {
+		border: 1px dotted #999;
+	}
+*/
+
+/* ---------------------------------------- MAIN SETUP ---------------------------------------- */
 html {
 	scrollbar-gutter: stable;
 }
@@ -5,20 +14,134 @@ body {
 	background-color: #181818;
 	color: #C0C0C0;
 	font-family: Roboto, sans-serif;
-	/*font-family: Arial, Helvetica, sans-serif;*/
 }
 body a {
-	color: #84C1FF;
-	text-decoration:none;
-	white-space:nowrap;
+	color: #44b3e3;
+	text-decoration: none;
+	white-space: nowrap;
 }
 body a:hover {
-	color: #f1f1f1;
-	text-decoration:none;
+	color: #F1F1F1;
+	text-decoration: none;
 }
-body a[target="_blank"]::after {
+body li {
+	margin-bottom: 10px;
+}
+content a[target="_blank"]::after {
+  /* Adds box-and-arrow icon after links that open a new tab */
   content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAACXRFWHRDb21tZW50AACJKo0GAAAASElEQVR4nGP4//8/AzZ85syZ/8gYQwBNcQKKQhwmwhQl4FSIrAjmDAyF6IpgGEXhqVOnFLApwlAIU4zue6wKsQUT6QoJYZBCABxrNhBirnqBAAAAAElFTkSuQmCC);
   margin: 0px 3px 0px 5px;
+}
+
+
+/* ---------------------------------------- BUTTONS ---------------------------------------- */
+
+/* ----- BACK BUTTON ----- */
+#backButton{
+	cursor: pointer;
+	position: fixed;
+	left:0;
+	top:368px;
+	text-align: center;
+	background-color: #031014DD;
+	padding: 4px;
+	border: 2px solid;
+	border-radius: 0px 12px 12px 0px;
+	overflow: hidden;
+	z-index: 99;
+	width: 40px;
+}
+#backButton:hover {
+	background-color: #124054;
+}
+
+/* ----- SCROLL TO TOP BUTTONS ----- */
+#toTopButton {
+  display: none;
+  position: fixed;
+  top: 262px; 
+  left: 0px; 
+  z-index: 99; 
+  cursor: pointer;
+  text-align: center;
+  background-color: #031014DD;
+  padding: 4px;
+  border: 2px solid;
+  border-radius: 0px 12px 12px 0px;
+  overflow: hidden;
+  width: 40px;
+}
+#toTopButton:hover {
+  background-color: #124054;
+}
+.toTopFooter{
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}	
+
+
+/* ---------------------------------------- TOOL TIPS ---------------------------------------- */
+.tooltip {
+	display: none;
+	border: 1px solid #C0C0C0;
+	padding: 5px;
+	border-radius:5px;
+	background-color:#031014DD;
+	font-size:small;
+	cursor: pointer;
+	max-width: 300px;
+}
+
+
+/* ---------------------------------------- PAGE TITLES ---------------------------------------- */
+.c6Left {
+	position: fixed;
+	left: 0;
+	width: 58px;
+	margin-top: 1px;
+	z-index: -2;
+	background-image: linear-gradient(to right, #bb4c1c77, #03030300 80%, #03030300);
+}
+.c6Left img{
+	height: 235px;
+}
+.c6Right {
+	position: fixed;
+	right: 0;
+	top: 9px;
+	width: 58px;
+	height: 235px;
+	color: #bb4c1c;
+	padding: 2px;
+	line-height: 1.6;
+	background-image: linear-gradient(to left, #bb4c1c77, #03030300 80%, #03030300);
+}
+.c6Right img {
+	display: block;
+	width: 58px;
+}
+.c6Right > a {
+	display: block;
+	color: #e47545;
+	text-align: center;
+	font-size: small;
+}
+.c6Right .bsky{
+	position: absolute;
+	bottom: 0;
+	line-height: 0.9;
+	margin: 3px auto 5px auto;
+	font-size: 11px;
+	text-align: center;
+	color: #e47545;
+}
+.c6Right .bsky a{
+	color: #e47545;
+}
+.c6Right .bsky img{
+	margin: 0px auto 3px auto;
 }
 .pageTitleImage {
 	position: fixed;
@@ -30,212 +153,198 @@ body a[target="_blank"]::after {
 	border-bottom: 1px solid;
 	border-color: #404040;
 }
-.pageTitle {
-	margin: 0 auto;
+.pageTitleContainer {
+	margin: auto;
 	position: relative;
-	padding-top: 100px;
-	padding-bottom: 120px;
+	padding-top: 45px;
+	padding-bottom: 50px;
+	width: fit-content;
 	text-align: center;
 	display: block;
     font-size: 2em;
     font-weight: bold;
 	text-wrap: nowrap;
+	color: #C0C0C0;
 }
-
+.pageTitle{
+	padding: 10px;
+	background-color: #030303EE;
+	border-radius: 15px;
+}
+.pageSubtitle {
+	margin: 0 auto;
+	position: relative;
+	padding-top: 10px;
+	text-align: center;
+	display: block;
+    font-size: 20px;
+    font-weight: bold;
+	text-wrap: nowrap;
+	color: #C0C0C0;
+}
 .spacer {
 	height: 60px;
 }
-
-#backButton{
-	cursor: pointer;
-	position: fixed;
-	left:0;
-	top:30%;
-	transform: translateY(60px);
-	text-align: center;
-	background-color: #000020;
-	padding: 6px;
-	border: 2px solid;
-	border-radius: 0px 15px 15px 0px;
-	overflow: hidden;
-	z-index: 100;
-	width: 40px;
+.pageFooter {
+	display: flex;
+    align-items: center;
+	height: 25px;
+	margin: 20px -8px 25px -8px;
+	background-color: #030303;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: #404040;
 }
-#backButton:hover {
-	background-color: #555;
-}	
+.pageFooter a {
+	color: #e47545;
+}
+.pageFooter img {
+	margin-bottom: 1px;
+	margin-left: 8px;
+	margin-right: 4px;
+	height: 18px;
+}
+.pageFooter .bsky{
+	position: absolute;
+	right: 8px;
+	font-size: 11px;
+}
+	
+#bottomBorder{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 4px;
+	border-bottom: 4px solid #e47545;
+	z-index: 3;
+	transition: 0.8s;
+}
 
+/* ---------------------------------------- CONTENT ---------------------------------------- */
 .content {
 	margin: auto;
 	padding: 8px;
-	/*width: 95%;*/
 	margin-left: 60px;
 	margin-right: 60px;
 	border-radius: 3px;
 	background-color: #181818EE;
 }
 
-/* -------------------- TOOL TIPS -------------------- */
+	/* | ---------------------------------------- MAIN INDEX-SPECIFIC CONTENT ---------------------------------------- */
+	.mainIndexTable{
+		width: 90%;
+		margin: auto;
+	}
+	.mainIndexTable > tbody > tr > td {
+		border: 1px dotted white;
+		text-align: center;
+		vertical-align: top;
+		width: 50%;
+	}
+	.seriesCard {
+		position: relative;
+		display: inline-block;
+		z-index: 0;
+		margin: 5px auto 5px auto;
+		border-style: solid;
+		border-width: 2px;
+		border-radius: 15px;
+		padding: 1px;
+		width: 500px;
+		overflow: hidden;
+		min-height:120px;
+		background-color: #181818EE;
+		line-height: 1.1;
+		text-align: center;
+	}
+	.seriesCardBG{
+		position: absolute;
+		z-index:-1;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: auto;
+		overflow:hidden;
+		object-fit:contain;
+		mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
+	}
+	.inactive {
+		mask-image: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 40%, rgba(0,0,0,0));
+	}
+	.seriesCardTitle {
+		display: inline-block;
+		height: 120px;
+		vertical-align: middle;
+		font-size: x-large;
+	}
+	.seriesCardTitle tr {
+		height: 120px;
+		vertical-align: middle;
+	}
+	.seriesCardTitle img{
+		width: 40%;
+		vertical-align: middle;
+	}
+	.comingSoonFlag{
+		position: absolute;
+		z-index:-1;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: auto;
+		overflow:hidden;
+		object-fit:contain;
+		mask-image: linear-gradient(to left, rgba(0,0,0,1),  rgba(0,0,0,0));
+	}
 
 
-.tooltip {
-	display: none;
-	border: 1px solid #C0C0C0;
-	padding: 5px;
-	border-radius:5px;
-	background-color:#141F29;
-	font-size:small;
-	cursor: pointer;
-	max-width: 300px;
-}
-
-/* -------------------- SCROLL TO TOP BUTTON -------------------- */
-
-#toTopButton {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  top: 0px; 
-  left: 15px; 
-  z-index: 100; 
-  cursor: pointer; /* Add a mouse pointer on hover */
-  text-align: center;
-  background-color: #000020;
-  padding: 4px;
-  border: 2px solid;
-  border-radius: 0px 0px 15px 15px;
-  overflow: hidden;
-  width: 30px;
-  /*font-weight: bold;
-  font-size: large;*/
-}
-
-#toTopButton:hover {
-  background-color: #555;
-}
-
-.toTopFooter{
-	cursor: pointer;
-	margin-left: auto;
-	margin-right: auto;
-	width: fit-content;
-}
-
-/* --------------------  -------------------- */
-
-/*
-td {
-  border: 1px dotted #999;
-}
-*/
-
-.seriesCard {
-	position: relative;
-	display: inline-block;
-	z-index: 0;
-	margin: 5px auto 5px auto;
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 15px;
-	padding: 1px;
-	width: 500px;
-	overflow: hidden;
-	min-height:120px;
-	background-color: #181818EE;
-	line-height: 1.1;
-	text-align: center;
-}
-.seriesCardBG{
-	position: absolute;
-	z-index:-1;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: auto;
-	overflow:hidden;
-	object-fit:contain;
-	mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0.8) 40%, rgba(0,0,0,0));
-}
-.inactive {
-	mask-image: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.4) 40%, rgba(0,0,0,0));
-}
-.seriesCardTitle {
-	display: inline-block;
-	height: 120px;
-	vertical-align: middle;
-	font-size: x-large;
-}
-.seriesCardTitle tr {
-	height: 120px;
-	vertical-align: middle;
-}
-.seriesCardTitle img{
-	width: 40%;
-	vertical-align: middle;
-}
-.comingSoonFlag{
-	position: absolute;
-	z-index:-1;
-	right: 0;
-	top: 0;
-	height: 100%;
-	width: auto;
-	overflow:hidden;
-	object-fit:contain;
-	mask-image: linear-gradient(to left, rgba(0,0,0,1),  rgba(0,0,0,0));
-}
-
-.introParagraph {
-	margin-top: 30px;
-}
-
-.finalVerdict {
-	text-align: center;
-	font-size: x-large;
-	border: 2px solid;
+	/* | ---------------------------------------- SERIES INDEX-SPECIFIC CONTENT ---------------------------------------- */
+	.seriesInfoCard {
+	border:2px solid white;
+	float: left;
 	padding: 3px;
-	margin: auto;
-	width: fit-content;
-}
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	}
+	.seriesInfoCard td{
+			padding-left: 3px;
+			padding-right: 3px;
+	}
+	.seriesInfoCard th{
+			background-color: #444;
+	}
+	.introParagraph {
+		margin-top: 30px;
+	}
+	.finalVerdict {
+		text-align: center;
+		font-size: x-large;
+		border: 2px solid;
+		padding: 3px;
+		margin: auto;
+		width: fit-content;
+		clear: both;
+	}
+	.understanding-ratings {
+		border-collapse: collapse;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.understanding-ratings td {
+		 border-bottom: 1px dotted #DDD;
+		 padding: 5px;
+	}
+	.understanding-ratings th {
+		 border-top: 1px dotted #DDD;
+		 border-bottom: 1px dotted #DDD;
+		 background-color: #303030;
+	}
 
-.understanding-ratings {
-	border-collapse: collapse;
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-}
 
-.understanding-ratings td {
-	 border-bottom: 1px dotted #DDD;
-	 padding: 5px;
-}
-
-.understanding-ratings th {
-	 border-top: 1px dotted #DDD;
-	 border-bottom: 1px dotted #DDD;
-	 background-color: #303030;
-}
-td.diagonalRising
-{
-	background: linear-gradient(to right bottom, #00000000 0%,#00000000 49%,#C0C0C0FF 49.1%,#C0C0C0FF 51.9%,#00000000 52%,#00000000 100%);
-}
-
-td.diagonalFalling
-{
-	background: linear-gradient(to right top, #ffffff 0%,#ffffff 49.9%,#000000 50%,#000000 51%,#ffffff 51.1%,#ffffff 100%);
-}
-.mainIndexTable{
-	width: 90%;
-	margin: auto;
-}
-.mainIndexTable > tbody > tr > td{
-	border: 1px dotted white;
-	text-align: center;
-	vertical-align: top;
-	width: 50%;
-}
-
-/* -------------------- TIMELINE TABLE -------------------- */
-
+/* ---------------------------------------- GLOBAL: TIMELINE TABLE ---------------------------------------- */
 .timelineTable{
 	border: 3px double #C0C0C0;
 	background-color: #181818EE;
@@ -288,7 +397,16 @@ td.diagonalFalling
 	margin-bottom: 10px;
 	margin-left: 10px;
 }
- /* Customize the label (the container) */
+td.diagonalRising {
+	background: linear-gradient(to right bottom, #00000000 0%,#00000000 49%,#C0C0C0FF 49.1%,#C0C0C0FF 51.9%,#00000000 52%,#00000000 100%);
+}
+td.diagonalFalling {
+	background: linear-gradient(to right top, #ffffff 0%,#ffffff 49.9%,#000000 50%,#000000 51%,#ffffff 51.1%,#ffffff 100%);
+}
+
+
+/* ---------------------------------------- GLOBAL: CUSTOM CHECKBOX ---------------------------------------- */
+/* Customize the label (the container) */
 .checkContainer {
   display: block;
   position: relative;
@@ -304,7 +422,6 @@ td.diagonalFalling
   user-select: none;
   height: 18px;
 }
-
 /* Hide the browser's default checkbox */
 .checkContainer input {
   position: absolute;
@@ -313,7 +430,6 @@ td.diagonalFalling
   height: 0;
   width: 0;
 }
-
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
@@ -323,31 +439,25 @@ td.diagonalFalling
   height: 14px;
   width: 14px;
   border: 1px solid #ccc;
-  /*background-color: #ccc;*/
 }
-
 /* On mouse-over, add a grey background color */
 .checkContainer:hover input ~ .checkmark {
   background-color: #ccc;
 }
-
 /* When the checkbox is checked, add a blue background */
 .checkContainer input:checked ~ .checkmark {
-  background-color: #2196F3/*#84C1FF*/;
+  background-color: #1b8aba; /*#44b3e3;*/ /*#2196F3 #84C1FF*/;
 }
-
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 /* Show the checkmark when checked */
 .checkContainer input:checked ~ .checkmark:after {
   display: inline-block;
 }
-
 /* Style the checkmark/indicator */
 .checkContainer .checkmark:after {
   left: 4px;
@@ -360,7 +470,10 @@ td.diagonalFalling
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
- /* Customize the label (the container) */
+
+
+/* ---------------------------------------- GLOBAL: CUSTOM RADIO BUTTON ---------------------------------------- */
+/* Customize the label (the container) */
 .radioContainer {
  
   padding-right: 16px;
@@ -370,7 +483,6 @@ td.diagonalFalling
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Hide the browser's default radio button */
 .radioContainer input {
   position: absolute;
@@ -379,7 +491,6 @@ td.diagonalFalling
   height: 0;
   width: 0;
 }
-
 /* Create a custom radio button */
 .radioDot {
   position: absolute;
@@ -391,29 +502,24 @@ td.diagonalFalling
   margin: 2px;
   border: 1px solid #C0C0C0;
 }
-
 /* On mouse-over, add a grey background color */
 .radioContainer:hover input ~ .radioDot {
   background-color: #ccc;
 }
-
 /* When the radio button is checked, add a blue background */
 .radioContainer input:checked ~ .radioDot {
-  background-color: #2196F3;
+  background-color: #1b8aba; /*#44b3e3;*/ /*#2196F3;*/
 }
-
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .radioDot:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 /* Show the indicator (dot/circle) when checked */
 .radioContainer input:checked ~ .radioDot:after {
   display: flex;
 }
-
 /* Style the indicator (dot/circle) */
 .radioContainer .radioDot:after {
   top: 5px;
@@ -423,3 +529,26 @@ td.diagonalFalling
   border-radius: 50%;
   background: white;
 } 
+
+
+/* -------------------- MISC -------------------- */
+.xx-small {
+	font-size: xx-small;
+}
+.x-small {
+	font-size: x-small;
+}
+.small {
+	font-size: small;
+}
+.large {
+	font-size: large;
+}
+.x-large {
+	font-size: x-large;
+}
+.xx-large {
+	font-size: xx-large;
+}
+
+/* --------------------  -------------------- */

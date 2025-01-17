@@ -3,20 +3,77 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<meta name="darkreader-lock">
-<link rel="stylesheet" href="../main.css" />
-<link rel="stylesheet" href="ds9.css" />
-<link rel="stylesheet" href="episode_reviews.css" />
+<meta name="darkreader-lock" content="47">
+<link rel="stylesheet" href="../main.css?v=0.8" />
+<link rel="stylesheet" href="ds9.css?v=0.8" />
+<link rel="stylesheet" href="ds9-episode-guides.css?v=0.8" />
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
-<script type="text/javascript" src="script.js"></script>
-<title>DS9 Season 7 Episode Guide</title>
+<style>
+.chapterCard {
+	position: relative;
+	z-index: 0;
+	margin: auto;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 15px;
+	padding: 1px;
+	width: 100%;
+	overflow: hidden;
+	background-color: #181818EE;
+	line-height: 1.1;
+	scroll-margin-top: 50px;
+}
+.chapterTitle {
+	margin: 12px auto 20px auto;
+	text-align: center;
+	font-size: 36px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.chapterDescription {
+	margin: 3px auto 12px auto;
+	width: 95%;
+}
+.chapterTable table {
+		border-collapse: collapse;
+		/*width: 50%;*/
+		min-width: 800px;
+		margin: 20px auto 20px auto;
+}
+.chapterTable td {
+		 border-bottom: 1px dotted #DDD;
+		 padding: 5px;
+}
+.chapterTable th {
+		 border-top: 1px dotted #DDD;
+		 border-bottom: 1px dotted #DDD;
+		 background-color: #303030;
+		 text-align: left;
+}
+.icon {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+</style>
+
+<script type="text/javascript" src="ds9.js"></script>
+<title>C6 | DS9 Season 7 Episode Guide</title>
 </head>
 
 <body>
 
-<div class="pageTitleImage"><img src="images/ds9--3.png" /></div>
-<div class="pageTitleImageSpacer"></div>
-<div class="pageTitle">Episode Guide</div>
+<div class="c6Left"><img src="../images/c6reviews-vert.png"></div>
+<div class="pageTitleImage"><img src="images/ds9-header.png" alt="Deep Space Nine station and title"/></div>
+<div class="pageTitleContainer">
+	<div class="pageTitle">
+		<img src="../images/c6reviews-hor.png" style="width:350px"><br />Star Trek: Deep Space Nine
+		<span class="pageSubtitle">Season 7 Episode Guides</span>
+	</div>
+</div>
+<div class="c6Right"><img src="../images/c6.png"><img src="../images/c6reviews-hor-noglow.png" style="margin-top:3px"><a href="../index.html" style="margin-top:8px;">HOME</a><a href="../about.html">ABOUT</a><span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank"><img src="../images/bsky.png" style="width:20px;">@c6reviews.<br/>bsky.social</a></span></div>
 
 <h3 class="seasonNav"><a href="ds9-s1.html">Season 1</a> • <a href="ds9-s2.html">Season 2</a> • 
 <a href="ds9-s3.html">Season 3</a> • <a href="ds9-s4.html">Season 4</a> • <a href="ds9-s5.html">Season 5</a> • <a href="ds9-s6.html">Season 6</a> • <span class="activeSeason"><a href="ds9-s7.html">Season 7</a></span></h3>
@@ -49,8 +106,8 @@
 	<a href="#e13" onclick="closeNav()">7x13:  Field of Fire</a>
 	<a href="#e14" onclick="closeNav()">7x14:  Chimera</a>
 	<a href="#e15" onclick="closeNav()">7x15:  Badda-Bing, Badda-Bang</a>
-	<a href="#e16" onclick="closeNav()">7x16:  Inter Arma Enim Silent Leges</a><br />
-	&nbsp;&nbsp;&nbsp;<span style="font-size:14px;"><u>The Final Chapter</u></span><br />
+	<a href="#e16" onclick="closeNav()">7x16:  Inter Arma Enim Silent Leges</a>
+	<a href="#theFinalChapter" onclick="closeNav()" style="text-align:center;width: 75%;margin-left:12px;border-width: 1px 0px 1px 0px;border-color:#C0C0C0;border-style: solid;">The Final Chapter</a>
 	<a href="#e17" onclick="closeNav()">7x17:  Penumbra</a>
 	<a href="#e18" onclick="closeNav()">7x18:  Til Death Do Us Part</a>
 	<a href="#e19" onclick="closeNav()">7x19:  Strange Bedfellows</a>
@@ -65,7 +122,7 @@
 <div class="content">
 
 	<div id="e01" class="episodeCard">
-		<img src="images/ds9-7x01.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x01.png" class="episodeCardBG" alt="Sisko cleaning clams in an alley behind his father's restaurant"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -86,7 +143,7 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td><div class="synopsis">
-							Sisko is contemplative at his father's restaurant; Romulans send a contingent to DS9.<br /><br />
+							Three months after leaving DS9, Sisko is still brooding at his father's restaurant; meanwhile, the Romulans send a contingent to DS9 and Worf is inconsolable.<br /><br />
 							<span class="arcDescription">Arc: Sisko's Purpose (Part 2 of 3)</span>
 						</div></td>
 						<td>&nbsp;</td>
@@ -109,6 +166,10 @@
 						<tr>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><div class="thoughtsSection"><strong>Thoughts: </strong>It seems odd that Starfleet would just let Sisko go home during a war because he's sad. It seems even odder that they wouldn't assign a new Starfleet commander to DS9. But, hey, we'll just bolster that suspension of disbelief and try to enjoy this season opener!</div></td>
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
@@ -153,7 +214,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e02" class="episodeCard">
-		<img src="images/ds9-7x02.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x02.png" class="episodeCardBG" alt="Sisko, in a desert with Jake and Ezri, looking confused at a pencil in his hand"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -237,7 +298,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e03" class="episodeCard">
-		<img src="images/ds9-7x03.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x03.png" class="episodeCardBG" alt="Ezri and Garak looking at each other"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -279,7 +340,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation">The show is now taking some time to introduce this new character, so this episode is mostly filler. No recommendation.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>The show is now taking some time to introduce this new character, so this episode is mostly filler. No recommendation.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -320,7 +381,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e04" class="episodeCard">
-		<img src="images/ds9-7x04.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x04.png" class="episodeCardBG" alt="Sisko and Leeta wearing baseball uniforms"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -404,7 +465,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e05" class="episodeCard">
-		<img src="images/ds9-7x05.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x05.png" class="episodeCardBG" alt="Bashir and three others in Starfleet uniforms discussing treatment for a patient"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -437,12 +498,12 @@
 				<div class="detailBlock">
 					<table>
 						<tr>
-							<td class="iconBox">🙄</td>
-							<td><div class="iconDescription"><strong>Annoying Bashir Moment: </strong>Pretty much the entire episode.</div></td>
+							<td class="iconBox">🔗</td>
+							<td><div class="iconDescription">This episode is a followup for the four genetically-engineered characters we met in <a href="ds9-s6.html#e09">6x09 Statistical Probabilities</a>.</div></td>
 						</tr>
 						<tr>
-							<td class="iconBox">&nbsp;</td>
-							<td><div class="iconDescription">&nbsp;</div></td>
+							<td class="iconBox">🙄</td>
+							<td><div class="iconDescription"><strong>Annoying Bashir Moment: </strong>Pretty much the entire episode.</div></td>
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
@@ -488,7 +549,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e06" class="episodeCard">
-		<img src="images/ds9-7x06.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x06.png" class="episodeCardBG" alt="O'Brien and Nog talking while performing maintenance on the Promenade"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -530,7 +591,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="nitpickery"><strong>Nitpickery: </strong>The premise for the O'Brien-Nog story line is that Sisko makes an unreasonable demand of the Chief for something that is plainly out of his control, and that never really sat well with me.</div></td>
+							<td><div class="nitpickery"><strong>Nitpickery: </strong>The premise for the O'Brien-Nog story line is that Sisko makes an unreasonable demand of the Chief for something that is plainly out of his control, and that never really sat well with me. Also, I morally object to the lack of an Oxford comma in the title.</div></td>
 						</tr>
 						<tr>
 							<td class="iconBox">&nbsp;</td>
@@ -538,7 +599,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is &quot;Recommended&quot; for some reason.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>It's a perfectly cromulent episode, but it doesn't have a lot of impact on the rest of the series. No recommendation.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -551,8 +612,8 @@
 						<td>&nbsp;</td>
 						<td class="watchRecommendationBox" rowspan="4">
 							<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br /></span>
-							<strong><span class="x-large">✔</span></strong><br />
-							<strong><span class="large">Recommended</span></strong>
+							<strong><span class="x-large"></span></strong><br />
+							<strong><span class="large">-</span></strong>
 						</td>
 						<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 							
@@ -580,7 +641,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e07" class="episodeCard">
-		<img src="images/ds9-7x07.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x07.png" class="episodeCardBG" alt="Worf and Martok listening to Kor tell a story"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -617,8 +678,8 @@
 							<td><div class="iconDescription"><strong>Crossover: </strong>Kor (TOS)</div></td>
 						</tr>
 						<tr>
-							<td class="iconBox">&nbsp;</td>
-							<td><div class="iconDescription">&nbsp;</div></td>
+							<td class="iconBox">🙇‍♂️</td>
+							<td><div class="iconDescription">This is the final appearance of <a href="https://memory-alpha.fandom.com/wiki/John_Colicos" target="_blank">John Colicos</a> as Kor in the Star Trek franchise. He first appeared in the role 31 years prior, in <a href="../tos/tos-s1.html#e27">TOS 1x27: Errand of Mercy</a> with the distinction of being the first Klingon to ever appear in Star Trek.</div></td>
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
@@ -665,8 +726,8 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e08" class="episodeCard">
-		<img src="images/ds9-7x08.png" class="episodeCardBG"/>
-		<img src="images/lensflare-silver.png" class="episodeCardFlare"/>
+		<img src="images/ds9-7x08.png" class="episodeCardBG" alt="Sisko and another officer firing phasers from behind cover"/>
+		<img src="images/lensflare-silver.png" class="episodeCardFlare" alt="a silver lens flare effect"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -704,12 +765,16 @@
 							<td><div class="iconDescription"><strong>Vice-Admiral Pips: </strong>Pips are awarded to episodes that are the most stand-out, representative examples of the series as a whole.</div></td>
 						</tr>
 						<tr>
+							<td class="iconBox">🌑</td>
+							<td><div class="iconDescription"><strong>Dark themes: </strong>War, combat, grave injury, PTSD.</div></td>
+						</tr>
+						<tr>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is an example of how Deep Space Nine to a different, darker path than other Trek of its time. Because it's representative of this theme, this episode is rated as &quot;Must Watch.&quot;</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Deep Space Nine took a different, darker path than other Trek of its time, and this episode in particular was very controversial because of its unflinching portrayal of war. This episode is rated as &quot;Must Watch.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -751,7 +816,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e09" class="episodeCard">
-		<img src="images/ds9-7x09.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x09.png" class="episodeCardBG" alt="Dukat wearing a red arm-band and talking face-to-face with Kira"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -783,10 +848,6 @@
 			<tr><td>
 				<div class="detailBlock">
 					<table>
-						<tr>
-							<td class="iconBox">&nbsp;</td>
-							<td><div class="thoughtsSection">Thoughts:</div></td>
-						</tr>
 						<tr>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
@@ -835,7 +896,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e10" class="episodeCard">
-		<img src="images/ds9-7x10.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x10.png" class="episodeCardBG" alt="Nog using paper, pencil, and an adding machine as Vic looks over his shoulder approvingly"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -868,8 +929,8 @@
 				<div class="detailBlock">
 					<table>
 						<tr>
-							<td class="iconBox">&nbsp;</td>
-							<td><div class="thoughtsSection">Thoughts:</div></td>
+							<td class="iconBox">🌑</td>
+							<td><div class="iconDescription"><strong>Dark themes: </strong>PTSD</div></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
@@ -877,7 +938,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode tackles the difficult subject of PTSD, and it's pretty good. It's &quot;Highly Recommended.&quot;</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode tackles the difficult subject of PTSD, and it's a pretty good follow-up to The Siege of AR-558. I'm rating it &quot;Highly Recommended.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -919,7 +980,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e11" class="episodeCard">
-		<img src="images/ds9-7x11.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x11.png" class="episodeCardBG" alt="Ezri standing in her family's home"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1007,7 +1068,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e12" class="episodeCard">
-		<img src="images/ds9-7x12.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x12.png" class="episodeCardBG" alt="Ezri, clad in all black, standing in a holding cell with Quark and Rom"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1028,7 +1089,7 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td><div class="synopsis">
-							Quark and Rom steal a cloak to save the Grand Nagus from the mirror universe.
+							Quark and Rom steal a cloaking device to save the Grand Nagus from the mirror universe.
 						</div></td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
@@ -1084,7 +1145,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e13" class="episodeCard">
-		<img src="images/ds9-7x13.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x13.png" class="episodeCardBG" alt="Ezri aiming a rifle as another Trill looks over her shoulder"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1119,6 +1180,14 @@
 						<tr>
 							<td class="iconBox">🔗</td>
 							<td><div class="iconDescription"><span class="reference">The former host, Joran, is first introduced in <a href="ds9-s3.html#e04">DS9&nbsp;3x04:&nbsp;Equilibrium</a></span></div></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><div class="nitpickery"><strong>Nitpickery: </strong>Worf chides Ezri for putting herself &quot;in danger&quot; by wandering the promenade while there is a killer on the station, but both of the murders at this point happened in the victims' quarters. Ezri is probably safer walking on the promenade than returning to her quarters.</div></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
@@ -1168,7 +1237,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e14" class="episodeCard">
-		<img src="images/ds9-7x14.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x14.png" class="episodeCardBG" alt="A changeling gesturing out the window as he talks to Odo"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1200,6 +1269,18 @@
 			<tr><td>
 				<div class="detailBlock">
 					<table>
+						<tr>
+							<td class="iconBox">💁‍♂️</td>
+							<td><div class="iconDescription">If Laas seems a bit familiar, it's because he's played by J.G. Hertzler, who regularly plays General Martok.</div></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td><div class="thoughtsSection"><strong>Thoughts: </strong>If you needed a reminder that the Founders/Changelings are the bad guys, Laas will happily remind you. The episode tries to make a point about being allowed to exist as one's true self, and there are some good lines, like Quark's explanation about humanoid genetic instincts. Unfortunately, any sympathy we might have felt for Laas is undone by the fact that he goes out of his way to be rude and condescending - and, oh yeah, he also casually commits murder.</div></td>
+						</tr>
 						<tr>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
@@ -1248,7 +1329,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e15" class="episodeCard">
-		<img src="images/ds9-7x15.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x15.png" class="episodeCardBG" alt="O'Brien, Bashir, Kasidy, Sisko, Kira, Odo, Ezri, and Nog strolling down the promenade wearing 1960's-style tuxedos, suits, and dresses"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1294,7 +1375,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I find this one enjoyable, but others only gave it an average rating. It's a one-off that isn't important to DS9's larger story, but I'm marking it &quot;Optional&quot; it because of the fun holodeck hijinks.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I find this one enjoyable, but others only gave it an average rating. It's a one-off that isn't important to DS9's larger story, but I'm marking it &quot;Optional&quot; because of the fun holodeck hijinks.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1303,7 +1384,7 @@
 				<table class="ratingBlock">
 					<tr>
 						<td class="myRatingDescriptionBox">My rating:</td>			
-						<td class="stars4">★★★★<span class="hollowStar">☆</span>  <span class="personalFavorite">♥ <span class="large">Personal Favorite</span></span></td>
+						<td class="stars4">★★★★<span class="hollowStar">☆</span>&nbsp;&nbsp;<span class="personalFavorite">♥ <span class="large">Personal Favorite</span></span></td>
 						<td>&nbsp;</td>
 						<td class="watchRecommendationBox" rowspan="4">
 							<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br /></span>
@@ -1313,22 +1394,22 @@
 						</td>
 						<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 							
-							<strong><span class="xx-large">4.1</span></strong>
+							<strong><span class="xx-large">6.4</span></strong>
 						</td>
 					</tr>
 					<tr>
 						<td class="SFDratingDescriptionBox">SF Debris rating:</td>
-						<td class="ratingNumber">5</td>
+						<td class="ratingNumber">6</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td class="EASratingDescriptionBox">Ex Astris Scientia rating:</td>
-						<td class="ratingNumber">4</td>
+						<td class="ratingNumber">5</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td class="NIMDBratingDescriptionBox">Normalized IMDB rating:</td>
-						<td class="ratingNumber">5.0</td>
+						<td class="ratingNumber">5.7</td>
 						<td class="ratingsInfoLinkBox"><a href="index.html#URAR" target="_blank">Understanding Ratings and Recommendations</a></td>
 					</tr>
 				</table>
@@ -1337,8 +1418,8 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e16" class="episodeCard">
-		<img src="images/ds9-7x16.png" class="episodeCardBG"/>
-		<img src="images/lensflare-silver.png" class="episodeCardFlare"/>
+		<img src="images/ds9-7x16.png" class="episodeCardBG" alt="Bashir and Sloan discussing a hologram of a Romulan official"/>
+		<img src="images/lensflare-silver.png" class="episodeCardFlare" alt="a silver lens flare effect"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1384,7 +1465,7 @@
 						</tr>					
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is the second of three episodes involving Section 31, and for that reason alone, it is a &quot;Must Watch.&quot;</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is the second of three episodes involving Section 31, and it's a pretty good one at that. It's not strictly necessary to the overall DS9 story, but I'm rating it as &quot;Highly Recommended.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1393,12 +1474,12 @@
 				<table class="ratingBlock">
 					<tr>
 						<td class="myRatingDescriptionBox">My rating:</td>			
-						<td class="stars4">★★★★<span class="hollowStar">☆</span>  <span class="personalFavorite">♥ <span class="large">Personal Favorite</span></span></td>
+						<td class="stars4">★★★★<span class="hollowStar">☆</span>&nbsp;&nbsp;<span class="personalFavorite">♥ <span class="large">Personal Favorite</span></span></td>
 						<td>&nbsp;</td>
 						<td class="watchRecommendationBox" rowspan="4">
 							<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br /></span>
-							<strong><span class="x-large"></span></strong><br />
-							<strong><span class="large">-</span></strong>
+							<strong><span class="x-large">✔+</span></strong><br />
+							<strong><span class="large">Highly Recommended</span></strong>
 						</td>
 						<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 							
@@ -1425,8 +1506,83 @@
 		</table>
 	</div>
 	<p>&nbsp;</p>
+	
+	<!-------------- SPECIAL CHAPTER CARD -------------->
+	<div id="theFinalChapter" class="chapterCard">
+		<div class="chapterTitle">The Final Chapter</div>
+		<div class="chapterDescription">
+			The Final Chapter of <em>Star Trek: Deep Space Nine</em> consists of nine episodes, with the final episode being feature-length.<br/><br/>
+			<strong>Watch Recommendation: </strong>I strongly recommend watching all nine of the episodes in this arc, but I'm going to mark 3 as &quot;Bare Minimum&quot;, 4 as &quot;Must Watch&quot;, and I'm knocking 2 down to &quot;Highly Recommended&quot;. If you decide to skip any of these episodes, you should at least watch the RECAP at the beginning of the following episode.</strong>
+		</div>
+		<div class="chapterTable">
+			<table>
+				<tr>
+					<th style="width: 120px">Episode</th>
+					<th style="width: 300px">Title</th>
+					<th style="width: 300px">Watch Recommendation</th>
+					<th>Notes</th>
+				</tr>
+				<tr>
+					<td>7x17</td>
+					<td>1: <a href="#e17">Penumbra</a></td>
+					<td><span class="icon">✔+</span> Highly Recommended</td>
+					<td>(No story recap)</td>
+				</tr>
+				<tr>
+					<td>7x18</td>
+					<td>2: <a href="#e18">'Til Death Do Us Part</a></td>
+					<td><span class="icon">🕶</span> Must Watch</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>7x19</td>
+					<td>3: <a href="#e19">Strange Bedfellows</a></td>
+					<td><span class="icon">🕶</span> Must Watch</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>7x20</td>
+					<td>4: <a href="#e20">The Changing Face of Evil</a></td>
+					<td><span class="icon">🕶‼</span> Must Watch/Bare Minimum</td>
+					<td>(No story recap)</td>
+				</tr>
+				<tr>
+					<td>7x21</td>
+					<td>5: <a href="#e21">When It Rains...</a></td>
+					<td><span class="icon">🕶‼</span> Must Watch/Bare Minimum</td>
+					<td>(No story recap)</td>
+				</tr>
+				<tr>
+					<td>7x22</td>
+					<td>6: <a href="#e22">Tacking Into the Wind</a></td>
+					<td><span class="icon">🕶</span> Must Watch</td>
+					<td>(No story recap)</td>
+				</tr>
+				<tr>
+					<td>7x23</td>
+					<td>7: <a href="#e23">Extreme Measures</a></td>
+					<td><span class="icon">✔+</span> Highly Recommended</td>
+					<td>(No story recap)</td>
+				</tr>
+				<tr>
+					<td>7x24</td>
+					<td>8: <a href="#e24">The Dogs of War</a></td>
+					<td><span class="icon">🕶</span> Must Watch</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>7x25/26 [FL]</td>
+					<td>9/10: <a href="#e25">What You Leave Behind</a></td>
+					<td><span class="icon">🕶‼</span> Must Watch/Bare Minimum</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<p>&nbsp;</p>
 	<div id="e17" class="episodeCard">
-		<img src="images/ds9-7x17.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x17.png" class="episodeCardBG" alt="Ezri tending to a wound on Worf's face"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1447,7 +1603,7 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td><div class="synopsis">
-							Sisko plans to marry Kasidy; Ezri goes in search of Worf after he goes missing following a battle in the badlands.<br /><br />
+							Ezri goes in search of Worf when he goes missing after a battle in the badlands; Sisko plans to marry Kasidy; Dukat has himself surgically altered for his last big scheme.<br /><br />
 							<span class="arcDescription">Arc: The Final Chapter (Part 1 of 9)</span>
 						</div></td>
 						<td>&nbsp;</td>
@@ -1465,7 +1621,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong> This is the first episode in the final arc, but if you really want to skip a few of these stories, this one is probably a good candidate. You can get caught up on the main points by watching the recap at the start of the next episode.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1478,8 +1634,8 @@
 						<td>&nbsp;</td>
 						<td class="watchRecommendationBox" rowspan="4">
 							<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br /></span>
-							<strong><span class="x-large">🕶</span></strong><br />
-							<strong><span class="large">Must Watch</span></strong>
+							<strong><span class="x-large">✔+</span></strong><br />
+							<strong><span class="large">Highly Recommended</span></strong>
 						</td>
 						<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 							
@@ -1507,7 +1663,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e18" class="episodeCard">
-		<img src="images/ds9-7x18.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x18.png" class="episodeCardBG" alt="Winn and Dukat looking tenderly into each other's eyes"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1528,7 +1684,7 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td><div class="synopsis">
-							Ezri and Worf are interrogated by the Breen; Winn receives a vision telling her of a &quot;guide.&quot;<br /><br />
+							Ezri and Worf are interrogated by the Breen; Winn receives a vision telling her to await a &quot;guide,&quot; a role which Dukat gladly fills.<br /><br />
 							<span class="arcDescription">Arc: The Final Chapter (Part 2 of 9)</span>
 						</div></td>
 						<td>&nbsp;</td>
@@ -1546,7 +1702,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode really starts to set things up for the rest of the final arc, and as such I'm making it a &quot;Must Watch.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1588,7 +1744,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e19" class="episodeCard">
-		<img src="images/ds9-7x19.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x19.png" class="episodeCardBG" alt="Ezri and Worf hanging upside down in a Breen prison cell"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1631,7 +1787,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is another important episode for the final chapter. It's rated &quot;Must Watch.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1673,7 +1829,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e20" class="episodeCard">
-		<img src="images/ds9-7x20.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x20.png" class="episodeCardBG" alt="Kai Winn looking concerned at a book wrapped in black cloth on her desk, as Dukat watches over her shoulder"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1712,7 +1868,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is essential to understanding and appreciating the final arc. It's a &quot;Must Watch&quot; and the 10th of 12 episodes on the &quot;Bare Minimum&quot; list.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1754,7 +1910,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e21" class="episodeCard">
-		<img src="images/ds9-7x21.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x21.png" class="episodeCardBG" alt="Garak, Kira, Odo, and Damar discussing strategy in an underground resistance base"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1775,7 +1931,7 @@
 					<tr>
 						<td>&nbsp;</td>
 						<td><div class="synopsis">
-							Kira, Odo, and Garak aid Damar's rebellion. Odo contracts the disease that is affecting all the changelings.<br /><br />
+							Kira, Odo, and Garak aid in Damar's rebellion. Bashir discovers that Odo has the changeling disease. Gowron takes a more active role in the war.<br /><br />
 							<span class="arcDescription">Arc: The Final Chapter (Part 5 of 9)</span>
 						</div></td>
 						<td>&nbsp;</td>
@@ -1789,7 +1945,11 @@
 					<table>
 						<tr>
 							<td class="iconBox" style="color:lime;font-size:x-large">⬆</td>
-							<td><div class="iconDescription"><strong>Level-Up: </strong>Kira given a Starfleet commission</div></td>
+							<td><div class="iconDescription"><strong>Level-Up: </strong>Kira given a Starfleet commission with a rank of Commander</div></td>
+						</tr>
+						<tr>
+							<td class="iconBox">🍆</td>
+							<td><div class="iconDescription">At the beginning of the episode when Odo provides Bashir with a sample of &quot;goo&quot;, Odo says he'll want it back when he and Kira return from their mission. Could this be a subtle joke about the sample he provided being a certain, <em>special</em> part of him?</div></td>
 						</tr>
 						<tr>
 							<td>&nbsp;</td>
@@ -1797,7 +1957,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode is essential to understanding and appreciating the final arc. It's a &quot;Must Watch&quot; and the 11th of 12 episodes on the &quot;Bare Minimum&quot; list.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1839,7 +1999,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e22" class="episodeCard">
-		<img src="images/ds9-7x22.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x22.png" class="episodeCardBG" alt="Gowron discussing battle plans at the head of a conference table surrounded by other Klingons"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1873,12 +2033,19 @@
 				<div class="detailBlock">
 					<table>
 						<tr>
+							<td class="iconBox">🙇‍♂️</td>
+							<td><div class="iconDescription">
+								<div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">In this episode, Worf kills Gowron, making this is the final appearance of <a href="https://memory-alpha.fandom.com/wiki/Robert_O%27Reilly" target="_blank">Robert O'Reilly</a> as Gowron. The character first appeared almost nine years prior, in <a href="../tng/tng-s4.html#e07">TNG 4x07: Reunion</a>.</span></div>
+							
+							</div></td>
+						</tr>
+						<tr>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>Another good episode with some important developments. It's a &quot;Must Watch.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1920,7 +2087,7 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e23" class="episodeCard">
-		<img src="images/ds9-7x23.png" class="episodeCardBG"/>
+		<img src="images/ds9-7x23.png" class="episodeCardBG" alt="Bashir, O'Brien, and Sloan talking"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -1963,7 +2130,7 @@
 						</tr>
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is the third and final &quot;Section 31&quot; episode of the series, so you'll probably want to watch it. But, since it takes the focus off the war and really focuses on this singular plot, part of which doesn't even take place in reality, I'm knocking it down to &quot;Highly Recommended&quot; as a part of this final arc.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -1976,8 +2143,8 @@
 						<td>&nbsp;</td>
 						<td class="watchRecommendationBox" rowspan="4">
 							<span class="watchRecommendationTitle">Watch Recommendation</span><span class="x-small"><br /><br /></span>
-							<strong><span class="x-large">🕶</span></strong><br />
-							<strong><span class="large">Must Watch</span></strong>	
+							<strong><span class="x-large">✔+</span></strong><br />
+							<strong><span class="large">Highly Recommended</span></strong>	
 						</td>
 						<td class="ScoreBox" rowspan="4">FINAL SCORE<br />
 							
@@ -2005,8 +2172,8 @@
 	</div>
 	<p>&nbsp;</p>
 	<div id="e24" class="episodeCard">
-		<img src="images/ds9-7x24.png" class="episodeCardBG"/>
-		<img src="images/lensflare-silver.png" class="episodeCardFlare"/>
+		<img src="images/ds9-7x24.png" class="episodeCardBG" alt="Garak, Damar, and Kira hiding in a dark cellar"/>
+		<img src="images/lensflare-silver.png" class="episodeCardFlare" alt="a silver lens flare effect"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -2040,6 +2207,10 @@
 				<div class="detailBlock">
 					<table>
 						<tr>
+							<td class="quote">&ldquo;</td>
+							<td><div class="iconDescription">Quark's impassioned speech includes the phrase, &quot;The line has to be drawn here; this far, and no further!&quot; This is a tribute to Jean-Luc Picard's nearly identical line from the film <em>Star Trek: First Contact</em>, which was released two and a half years prior to this episode airing.</div></td>
+						</tr>
+						<tr>
 							<td class="iconBox"><img alt="admiral insignia" src="images/admiral.png" width="32" style="transform: rotate(90deg);" /></td>
 							<td><div class="iconDescription"><strong>Admiral Pips: </strong>Pips are awarded to episodes that are the most stand-out, representative examples of the series as a whole.</div></td>
 						</tr>
@@ -2049,7 +2220,7 @@
 						</tr>					
 						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This episode ties up some more minor story lines and sets things up for the series finale, making it a &quot;Must Watch.&quot;</div></td>
 						</tr>
 					</table>
 				</div>
@@ -2090,8 +2261,8 @@
 		</table>
 	</div>
 	<p>&nbsp;</p><div id="e25" class="episodeCard">
-		<img src="images/ds9-7x25.png" class="episodeCardBG"/>
-		<img src="images/lensflare-silver.png" class="episodeCardFlare"/>
+		<img src="images/ds9-7x25.png" class="episodeCardBG" alt="Humans, Bajorans, Klingons, and Romulans standing across a conference table from Founders, Vorta, and Jem'Hadar"/>
+		<img src="images/lensflare-silver.png" class="episodeCardFlare" alt="a silver lens flare effect"/>
 		<table class="episodeCardTable">
 			<tr><td>
 				<table class="titleBlock">
@@ -2133,8 +2304,16 @@
 							<td>&nbsp;</td>
 						</tr>
 						<tr>
+							<td>&nbsp;</td>
+							<td><div class="thoughtsSection"><strong>Thoughts: </strong>There is one thing that bothers me greatly about this finale. <span class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">When Sisko reappears at the end to say his goodbyes, he talks to Kasidy <em>and doesn't talk to Jake</em>. From the very first episode of the series, the importance of this father-son relationship has been stressed, especially since Jake lost his mother and Ben had to raise him as a single father. There are entire episodes like <em>The Visitor</em> that focus on the importance of the relationship to both Ben and Jake... and now Ben's just like &quot;Hey Kasidy, I gotta go, tell Jake I said bye.&quot;</span></span></div></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
 							<td class="iconBox"></td>
-							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>I am just going to mark all 9 episodes in this final chapter as &quot;Must Watch&quot;, but if you really don't want to sit through them all, the ones on the &quot;Bare Minimum&quot; list are 7x20, 7x21, and the final episode.</div></td>
+							<td><div class="watchRecommendationExplanation"><strong>Watch Recommendation: </strong>This is the final episode of the series. It's a &quot;Must Watch&quot; and the last episode on the &quot;Bare Minimum&quot; list.</div></td>
 						</tr>
 					</table>
 				</div>
@@ -2182,16 +2361,17 @@
 <a href="ds9-s3.html">Season 3</a> • <a href="ds9-s4.html">Season 4</a> • <a href="ds9-s5.html">Season 5</a> • <a href="ds9-s6.html">Season 6</a> • <span class="activeSeason"><a href="ds9-s7.html">Season 7</a></span></h3>
 <div class="toTopFooter"><a onClick="scrollToTop()">▲ Back to Top ▲</a></div>
 
+<div class="pageFooter"><img src="../images/c6reviews-hor.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html">HOME</a>&nbsp;&nbsp;<a href="../about.html">ABOUT</a>&nbsp;&nbsp;<span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank" style="display: flex;align-items: center;"><img src="../images/bsky.png">@c6reviews.bsky.social</a></span></div>
 
 <div id="TTDIV">
 
-	<div id="FepisodeToolTip" class="tooltip" onClick="closeToolTip(this)">"Franchise Episode" tells you the order in which episodes from ANY/ALL Star Trek television shows aired or streamed for the first time. This number excludes movies, TOS's "The Cage", and the "Very Short Treks" web shorts.<br /><span class="xx-small"><center>click to close</center></span></div>
+	<div id="FepisodeToolTip" class="tooltip" onClick="closeToolTip(this)">"Franchise Episode" tells you the order in which episodes from ANY/ALL Star Trek television shows aired or streamed for the first time. This number excludes movies, TOS's "The Cage", and the "Very Short Treks" web shorts.<br /><span class="xx-small" style="display:table;margin:0 auto;">click or scroll to close</span></div>
 	
-	<div id="penaltyFlagToolTip" class="tooltip" onClick="closeToolTip(this)">A penalty flag is given to an episode that is far enough out of the norm that it can hardly be considered part of the series.<br /><span class="xx-small"><center>click to close</center></span></div>
+	<div id="penaltyFlagToolTip" class="tooltip" onClick="closeToolTip(this)">A penalty flag is given to an episode that is far enough out of the norm that it can hardly be considered part of the series.<br /><span class="xx-small" style="display:table;margin:0 auto;">click or scroll to close</span></div>
 	
 </div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 
+
+<div id="bottomBorder"></div>
 </body>
 </html>

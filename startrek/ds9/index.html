@@ -3,33 +3,53 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<meta name="darkreader-lock">
-<link rel="stylesheet" href="../main.css" />
-<link rel="stylesheet" href="ds9.css" />
-<link rel="stylesheet" href="episode_reviews.css" />
+<meta name="darkreader-lock" content="47">
+<link rel="stylesheet" href="../main.css?v=0.8" />
+<link rel="stylesheet" href="ds9.css?v=0.8" />
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+<!-- <link rel="stylesheet" href="ds9-episode-guides.css?v=0.8" /> -->
 
-<script type="text/javascript" src="script.js"></script>
-<title>DS9 Episode Guide</title>
+<script type="text/javascript" src="ds9.js"></script>
+<title>C6 | DS9 Episode Guides</title>
 </head>
 
 <body>
 
-<div class="pageTitleImage"><img src="images/ds9--3.png" /></div>
-<div class="pageTitleImageSpacer"></div>
-<div class="pageTitle">Episode Guide</div>
 
-<div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div>
+	<div class="c6Left"><img src="../images/c6reviews-vert.png"></div>
+	<div class="pageTitleImage"><img src="images/ds9-header.png" alt="Deep Space Nine station and title"/></div>
+	<div class="pageTitleContainer">
+		<div class="pageTitle">
+			<img src="../images/c6reviews-hor.png" style="width:350px"><br />Star Trek: Deep Space Nine
+			<span class="pageSubtitle">&nbsp;</span>
+		</div>
+	</div>
+	<div class="c6Right"><img src="../images/c6.png"><img src="../images/c6reviews-hor-noglow.png" style="margin-top:3px"><a href="../index.html" style="margin-top:8px;">HOME</a><a href="../about.html">ABOUT</a><span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank"><img src="../images/bsky.png" style="width:20px;">@c6reviews.<br/>bsky.social</a></span></div>
+
+
+<div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺 top</div>
+
+<div id="leftNavOpenButton" onclick="toggleNav()">🧭<br />nav</div>
+<div id="mainSidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="../index.html"><span style="font-size:large">←</span> Star Trek Home</a><br />
+	<a href="ds9-episode-list.html" style="text-align:center">Full Episode List</a>
+	<div class="sidenavseasons">
+		Season: 
+		<a href="ds9-s1.html">1</a> • <a href="ds9-s2.html">2</a> • <a href="ds9-s3.html">3</a> • <a href="ds9-s4.html">4</a> • <a href="ds9-s5.html">5</a> • <a href="ds9-s6.html">6</a> • <a href="ds9-s7.html">7</a>
+	</div>
+</div>
 
 <div id="backButton" onclick="window.location = '../index.html';"><span style="font-size:large;font-weight:bold">←</span><br />Star Trek<br />home</div>
 
-<div class="content" style="background-color: #181818EE;">
+<div class="content">
 	<div class="seriesInfoCard">
 		<table>
 			<tr>
 				<th colspan=2 style="font-size:16px">Star Trek: Deep Space Nine</th>
 			</tr>
 			<tr>
-				<td colspan=2 style="text-align:center"><img src="images/ds9-cast.png" width="300px" /></th>
+				<td colspan=2 style="text-align:center"><img src="images/ds9-cast.png" style="width:300px" alt="Deep Space Nine cast photo"/></td>
 			</tr>
 			<tr>
 				<td><strong>Abbreviation:</strong></td>
@@ -51,11 +71,11 @@
 		<hr>
 		<div class="small">
 			Jump to: <br />
+			<a href="#spoilerPolicy">• Spoiler Policy</a><br />
 			<a href="#URAR">• Understanding Ratings &amp; Recommendations</a><br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#episode-scores">• Episode scores</a><br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#additional-awards">• Additional awards</a><br />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#watch-recommendations">• Watch recommendations</a><br />
-			<a href="#spoilerPolicy">• Spoiler Policy</a><br />
 		</div>
 	</div>
 	
@@ -220,10 +240,24 @@
 	</div>
 	
 	<div class="finalVerdict">Final Verdict: 9 out of 10</div>
+	
+	<div class="spacer"></div>
+	<hr id="spoilerPolicy" style="height:5px;background-color:gray;border-width:0;">
 
-	<hr style="clear:both">
+	<h2 style="text-align:center">Spoiler Policy</h2>
+	
+	<ul>
+		<li>Generally speaking, you can safely read any of the episode guides without fear of spoiling any plot reveals or twists in a single episode.</li>
+		<li><em>HOWEVER,</em> this show is over 25 years old, so some things just can't be a surprise any more. Some of the episode descriptions or pictures may hint at things you might not have otherwise known if this is your first time watching. Also, certain other major developments in the series can't and won't be hidden - for example, if you didn't know that Worf becomes a main character in the show starting in Season 4, well, now you do!</li>
+		<li>Blatant spoilers will be obscured, with a "Spoiler" tag that you can click on to reveal the contents. Don't read the spoiler unless you've seen the episode or don't have any intention of seeing the episode. Try it here:
+			<div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">This is a spoiler!</span></div>
+		</li>
+	</ul>
+	
+	<div class="spacer"></div>
+	<hr id="URAR" style="clear:both;height:5px;background-color:gray;border-width:0;">
 
-	<h2 id="URAR" style="text-align:center">Understanding Ratings and Recommendations</h2>
+	<h2 style="text-align:center">Understanding Ratings and Recommendations</h2>
 
 	<p>
 		Everyone has different tastes and opinions, and my opinions certainly aren't always popular. To help combat that, a &quot;final score&quot; on any episode is an average of my rating and the ratings from 3 other independent sources, including IMDB. Though, my rating is weighted a little higher in that calculation, because this is my website, after all. In addition to the ratings, I also provide a &quot;Watch Recommendation&quot; which doesn't necessarily have anything to do with the quality of the episode. Rather, the watch recommendation is based on how important the episode is to the overall story of the entire series, whether that episode is good or bad. See below for more details.
@@ -234,7 +268,7 @@
 		<tr>
 			<th style="width:200px">Episode Rating</th>
 			<th>Rating Value Range</th>
-			<th>Description</th>
+			<th style="text-align:left;padding-left:30px;">Description</th>
 		</tr>
 		<tr>
 			<td style="text-align:right">My rating</td>
@@ -277,7 +311,7 @@
 				0-10
 			</td>
 			<td>
-				<ul><li>User ratings on <span style="white-space:nowrap;"><a href="https://imdb.com" target="_blank">IMDB</a></span> might have the lowest-rated episode in a series at a 6.2 and the highest-rated at a 8.9. The normalized rating that I present here turns the lowest rating into a 1, and the highest rating into a 10, and distributes the remaining scores accordingly. There may be some other tweaks, such as scoring a very low outlier as a 0 instead of using it for the basis of a 1 rating.</li></ul>
+				<ul><li>User ratings on <span style="white-space:nowrap;"><a href="https://imdb.com" target="_blank">IMDB</a></span> might have the lowest-rated episode in a series at a 6.2 and the highest-rated at a 8.9. The normalized rating that I present here turns the lowest rating into a 1, and the highest rating into a 10, and distributes the remaining scores accordingly. There may be some other tweaks, such as scoring a very low outlier as a 0 instead of using it for the basis of a 1 rating. <em>IMDB ratings were retrieved on April 21, 2024.</em></li></ul>
 			</td>
 		</tr>
 		<tr>
@@ -295,33 +329,33 @@
 	<table class="understanding-ratings">
 		<tr>
 			<th colspan=2>Award</th>
-			<th>Description</th>
+			<th style="text-align:left">Description</th>
 		</tr>
 		<tr>
-			<td style="text-align:center;font-size:x-large"><span class="personalFavorite">♥</span></td>
+			<td style="text-align:center;font-size:x-large;color:#FF86AD;"><span title="Personal Favorite">♥</span></td>
 			<td style="width:200px"><span class="personalFavorite"><span class="large">Personal Favorite</span></span></td>
 			<td>
 				This is a <em>purely subjective</em> distinction that indicates an episode that I just particularly like, and there is no accounting for taste.
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align:center;font-size:x-large"><span class="award">🥇</span></td>
-			<td><span class="award"><span class="large">1st place</span></span></td>
+			<td style="text-align:center;font-size:x-large;border-bottom:0px;"><span class="award">🥇</span></td>
+			<td style="border-bottom:0px"><span class="award"><span class="large">1st place</span></span></td>
 			<td rowspan=3>
 				These are awarded to what I consider to be the best episodes in the series, but that are also representative of the series. This means that I generally won't award them to &quot;special&quot; episodes. For instance, in the case of Deep Space Nine, episodes like <em>Trials and Tribble-ations</em> or <em>Far Beyond the Stars</em> wouldn't be considered for these despite being really good episodes.
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align:center;font-size:x-large"><span class="award">🥈</span></td>
-			<td><span class="award"><span class="large">2nd place</span></span></td>
+			<td style="text-align:center;font-size:x-large;border-bottom:0px"><span class="award">🥈</span></td>
+			<td style="border-bottom:0px"><span class="award"><span class="large">2nd place</span></span></td>
 		</tr>
 		<tr>
 			<td style="text-align:center;font-size:x-large"><span class="award">🥉</span></td>
 			<td><span class="award"><span class="large">3rd place</span></span></td>
 		</tr>
 		<tr>
-			<td style="text-align:center;font-size:x-large"><span class="award"><img alt="vice admiral insignia" src="images/admiral.png" width="36" /></span></td>
-			<td><span class="award"><span class="large">Admiral Pips</span></span></td>
+			<td style="text-align:center;font-size:x-large;border-bottom:0px"><span class="award"><img alt="admiral insignia" src="images/admiral.png" width="36" /></span></td>
+			<td style="border-bottom:0px"><span class="award"><span class="large">Admiral Pips</span></span></td>
 			<td rowspan=2>
 				Pips are awarded to episodes that are the most stand-out, representative examples of the series as a whole.
 			</td>
@@ -372,7 +406,7 @@
 			<td style="text-align:center;font-size:x-large">‼</td>
 			<td style="font-size:large">BARE MINIMUM</td>
 			<td>
-				This track is designed for someone who really has no intention to watch the show, but would like the bare-minimum experience to get the &quot;gist&quot; of the series from beginning to end. It will usually include the series premiere, the series finale, and a smattering of episodes in between. Episodes in this track are frequently also in the &quot;Must Watch&quot; category, but not always. This track doesn't always include high-scoring or iconic episodes; it focuses instead on giving you the quickest glimpse into the important elements to the overall story arc of the entire series.
+				This track is designed for someone who would like the bare-minimum experience to get the &quot;gist&quot; of the series from beginning to end.<br/><br/><span class="small">This track usually includes the series premiere, the series finale, and a smattering of episodes in between. Episodes in this track are frequently also in the &quot;Must Watch&quot; category, but not always. This track doesn't always include high-scoring or iconic episodes; it focuses instead on giving you the quickest glimpse into the important elements to the overall story arc of the entire series.</span>
 			</td>
 			<td style="text-align:center">
 			13
@@ -382,7 +416,7 @@
 			<td style="text-align:center;font-size:x-large">🕶</td>
 			<td style="font-size:large">MUST WATCH</td>
 			<td>
-				This category is for viewers who are willing to watch more than the minimum, but who still only want to see the most important and most iconic episodes of a series. This track fills out a lot more of the gaps in the story-telling than the &quot;Bare Minimum&quot; track does. &quot;Must Watch&quot; episodes aren't always just the best, highly-rated episodes. This track includes episodes that are the most <em>important</em> for understaning the overall story arc of the series, and that may include some low-rated, &quot;not great&quot; episodes.
+				This category fills out a lot more of the gaps in the story-telling than the &quot;Bare Minimum&quot; track does, but still only includes the most important and most iconic episodes of a series.<br/><br/><span class="small">&quot;Must Watch&quot; episodes aren't always just the best, highly-rated episodes. This track includes episodes that are the most <em>important</em> for understanding the overall story arc of the series, and that may include some low-rated, &quot;not great&quot; episodes.</span>
 			</td>
 			<td style="text-align:center">
 			49
@@ -405,7 +439,7 @@
 				If you're looking for even more episodes to watch, this recommended list is the place to go. These are episodes that are usually average or above-average, and they might provide more in-depth details about characters and events, but they aren't necessarily crucial to understanding the entire series.
 			</td>
 			<td style="text-align:center">
-				30
+				26
 			</td>
 		</tr>
 		<tr>
@@ -415,7 +449,7 @@
 				&quot;Optional&quot; episodes are usually ones that wouldn't otherwise be recommended, but might have a special guest character or particular plot point that you might be interested in watching.
 			</td>
 			<td style="text-align:center">
-				16
+				17
 			</td>
 		</tr>
 		<tr>
@@ -439,25 +473,16 @@
 			</td>
 		</tr>
 	</table>
-	<p>&nbsp;</p>
-	<hr>
-	<h2 id="spoilerPolicy" style="text-align:center">Spoiler Policy</h2>
 	
-	<ul>
-		<li>Generally speaking, you can safely read any of the episode guides without fear of spoiling any plot reveals or twists in a single episode.</li>
-		<br />
-		<li><em>HOWEVER,</em> this show is over 25 years old, so some things just can't be a surprise any more. Some of the episode descriptions or pictures may hint at things you might not have otherwise known if this is your first time watching. Also, certain other major developments in the series can't and won't be hidden - for example, if you didn't know that Worf becomes a main character in the show starting in Season 4, well, now you do!</li>
-		<br />
-		<li>Blatant spoilers will be obscured, with a "Spoiler" tag that you can click on to reveal the contents. Don't read the spoiler unless you've seen the episode or don't have any intention of seeing the episode. Try it here:
-			<div class="spoiler"><span class="spoilerTag" onClick="displaySpoiler(this)">Spoiler » </span><span class="spoilerContent">This is a spoiler!</span></div></div>
-		</li>
-		
+	<p>&nbsp;</p>
+	
 	<div class="toTopFooter"><a onClick="scrollToTop()">▲ Back to Top ▲</a></div>
 </div>
 
-<div id="TTDIV"></div>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<div class="pageFooter"><img src="../images/c6reviews-hor.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html">HOME</a>&nbsp;&nbsp;<a href="../about.html">ABOUT</a>&nbsp;&nbsp;<span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank" style="display: flex;align-items: center;"><img src="../images/bsky.png">@c6reviews.bsky.social</a></span></div>
 
+<div id="TTDIV"></div>
+
+<div id="bottomBorder"></div>
 </body>
 </html>

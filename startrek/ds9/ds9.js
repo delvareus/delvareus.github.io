@@ -1,4 +1,7 @@
-﻿
+﻿document.addEventListener('DOMContentLoaded', function() {
+	var bottomBorder = document.getElementById('bottomBorder');
+	setTimeout(function(){bottomBorder.style.width = '76%'},100);
+});
 
 function closeToolTip(caller) {
 	caller.style.display = 'none';
@@ -16,7 +19,7 @@ function hideTimeline(id){
 	obj.style.transform = "translateX(-100%) translateY(-50%)";
 }
 
-/* ------------------------- NAVIGATION MENU ------------------------- */
+/* -------------------------------------------------- NAVIGATION MENU -------------------------------------------------- */
 
 function toggleNav(){
 	var button = document.getElementById("leftNavOpenButton");
@@ -48,24 +51,16 @@ window.addEventListener('mouseup',function(event){
         }
 });
 
-/* ------------------------- SCROLL TO TOP BUTTON ------------------------- */
+/* -------------------------------------------------- SCROLL TO TOP BUTTON -------------------------------------------------- */
 
-window.onscroll = function scrollFunction() {
-  let toTopButton = document.getElementById("toTopButton");
-  
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    toTopButton.style.display = "block";
-  } else {
-    toTopButton.style.display = "none";
-  }
-}
+
 
 function scrollToTop() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
-/* ------------------------- SPOILERS ------------------------- */
+/* -------------------------------------------------- SPOILERS -------------------------------------------------- */
 
 function displaySpoiler(caller) {
 	
@@ -83,21 +78,38 @@ function displaySpoiler(caller) {
 	}
 }
 
+
+/* -------------------------------------------------- ONSCROLL -------------------------------------------------- */
+   
+window.onscroll = function scrollFunction() {
+
+	// Show or Hide "Scroll to top" button
+		let toTopButton = document.getElementById("toTopButton");
+		
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			toTopButton.style.display = "block";
+		} else {
+			toTopButton.style.display = "none";
+		}
+	 
+	// Hide all Tool Tips
+		for (const item of document.getElementsByClassName('tooltip')) {
+			closeToolTip(item);
+		}
+}
+
+
 /* ------------------------------------------------------------------------------------------------------------
    -------------------------------------------------- ONLOAD --------------------------------------------------
    ------------------------------------------------------------------------------------------------------------ */
 
 window.onload = function() {
-
-	/*document.getElementById('TTDIV').innerHTML = `
-		<div id="FepisodeToolTip" class="tooltip" onClick="closeToolTip(this)">"Franchise Episode" tells you the order in which episodes from ANY/ALL Star Trek television shows aired or streamed for the first time. This number excludes movies, TOS's "The Cage", and the "Very Short Treks" web shorts.<br /><span class="xx-small"><center>click to close</center></span></div>
-		
-	`;*/
-
+	
 	if (window.location.href.includes("openNav")) {
 		openNav();
 	};
 
+	// Franchise Episode Tool Tip
 	for (const item of document.getElementsByClassName('FepisodeNumberBox')) {
 		item.onclick = function(e){
 			var tooltip = document.getElementById('FepisodeToolTip');
@@ -108,12 +120,9 @@ window.onload = function() {
 				tooltip.style.display = 'block';
 				tooltip.style.position = 'fixed';
 		}
-		/*item.onmouseout = function(){
-			var tooltip = document.getElementById('FepisodeToolTip');
-			tooltip.style.display = 'none';
-		}*/
 	}
 	
+	// Red Flag Tool Tip
 	for (const item of document.getElementsByClassName('redFlag')) {
 		item.onclick = function(e){
 			var tooltip = document.getElementById('redFlagToolTip');
@@ -126,6 +135,7 @@ window.onload = function() {
 		}
 	}
 	
+	// Penalty Flag Tool Tip
 	for (const item of document.getElementsByClassName('penaltyFlag')) {
 		item.onclick = function(e){
 			var tooltip = document.getElementById('penaltyFlagToolTip');
@@ -138,6 +148,7 @@ window.onload = function() {
 		}
 	}
 	
+	// Show Award Tool Tip
 	for (const item of document.getElementsByClassName('showAward')) {
 		item.onclick = function(e){
 			var tooltip = document.getElementById('showAwardToolTip');
@@ -150,6 +161,7 @@ window.onload = function() {
 		}
 	}	
 
+	// Color the rating numbers
 	Array.from(document.getElementsByClassName("ratingNumber")).forEach(rating => {
 		
 		switch (Array.from(rating.innerHTML)[0]) {
@@ -191,6 +203,7 @@ window.onload = function() {
 		
 	});
 
+	// Color the Score Boxes
 	Array.from(document.getElementsByClassName("ScoreBox")).forEach(box => {
 		
 		var score = box.querySelector(".xx-large").innerHTML;
@@ -233,5 +246,7 @@ window.onload = function() {
 		}
 		
 	});
-
+	
+	var bottomBorder = document.getElementById('bottomBorder');
+	setTimeout(function(){bottomBorder.style.width = '100%'},800);
 }

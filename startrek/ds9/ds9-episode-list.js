@@ -1,16 +1,17 @@
-﻿/* -------------------------------------------------- GLOBAL VARIABLES -------------------------------------------------- */
+﻿
+
+/* ----------------------------------------------------- GLOBAL VARIABLES ----------------------------------------------------- */
 
 var G_sortcol = 0;
 var G_sortdir = "asc";
 
 
-/* -------------------------------------------------- CREATE THE TABLE -------------------------------------------------- */
+/* ----------------------------------------------------- CREATE THE TABLE ----------------------------------------------------- */
 
 function csvToNestedArray(csvString) {
   // Split into rows
   const rows = csvString.split('\n');
   // Split each row into an array. This regex splits using a comma delimiter, but ignores commas that are within quotation marks.
-  // Yet for some reason I've now forgotten, I changed the commas in quotes to another similar character
   const nestedArray = rows.map(row => row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)); 
   return nestedArray;
 }
@@ -18,11 +19,12 @@ function csvToNestedArray(csvString) {
 function createTable(array) {
     
 	// ----------------- ADD CONTENT -----------------
+	
 	var columns = 5;
 	var content = "";
 	
 	array.slice(1).forEach(function(row) {
-        content += '<tr class="filterrow">';
+        content += '<tr class="filterableRow">';
 		
 		for (var i = 0; i < columns; i++) {
 			
@@ -32,27 +34,49 @@ function createTable(array) {
 			//Set cell class
 			switch (i) {
 				case 0:
-					cellClass = "list_episodeNumber";
+					cellClass = "col_episodeNumber";
 					break;
 				case 1:
-					cellClass = "list_episodeTitle";
+					cellClass = "col_episodeTitle";
+					if (cell.startsWith('"') && cell.endsWith('"')){
+						cell = cell.substring(1, cell.length-1);
+					}
 					break;
 				case 2:
-					cellClass = "list_episodeTags";
-					// Replace flag icons
-					cell = cell.replace("R⚑",'<span style="color:red">⚑</span>');
-					cell = cell.replace("P⚑",'<span style="color:yellow">⚑</span>');
+					cellClass = "col_episodeTags";
+					// Replace flags
+					cell = cell.replace("R⚑",'<span style="color:red" title="Red Flag">⚑</span>');
+					cell = cell.replace("P⚑",'<span style="color:yellow" title="Penalty Flag">⚑</span>');
+					
 					// Replace pips
-					cell = cell.replace("A🟡",'<img alt="admiral insignia" src="images/admiral.png" width="29" />');
-					cell = cell.replace("V🟡",'<img alt="vice admiral insignia" src="images/vice_admiral.png" width="26" />');
+					cell = cell.replace("A🟡",'<img alt="admiral insignia" title="Full Admiral Pips" src="images/admiral.png" width="29" />');
+					cell = cell.replace("V🟡",'<img alt="vice admiral insignia" title="Vice Admiral Pips" src="images/vice_admiral.png" width="26" />');
+					
+					// Add titles to remaining tags
+					cell = cell.replace("♥",'<span title="Personal Favorite">♥</span>');
+					cell = cell.replace("🕖",'<span title="Time Travel episode">🕖</span>');
+					cell = cell.replace("Q",'<span title="Q Episode">Q</span>');
+					cell = cell.replace("31",'<span title="Section 31" style="border:1px solid #C0C0C0;border-radius:10px;">31</span>');
+					cell = cell.replace("⚖",'<span title="Courtroom Episode">⚖</span>');
+					cell = cell.replace("♊",'<span title="Mirror Universe episode">♊</span>');
+					cell = cell.replace("🌎",'<span title="Episode takes place on Earth">🌎</span>');
+					cell = cell.replace("🟨",'<span title="Holodeck episode">🟨</span>');
+					cell = cell.replace("🎭",'<span title="Lighthearted/Comedy">🎭</span>');
+					cell = cell.replace("😱",'<span title="Scary">😱</span>');
+					cell = cell.replace("🥇",'<span title="1st place episode">🥇</span>');
+					cell = cell.replace("🥈",'<span title="2nd place episode">🥈</span>');
+					cell = cell.replace("🥉",'<span title="3rd place episode">🥉</span>');
+					cell = cell.replace("🏅",'<span title="Special Award">🏅</span>');
+					cell = cell.replace("🎖",'<span title="General Award">🎖</span>');
+					cell = cell.replace("💩",'<span title="Worst episode of the series">💩</span>');
 					break;
 				case 3:
-					cellClass = "list_episodeRecommendation";
+					cellClass = "col_episodeRecommendation";
 					// Stylize notably bad entries
 					cell = cell.replace("✖ Notably Bad",'<span class="NotablyBad">✖ Notably Bad</span>');
 					break;
 				case 4:
-					cellClass = "list_episodeRating";
+					cellClass = "col_episodeRating";
 					break;
 			}
 			
@@ -65,12 +89,12 @@ function createTable(array) {
 	
 	// ----------------- ADD LINKS -----------------
 	
-	var epNumCells = Array.from(document.getElementsByClassName("list_episodeNumber"));
+	var epNumCells = Array.from(document.getElementsByClassName("col_episodeNumber"));
 	
 	epNumCells.forEach((cell) => {
-		var cellContents = Array.from(cell.innerHTML);
-		var season = cellContents[0];
-		var episode = "" + cellContents[2] + cellContents[3];
+		var cellContents = cell.innerHTML;
+		var season = cellContents.substring(0,1);
+		var episode = cellContents.substring(2,4);
 		var link = "ds9-s" + season + ".html#e" + episode;
 		
 		var titleCell = cell.parentElement.querySelectorAll("td")[1];
@@ -219,13 +243,13 @@ window.addEventListener('mouseup',function(event){
 
 function updateFilterCount() {
 	
-	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
+	const filterrows = Array.from(document.getElementsByClassName("filterableRow"));
 	var displayedRows = 0;
 
 	filterrows.forEach((filterrow) => {
 		if (filterrow.style.display != "none") {
 			displayedRows += 1;
-			if (filterrow.querySelector(".list_episodeNumber").innerHTML.match("&")){
+			if (filterrow.querySelector(".col_episodeNumber").innerHTML.match("&")){
 				displayedRows += 1;
 			}
 		}
@@ -235,14 +259,15 @@ function updateFilterCount() {
 }
 
 function setRnFilters() {
-	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
+	const filterrows = Array.from(document.getElementsByClassName("filterableRow"));
 	var checkedRnFilters = document.querySelectorAll(".rnfiltercheckbox:checked");
 	let activeRnFilters = [];
 	var activeIcons = "";
 	
 	Array.from(checkedRnFilters).forEach((filter) => {
 		activeRnFilters.push(filter.value);
-		activeIcons += filter.parentElement.querySelector("span.icon").innerHTML;
+		var rnIcon = filter.parentElement.querySelector("span.icon").innerHTML
+		activeIcons += rnIcon + "   ";
 	})
 	
 	document.getElementById("recommendationFilterTextbox").value = activeIcons;
@@ -270,7 +295,7 @@ function setRnFilters() {
 }
 
 function setTagsFilters() {
-	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
+	const filterrows = Array.from(document.getElementsByClassName("filterableRow"));
 	var checkedTagsFilters = document.querySelectorAll(".tagsfiltercheckbox:checked");
 	let activeTagsFilters = [];
 	var activeIcons = "";
@@ -321,7 +346,7 @@ function setTagsFilters() {
 
 function setFilters(type) {
 	
-	const filterrows = Array.from(document.getElementsByClassName("filterrow"));
+	const filterrows = Array.from(document.getElementsByClassName("filterableRow"));
 
 	if (type.endsWith("all")) { // "All Tags" or "All Recommendations" was checked or unchecked
 		
@@ -460,7 +485,7 @@ function setFilters(type) {
 	
 		Array.from(checkedRnFilters).forEach((filter) => {
 			activeRnFilters.push(filter.value);
-			activeRnIcons += filter.parentElement.querySelector("span.icon").innerHTML;
+			activeRnIcons += filter.parentElement.querySelector("span.icon").innerHTML + "   ";
 		});
 
 		document.getElementById("recommendationFilterTextbox").value = activeRnIcons;
@@ -539,6 +564,8 @@ function resetFilters() {
 		addSeasonSeparator();
 	}
 }
+/* ------------------------------------------------------------ (End TABLE FILTERS) ------------------------------------------------------------ */
+
 
 /* ------------------------------------------------------------ SEASON SEPARATOR ------------------------------------------------------------ */
 
@@ -584,126 +611,126 @@ function removeSeasonSeparator() {
    ------------------------------------------------------------------------------------------------------------ */
 
 window.onload = function() {
-	
+
 var csvString = `Episode,Title,Tags,Recommendation,Rating
 1x01/02 [FL],Emissary,,🕶 ‼ Must Watch/Bare Minimum,7.2
 1x03,Past Prologue,,🕶 Must Watch,4.9
 1x04,A Man Alone,,✔ Recommended,4.4
-1x05,Babel,,,2.0
-1x06,Captive Pursuit,,,4.6
+1x05,Babel,,-,2.0
+1x06,Captive Pursuit,,-,4.6
 1x07,Q-Less,Q,♦ Optional,4.1
 1x08,Dax,⚖️,✔ Recommended,5.1
-1x09,The Passenger,,,2.2
-1x10,Move Along Home,,,2.0
+1x09,The Passenger,,-,2.2
+1x10,Move Along Home,,-,2.0
 1x11,The Nagus,,✔ Recommended,5.1
-1x12,Vortex,,,4.8
+1x12,Vortex,,-,4.8
 1x13,Battle Lines,,♦ Optional,4.3
 1x14,The Storyteller,,✖ Notably Bad,1.5
-1x15,Progress,,,5.3
-1x16,If Wishes Were Horses,,,2.9
+1x15,Progress,,-,5.3
+1x16,If Wishes Were Horses,,-,2.9
 1x17,The Forsaken,,✔ Recommended,4.5
-1x18,Dramatis Personae,,,4.9
+1x18,Dramatis Personae,,-,4.9
 1x19,Duet,♥️,🕶 Must Watch,9.4
 1x20,In the Hands of the Prophets,,🕶 ‼ Must Watch/Bare Minimum,5.4
 2x01,The Homecoming,,✔ Recommended,5.4
 2x02,The Circle,,✔ Recommended,5.4
 2x03,The Siege,,✔ Recommended,6.3
-2x04,Invasive Procedures,,,3.8
-2x05,Cardassians,,,4.5
-2x06,Melora,,,4.5
-2x07,Rules of Acquisition,,,4.8
+2x04,Invasive Procedures,,-,3.8
+2x05,Cardassians,,-,4.5
+2x06,Melora,,-,4.5
+2x07,Rules of Acquisition,,-,4.8
 2x08,Necessary Evil,♥️,✔+ Highly Recommended,7.7
-2x09,Second Sight,,,3.9
-2x10,Sanctuary,,,4.3
-2x11,Rivals,,,1.7
-2x12,The Alternate,,,4.7
-2x13,Armageddon Game,,,6.9
-2x14,Whispers,,,7.7
-2x15,Paradise,,,3.6
-2x16,Shadowplay,,,5.0
-2x17,Playing God,,,2.9
-2x18,Profit and Loss,,,5.8
+2x09,Second Sight,,-,3.9
+2x10,Sanctuary,,-,4.3
+2x11,Rivals,,-,1.7
+2x12,The Alternate,,-,4.7
+2x13,Armageddon Game,,-,6.9
+2x14,Whispers,,-,7.7
+2x15,Paradise,,-,3.6
+2x16,Shadowplay,,-,5.0
+2x17,Playing God,,-,2.9
+2x18,Profit and Loss,,-,5.8
 2x19,Blood Oath,,♦ Optional,6.7
 2x20 & 21,The Maquis (Parts I and II),,🕶 Must Watch,7.1
 2x22,The Wire,,✔+ Highly Recommended,6.2
 2x23,Crossover,♊,✔ Recommended,6.7
 2x24,The Collaborator,,🕶 Must Watch,3.8
-2x25,Tribunal,,,5.7
+2x25,Tribunal,,-,5.7
 2x26,The Jem'Hadar,,🕶 Must Watch,7.2
 3x01 & 02,The Search (Parts I and II),V🟡,🕶 ‼ Must Watch/Bare Minimum,7.8
 3x03,The House of Quark,,♦ Optional,6.9
 3x04,Equilibrium,,✔ Recommended,5.2
 3x05,Second Skin,,✔ Recommended,5.9
-3x06,The Abandoned,,,3.9
+3x06,The Abandoned,,-,3.9
 3x07,Civil Defense,♥️,✔ Recommended,7.2
-3x08,Meridian,,,1.9
+3x08,Meridian,,-,1.9
 3x09,Defiant,,🕶 Must Watch,7.2
-3x10,Fascination,🎭♥️,,3.3
+3x10,Fascination,🎭♥️,-,3.3
 3x11 & 12,Past Tense (Parts I and II),🕖🌎,✔+ Highly Recommended,6.4
 3x13,Life Support,,♦ Optional,3.2
 3x14,Heart of Stone,,♦ Optional,5.2
 3x15,Destiny,♥️,✔ Recommended,6.4
-3x16,Prophet Motive,,,3.3
-3x17,Visionary,🕖,,6.6
-3x18,Distant Voices,😱,,3.1
+3x16,Prophet Motive,,-,3.3
+3x17,Visionary,🕖,-,6.6
+3x18,Distant Voices,😱,-,3.1
 3x19,Through the Looking Glass,♊,✔ Recommended,6.4
 3x20,Improbable Cause,A🟡,🕶 Must Watch,9.0
 3x21,The Die is Cast,A🟡,🕶 Must Watch,9.2
-3x22,Explorers,,,5.2
-3x23,Family Business,,,5.2
+3x22,Explorers,,-,5.2
+3x23,Family Business,,-,5.2
 3x24,Shakaar,,🕶 Must Watch,4.3
 3x25,Facets,,✔ Recommended,4.4
 3x26,The Adversary,,🕶 Must Watch,7.5
 4x01/02 [FL],The Way of the Warrior,V🟡🥈,🕶 ‼ Must Watch/Bare Minimum,9.6
 4x03,The Visitor,,✔+ Highly Recommended,8.6
-4x04,Hippocratic Oath,,,5.3
+4x04,Hippocratic Oath,,-,5.3
 4x05,Indiscretion,,🕶 Must Watch,6.7
-4x06,Rejoined,,,5.1
-4x07,Starship Down,,,7.4
+4x06,Rejoined,,-,5.1
+4x07,Starship Down,,-,7.4
 4x08,Little Green Men,🕖🌎,♦ Optional,6.0
-4x09,The Sword of Kahless,,,4.8
+4x09,The Sword of Kahless,,-,4.8
 4x10,Our Man Bashir,🎭🟨♥️,♦ Optional,6.8
 4x11,Homefront,A🟡🌎,🕶 Must Watch,9.1
 4x12,Paradise Lost,A🟡🌎,🕶 Must Watch,9.1
 4x13,Crossfire,,✔ Recommended,4.6
 4x14,Return to Grace,,✔ Recommended,6.9
 4x15,Sons of Mogh,,♦ Optional,4.7
-4x16,Bar Association,,,4.2
-4x17,Accession,,,3.6
-4x18,Rules of Engagement,⚖️,,6.5
-4x19,Hard Time,,,5.4
+4x16,Bar Association,,-,4.2
+4x17,Accession,,-,3.6
+4x18,Rules of Engagement,⚖️,-,6.5
+4x19,Hard Time,,-,5.4
 4x20,Shattered Mirror,♊,✔ Recommended,6.5
-4x21,The Muse,,,1.1
+4x21,The Muse,,-,1.1
 4x22,For the Cause,V🟡,🕶 Must Watch,7.4
-4x23,To The Death,,,6.2
-4x24,The Quickening,♥️,,5.1
+4x23,To The Death,,-,6.2
+4x24,The Quickening,♥️,-,5.1
 4x25,Body Parts,,✔ Recommended,4.2
 4x26,Broken Link,,🕶 Must Watch,6.6
 5x01,Apocalypse Rising,,✔ Recommended,6.2
-5x02,The Ship,,,6.1
+5x02,The Ship,,-,6.1
 5x03,Looking for par'Mach in All the Wrong Places,,♦ Optional,4.9
-5x04,Nor the Battle to the Strong,,,6.6
-5x05,The Assignment,,,5.3
+5x04,Nor the Battle to the Strong,,-,6.6
+5x05,The Assignment,,-,5.3
 5x06,Trials and Tribble-ations,V🟡🕖🏅,🕶 Must Watch,10.0
 5x07,Let He Who Is Without Sin…,,✖ Notably Bad,1.4
-5x08,Things Past,,,5.7
-5x09,The Ascent,,,4.4
+5x08,Things Past,,-,5.7
+5x09,The Ascent,,-,4.4
 5x10,Rapture,,✔ Recommended,6.0
-5x11,The Darkness and the Light,,,3.4
+5x11,The Darkness and the Light,,-,3.4
 5x12,The Begotten ,,✔ Recommended,5.6
 5x13,For the Uniform,,🕶 Must Watch,7.1
 5x14,In Purgatory's Shadow,A🟡,🕶 Must Watch,8.9
 5x15,By Inferno's Light,A🟡,🕶 Must Watch,8.9
-5x16,Doctor Bashir，I Presume,,✔ Recommended,5.1
-5x17,A Simple Investigation,,,5.0
-5x18,Business as Usual,,,5.2
+5x16,"Doctor Bashir, I Presume",,✔ Recommended,5.1
+5x17,A Simple Investigation,,-,5.0
+5x18,Business as Usual,,-,5.2
 5x19,Ties of Blood and Water,,♦ Optional,6.4
-5x20,Ferengi Love Songs,,,3.5
-5x21,Soldiers of the Empire,,,5.9
-5x22,Children of Time,🕖,,6.4
+5x20,Ferengi Love Songs,,-,3.5
+5x21,Soldiers of the Empire,,-,5.9
+5x22,Children of Time,🕖,-,6.4
 5x23,Blaze of Glory,,🕶 Must Watch,6.8
-5x24,Empok Nor,😱,,6.0
-5x25,In the Cards, ,,4.8
+5x24,Empok Nor,😱,-,6.0
+5x25,In the Cards, ,-,4.8
 5x26,Call to Arms,V🟡,🕶 ‼ Must Watch/Bare Minimum,8.8
 6x01,A Time to Stand,,🕶 Must Watch,6.6
 6x02,Rocks and Shoals,,✔ Recommended,7.5
@@ -714,55 +741,55 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 6x07,You Are Cordially Invited,♥️,♦ Optional,6.6
 6x08,Resurrection,♊,♦ Optional,3.6
 6x09,Statistical Probabilities,,✔ Recommended,5.9
-6x10,The Magnificent Ferengi,,,6.2
+6x10,The Magnificent Ferengi,,-,6.2
 6x11,Waltz,V🟡,🕶 Must Watch,6.1
-6x12,Who Mourns for Morn?,,,5.4
+6x12,Who Mourns for Morn?,,-,5.4
 6x13,Far Beyond the Stars,🏅,🕶 Must Watch,9.0
-6x14,One Little Ship,,,4.8
-6x15,Honor Among Thieves,,,4.1
-6x16,Change of Heart,,,3.5
-6x17,Wrongs Darker Than Death or Night,🕖,,5.0
+6x14,One Little Ship,,-,4.8
+6x15,Honor Among Thieves,,-,4.1
+6x16,Change of Heart,,-,3.5
+6x17,Wrongs Darker Than Death or Night,🕖,-,5.0
 6x18,Inquisition,31♥️,🕶 Must Watch,7.3
 6x19,In the Pale Moonlight,A🟡🥇,🕶 ‼ Must Watch/Bare Minimum,9.6
 6x20,His Way,,♦ Optional,4.4
-6x21,The Reckoning,,✔ Recommended,4.3
-6x22,Valiant,,,4.0
-6x23,Profit and Lace,R⚑,✖ Notably Bad,0.3
-6x24,Time's Orphan,🕖,,4.9
-6x25,The Sound of Her Voice,,✔ Recommended,6.4
+6x21,The Reckoning,,-,4.3
+6x22,Valiant,,-,4.0
+6x23,Profit and Lace,R⚑💩,✖ Notably Bad,0.3
+6x24,Time's Orphan,🕖,-,4.9
+6x25,The Sound of Her Voice,,-,6.4
 6x26,Tears of the Prophets,,🕶 ‼ Must Watch/Bare Minimum,6.4
 7x01,Image in the Sand,🌎,🕶 Must Watch,6.1
 7x02,Shadows and Symbols,,🕶 ‼ Must Watch/Bare Minimum,6.4
-7x03,Afterimage,,,4.7
-7x04,Take Me Out to the Holosuite,🎭,,4.1
-7x05,Chrysalis,,,3.7
-7x06,Treachery，Faith and the Great River,,✔ Recommended,6.4
+7x03,Afterimage,,-,4.7
+7x04,Take Me Out to the Holosuite,🎭,-,4.1
+7x05,Chrysalis,,-,3.7
+7x06,"Treachery, Faith and the Great River",,-,6.4
 7x07,Once More Unto the Breach,,♦ Optional,5.9
 7x08,The Siege of AR-558,V🟡,🕶 Must Watch,7.5
 7x09,Covenant,,✔ Recommended,4.6
 7x10,It's Only a Paper Moon,,✔+ Highly Recommended,7.4
-7x11,Prodigal Daughter,P⚑,,2.8
+7x11,Prodigal Daughter,P⚑,-,2.8
 7x12,The Emperor's New Cloak,♊,♦ Optional,3.7
-7x13,Field of Fire,,,5.1
-7x14,Chimera,,,3.8
-7x15,Badda-Bing，Badda-Bang,🎭🟨♥️,♦ Optional,6.4
-7x16,Inter Arma Enim Silent Leges,V🟡31♥️,🕶 Must Watch,7.6
-7x17,Penumbra,,🕶 Must Watch,5.1
+7x13,Field of Fire,,-,5.1
+7x14,Chimera,,-,3.8
+7x15,"Badda-Bing, Badda-Bang",🎭🟨♥️,♦ Optional,6.4
+7x16,Inter Arma Enim Silent Leges,V🟡31♥️,✔+ Highly Recommended,7.6
+7x17,Penumbra,,✔+ Highly Recommended,5.1
 7x18,'Til Death Do Us Part,,🕶 Must Watch,5.7
 7x19,Strange Bedfellows,,🕶 Must Watch,6.4
 7x20,The Changing Face of Evil,,🕶 ‼ Must Watch/Bare Minimum,7.8
 7x21,When It Rains…,,🕶 ‼ Must Watch/Bare Minimum,7.1
 7x22,Tacking Into the Wind,,🕶 Must Watch,7.8
-7x23,Extreme Measures,31,🕶 Must Watch,5.6
+7x23,Extreme Measures,31,✔+ Highly Recommended,5.6
 7x24,The Dogs of War,A🟡,🕶 Must Watch,8.4
 7x25/26 [FL],What You Leave Behind,A🟡,🕶 ‼ Must Watch/Bare Minimum,9.4`;
-	
+
 	var array = csvToNestedArray(csvString);
 	
 	createTable(array);
 	
 	// Add episode rating colors
-	Array.from(document.getElementsByClassName("list_episodeRating")).forEach(rating => {
+	Array.from(document.getElementsByClassName("col_episodeRating")).forEach(rating => {
 		
 		rating.style.color = 'black';
 		
@@ -809,4 +836,7 @@ var csvString = `Episode,Title,Tags,Recommendation,Rating
 	sortArrowOn.style.color = "white";
 	
 	addSeasonSeparator();
+	
+	var bottomBorder = document.getElementById('bottomBorder');
+	setTimeout(function(){bottomBorder.style.width = '100%'},500);
 }

@@ -1,10 +1,194 @@
-.pageTitleImageSpacer {
-	position:fixed;
-    width:600px;
-	left: 0px;
+
+
+/* ------------------------------------ LEFT NAVIGATION MENU ------------------------------------ */
+#leftNavOpenButton{
+	cursor: pointer;
+	position: fixed;
+	left:0;
+	top:315px;
+	text-align: center;
+	background-color: #031014DD;
+	padding: 4px;
+	border: 2px solid;
+	border-radius: 0px 12px 12px 0px;
+	overflow: hidden;
+	z-index: 100;
+	transition: 0.2s;
+	width: 40px;
+}
+#leftNavOpenButton:hover {
+	background-color: #124054; /*#555;*/
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #111111EE;
+  overflow-x: hidden;
+  padding-top: 20px; 
+  transition: 0.2s; 
+}
+.sidenav a {
+  padding: 3px 12px 3px 12px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #44b3e3; /*#AAAACC;*/
+  display: block;
+  transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #FFFFFF;
+}
+.sidenav .sidenavseasons{
+	margin-top: 5px;
+	margin-bottom: 8px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	line-height: 1.5;
+	text-align:center;
+	font-size: 14px;
+	margin-left: auto;
+	margin-right: auto;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	width: max-content;
+}
+.sidenav .sidenavseasons a{
+	padding: 0px 0px 0px 0px;
+	display:inline;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 10px;}
 }
 
-.pageTitle {
-    padding-left:1200px;
-    left:-600px;
+
+/* ---------------------------------------- STARS ---------------------------------------- */
+.stars0 {
+	font-size: x-large;
+	color: #F8696B;
+	height: 24px;
+	padding-left: 8px;
 }
+.stars1 {
+	font-size: x-large;
+	color: #FA9473;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars2 {
+	font-size: x-large;
+	color: #FCBF7B;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars3 {
+	font-size: x-large;
+	color: #FFEB84;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars4 {
+	font-size: x-large;
+	color: #B1D580;
+	height: 24px;
+	padding-left: 8px;
+}
+.stars5 {
+	font-size: x-large;
+	color: #63BE7B;
+	height: 24px;
+	padding-left: 8px;
+}
+.hollowStar {
+	color: #828282;
+}
+.halfstar {
+	display: inline-block;
+	position: relative;
+	font-size:x-large;
+	height:26px;
+	overflow:hidden;
+	vertical-align:top;
+}
+.lefthalfstar{
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	width:50%;
+}
+.righthalfstar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #828282;
+}
+
+/* ---------------------------------------- AWARDS AND DESIGNATIONS ---------------------------------------- */
+.personalFavorite {
+	font-size: x-large;
+	color: #FF86AD;
+	height: 24px
+}
+.award{
+	color: lightgray;
+}
+.showAward{
+	color: lightgray;
+	cursor: help;
+}
+.redFlag{
+	color:red;
+	cursor: help;
+}
+.penaltyFlag{
+	color:yellow;
+	cursor: help;
+}
+.NotablyBad {
+	color: #FF6666;
+}
+
+/* --- OTHER RATINGS --- */
+.ratingNumber {
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+
+/* ---------------------------------------- SPOILER TAGS ---------------------------------------- */
+.spoiler{
+	
+}
+.spoilerTag{
+	font-weight: bold;
+	color: orange;
+	cursor: pointer;
+}
+.spoilerTag:hover{
+	background-color: #845600EE;
+	border-radius: 3px;
+}
+.spoilerContent{
+	filter: blur(6px);
+	font-size:small;
+	color: #FFE1CA;
+	transition: 0.5s;
+	user-select: none;
+	pointer-events: none;
+}
+

@@ -3,24 +3,42 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<meta name="darkreader-lock">
-<link rel="stylesheet" href="../main.css" />
-<link rel="stylesheet" href="ds9.css" />
-<link rel="stylesheet" href="full_episode_list.css" />
+<meta name="darkreader-lock" content="47">
+<link rel="stylesheet" href="../main.css?v=0.8" />
+<link rel="stylesheet" href="ds9.css?v=0.8" />
+<link rel="stylesheet" href="ds9-episode-list.css?v=0.8" />
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
-<script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="tscript.js"></script>
-<title>DS9 Full Episode List</title>
+<script type="text/javascript" src="ds9.js"></script>
+<script type="text/javascript" src="ds9-episode-list.js"></script>
+<title>C6 | DS9 Full Episode List</title>
 </head>
 
 <body>
 
-<div class="pageTitleImage"><img src="images/ds9--3.png" /></div>
-<div class="pageTitleImageSpacer"></div>
-<div class="pageTitle">Full Episode List</div>
+<div class="c6Left"><img src="../images/c6reviews-vert.png"></div>
+<div class="pageTitleImage"><img src="images/ds9-header.png" alt="Deep Space Nine station and title"/></div>
+<div class="pageTitleContainer">
+	<div class="pageTitle">
+		<img src="../images/c6reviews-hor.png" style="width:350px"><br />Star Trek: Deep Space Nine
+		<span class="pageSubtitle">Full Episode List</span>
+	</div>
+</div>
+<div class="c6Right"><img src="../images/c6.png"><img src="../images/c6reviews-hor-noglow.png" style="margin-top:3px"><a href="../index.html" style="margin-top:8px;">HOME</a><a href="../about.html">ABOUT</a><span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank"><img src="../images/bsky.png" style="width:20px;">@c6reviews.<br/>bsky.social</a></span></div>
 
 
 <div onclick="scrollToTop()" id="toTopButton" title="Go to top">🔺<br />top</div> 
+
+<div id="leftNavOpenButton" onclick="toggleNav()">🧭<br />nav</div>
+<div id="mainSidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	<a href="index.html"><span style="font-size:large">←</span> DS9 Episode Guide Home</a><br />
+	<a href="ds9-episode-list.html" style="text-align:center">Full Episode List</a>
+	<div class="sidenavseasons">
+		Season: 
+		<a href="ds9-s1.html">1</a> • <a href="ds9-s2.html">2</a> • <a href="ds9-s3.html">3</a> • <a href="ds9-s4.html">4</a> • <a href="ds9-s5.html">5</a> • <a href="ds9-s6.html">6</a> • <a href="ds9-s7.html">7</a>
+	</div>
+</div>
 
 <div id="backButton" onclick="window.location = 'index.html';"><span style="font-size:large;font-weight:bold">←</span><br />DS9<br />home</div>
 	
@@ -30,18 +48,19 @@
 			<td><div id="filterTotalbox">Showing<br /><span id="filterTotal">173</span> of 173<br />episodes</div></td>
 			<td style="text-align:right;padding-right:8px;vertical-align:bottom;">
 				<span style="font-size: 12px;text-decoration:underline">Filter mode</span><br />
-				<div class="filterAndOr">
+				<div class="filterModeContainer">
 					<label class="radioContainer">AND&nbsp;<input type="radio" class="andorradio" id="andordefault" value="and" name="andor" onClick="setFilters('andor')" checked /><span class="radioDot"></span></label><br />
 					<label class="radioContainer">OR&nbsp;<input type="radio" class="andorradio" value="or" name="andor" onClick="setFilters('andor')" /><span class="radioDot"></span></label>
 				</div>
 			</td>
 			<td style="text-align:center;vertical-align:bottom;">
-				<input type="textbox" id="tagFilterTextbox" placeholder="Tags filter" size="12" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">▼</span>
-				<div class="filterCategory" id="tagFilter" style="transform: translateX(-112px);">
+				<div class="xx-small">Mouse over tags<br />to see description<br /><br /></div>
+				<input type="text" id="tagFilterTextbox" placeholder="Tags filter" size="12" readonly /><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('tagFilter')">▼</span>
+				<div class="filterDropdownContainer" id="tagFilter" style="transform: translateX(-112px);">
 					<label class="checkContainer"><input type="checkbox" id="tagsfilterall" onClick="setFilters('tagsall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Tags</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="admiral.png" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">⏺</span>&nbsp;Admiral&nbsp;Pips</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="♥" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">♥️</span>&nbsp;Personal&nbsp;Favorites</label>
-					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🥉|🏅|🎖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
+					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🥇|🥈|🥉|🏅|🎖|💩" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🏅</span>&nbsp;Episodes with extra awards</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="🕖" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">🕖</span>&nbsp;Time&nbsp;Travel episodes</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="Q" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">Q</span>&nbsp;Q episodes</label>
 					<label class="checkContainer"><input type="checkbox" class="tagsfiltercheckbox" value="31" onClick="setFilters('tags')" /><span class="checkmark"></span><span class="icon">31</span>&nbsp;Section 31 episodes</label>
@@ -55,14 +74,15 @@
 				</div>
 			</td>
 			<td style="text-align:center;vertical-align:bottom;">
-				<input type="textbox" id="recommendationFilterTextbox" placeholder="Recommendation filter" size="26" readonly></input><span id="tagFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">▼</span>
-				<div class="filterCategory" id="recommendationFilter" style="transform: translateX(29px);">
+				<input type="text" id="recommendationFilterTextbox" placeholder="Recommendation filter" size="26" readonly /><span id="recommendationFilterDropdownArrow" class="dropdownArrow" onclick="toggleFilterBox('recommendationFilter')">▼</span>
+				<div class="filterDropdownContainer" id="recommendationFilter" style="transform: translateX(29px);">
 					<label class="checkContainer"><input type="checkbox" id="rnfilterall" onClick="setFilters('rnall')" checked /><span class="checkmark"></span><span class="icon"></span>&nbsp;All&nbsp;Recommendations</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="‼" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">‼</span>&nbsp;Bare&nbsp;Minimum</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="🕶" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">🕶</span>&nbsp;Must&nbsp;Watch</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔+" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔+</span>&nbsp;Highly&nbsp;Recommended</label>
-					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔ " onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔</span>&nbsp;Recommended</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✔" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✔</span>&nbsp;Recommended</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="♦" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">♦</span>&nbsp;Optional</label>
+					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="-" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">-</span>&nbsp;No Recommendation</label>
 					<label class="checkContainer"><input type="checkbox" class="rnfiltercheckbox" value="✖" onClick="setFilters('rn')" /><span class="checkmark"></span><span class="icon">✖</span>&nbsp;Notably&nbsp;Bad</label>
 					<input type="hidden" class="rnfiltercheckbox" value="None" />
 				</div>
@@ -88,12 +108,13 @@
 	</table>
 </div>
 
-	<p>&nbsp;</p>
+<div class="pageFooter"><img src="../images/c6reviews-hor.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../index.html">HOME</a>&nbsp;&nbsp;<a href="../about.html">ABOUT</a>&nbsp;&nbsp;<span class="bsky"><a href="https://bsky.app/profile/c6reviews.bsky.social" target="_blank" style="display: flex;align-items: center;"><img src="../images/bsky.png">@c6reviews.bsky.social</a></span></div>
+
 	<div id="TTDIV"></div>
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
 
 
 
+
+<div id="bottomBorder"></div>
 </body>
 </html>
